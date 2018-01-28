@@ -21,3 +21,25 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.center {
+    text-align: center;
+}
+
+.category-card {
+    .item-title {
+        font-size: 16px;
+    }
+    .item-image {
+        height: 6rem;
+        background-position: bottom;
+        background-size: cover;
+
+        img{
+            min-height: 6rem;
+        }
+    }
+}
+
+ion-content{
+    background-color: $stable;
+}
