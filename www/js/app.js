@@ -24,10 +24,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
             });
         // not working
-    /*
-        $ionicPlatform.onHardwareBackButton(function () {
-            return false;
-        })*/
+        /*
+            $ionicPlatform.onHardwareBackButton(function () {
+                return false;
+            })*/
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -55,6 +55,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 url: '/home',
                 templateUrl: 'templates/home.html'
             })
+
             .state('recientes', {
                 url: '/recientes',
                 templateUrl: 'templates/pedidos-recientes.html'
@@ -73,7 +74,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 }
             })
 
-        /* ============= ADMIN SITES =========== */
+            .state('bocadillos', {
+                url: '/productos/bocadillos',
+                templateUrl: 'templates/productos/bocadillos.html'
+            })
+
+            /* ============= ADMIN SITES =========== */
             .state('admin-home', {
                 url: '/admin/home',
                 templateUrl: 'templates/admin/home.html'
