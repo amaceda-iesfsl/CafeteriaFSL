@@ -9882,11 +9882,33 @@ a.button {
   font-size: 16px; }
 
 .category-card .item-image {
-  height: 6rem;
+  min-height: 6rem;
   background-position: bottom;
   background-size: cover; }
   .category-card .item-image img {
-    min-height: 6rem; }
+    height: 6rem; }
+
+.card .card-header-right {
+  position: absolute;
+  right: 10px;
+  z-index: 1000;
+  top: 14px; }
 
 ion-content {
   background-color: #f8f8f8; }
+
+.padding-0 {
+  padding: 0px; }
+
+.margin-0 {
+  margin: 0px; }
+
+@media (min-width: 600px) {
+  .category-card {
+    max-width: 25em; }
+    .category-card .item-image {
+      min-height: 6rem;
+      background-position: bottom;
+      background-size: cover; }
+      .category-card .item-image img {
+        height: 13rem; } }
