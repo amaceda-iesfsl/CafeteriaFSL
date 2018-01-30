@@ -30,16 +30,31 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         font-size: 16px;
     }
     .item-image {
-        height: 6rem;
+        min-height: 6rem;
         background-position: bottom;
         background-size: cover;
-
-        img{
-            min-height: 6rem;
+        img {
+            height: 6rem;
         }
+
     }
 }
 
-ion-content{
+ion-content {
     background-color: $stable;
+}
+
+@media (min-width: 600px) {
+    .category-card {
+        max-width:25em;
+        .item-image {
+            min-height: 6rem;
+            background-position: bottom;
+            background-size: cover;
+            img {
+                height: 13rem;
+            }
+
+        }
+    }
 }
