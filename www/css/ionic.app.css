@@ -9875,6 +9875,9 @@ a.button {
 .center {
   text-align: center; }
 
+.right {
+  text-align: right; }
+
 .category-card a {
   text-decoration: none; }
 
@@ -9888,11 +9891,36 @@ a.button {
   .category-card .item-image img {
     height: 6rem; }
 
-.card .card-header-right {
+/*
+.card {
+    .card-header-right {
+        position: absolute;
+        right: 10px;
+        z-index: 1000;
+        top: 14px;
+    }
+}*/
+.margin {
+  margin: 10px; }
+
+.margin-sides {
+  margin: 0px 10px; }
+
+.margin-sides-sm {
+  margin: 0px 5px; }
+
+.product-list .item-badge {
   position: absolute;
-  right: 10px;
-  z-index: 1000;
-  top: 14px; }
+  top: 8px;
+  left: 40px;
+  font-size: 12px;
+  right: auto; }
+
+.product-list .price {
+  font-size: 16px; }
+
+.product-list .button-sm {
+  font-size: 16px; }
 
 ion-content {
   background-color: #f8f8f8; }
