@@ -82,13 +82,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             /* ============= ADMIN SITES =========== */
             .state('admin-home', {
                 url: '/admin/home',
-                templateUrl: 'templates/admin/home.html'});
-/*
-            .state('adminNuevoproducto', {
-                url: '/adminNuevoproducto',
-                templateUrl: 'templates/adminNuevoproducto.html'
-            })
-            .state('adminHome', {
+                templateUrl: 'templates/admin/home.html'})
+
+            .state('nuevo-producto', {
+                url: '/nuevo-producto',
+                templateUrl: 'templates/admin/nuevo-producto.html'
+            });
+ /*           .state('adminHome', {
                 url: '/adminHome',
                 templateUrl: 'templates/adminHome.html'
 
