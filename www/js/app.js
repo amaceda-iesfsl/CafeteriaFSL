@@ -71,6 +71,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                                 }
                             ]
                 }
+            })
+
+            .state('adminHome', {
+                url: '/adminHome',
+                templateUrl: 'templates/adminHome.html'
             });
         /*
         $routeProvider.when('/hipoteca/detalle/:idHipoteca', {
