@@ -1,16 +1,27 @@
-<ion-view view-title="Nuevo producto">
-    <div class="bar bar-subheader bar-stable">
-        <h2 class="title">Nuevo producto</h2>
+<ion-view hide-back-button="true" view-title="Nuevo producto">
+    <!--
+    <div class="bar bar-subheader">
+        <h2 class="title">Iniciar Sesión</h2>
     </div>
-    <ion-content class="has-subheader" >
+-->
+    <ion-content class="has-subheader">
         <div class="row">
-            <div class="col center">
-                <img src="img/promo/QR.jpg" class="col-80"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-50 col-offset-25">
-                <a href="#/detalle-pedido"><button class="button button-block button-positive">Ver pedido</button></a>
+            <div class="list">
+                <form>
+                <label>Nombre</label>
+                        <input type = "text"/>
+
+               <label>Categoria</label>
+                <select>
+                    <option></option>
+                    <option >Ofertas</option>
+                    <option>Bocadillos</option>
+                    <option >Bebidas</option>
+                    <option>bolleria</option>
+                     <option>Cafes</option>
+                </select>
+               </form>
+
             </div>
         </div>
     </ion-content>

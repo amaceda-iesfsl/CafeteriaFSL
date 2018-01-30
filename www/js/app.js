@@ -72,11 +72,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                             ]
                 }
             })
-
+            .state('adminNuevoproducto', {
+                url: '/adminNuevoproducto',
+                templateUrl: 'templates/adminNuevoproducto.html'
+            })
             .state('adminHome', {
                 url: '/adminHome',
                 templateUrl: 'templates/adminHome.html'
             });
+
+
         /*
         $routeProvider.when('/hipoteca/detalle/:idHipoteca', {
             templateUrl: "html/detalle.html",
