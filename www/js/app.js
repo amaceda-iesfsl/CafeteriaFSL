@@ -117,6 +117,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('nuevo-producto', {
                 url: '/admin/nuevo-producto',
                 templateUrl: 'templates/admin/nuevo-producto.html'
+            })
+            .state('nueva-oferta', {
+              url: '/admin/nueva-oferta',
+              templateUrl: 'templates/admin/Nueva-oferta.html'
             });
  
 

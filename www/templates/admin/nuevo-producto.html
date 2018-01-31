@@ -1,59 +1,61 @@
 <ion-view hide-back-button="true" view-title="CFSL-Nuevo producto">
 
 
-    <ion-content>
+  <ion-content>
 
-        <div class="row ">
+    <div class="row ">
 
-            <form class="col  col-offset-10 ">
-                <div class="row responsive-lg">
-                    <div class="col col-40 col-center">
-                        <div class=" item-input">
-                            <label class="input-label formfont" for="nombre">Nombre</label>
-                            <input type="text" name="nombre" placeholder="Nombre del producto" />
-                        </div>
-                        <div class=" item-input " >
-                            <label class="input-label formfont" for="categorias">Categoria</label>
-                            <select class="item item-input item-select " name="categorias">
-                        <option>Elige categoria</option>
-                        <option >Ofertas</option>
-                        <option>Bocadillos</option>
-                        <option >Bebidas</option>
-                        <option>bolleria</option>
-                        <option>Cafes</option>
-                </select>
-                        </div>
-                        <div class=" item-input">
-                            <label class="input-label formfont" for="ingredientes">Ingredientes</label>
-                            <textarea name="ingredientes" placeholder="ingredientes de producto"></textarea>
-                        </div>
-                        <div class=" item-input">
-                            <label class="input-label formfont" for="precio">Precio</label>
-                            <input type="number" name="precio">
+      <form class="col  col-offset-10 ">
+        <div class="row responsive-lg">
+          <div class="col col-40 col-center">
+            <div class=" item-input">
+              <label class="input-label formfont" for="nombre">Nombre</label>
+              <input type="text" name="nombre" placeholder="Nombre del producto" />
+            </div>
+            <div class=" item-input ">
+              <label class="input-label formfont" for="categorias">Categoria</label>
+              <select class="item item-input item-select " name="categorias">
+                <option>Elige categoria</option>
+                <option>Ofertas</option>
+                <option>Bocadillos</option>
+                <option>Bebidas</option>
+                <option>bolleria</option>
+                <option>Cafes</option>
+              </select>
+            </div>
+            <div class=" item-input">
+              <label class="input-label formfont" for="ingredientes">Ingredientes</label>
+              <textarea name="ingredientes" placeholder="ingredientes de producto"></textarea>
+            </div>
+            <div class=" item-input">
+              <label class="input-label formfont" for="precio">Precio</label>
+              <input type="number" name="precio" placeholder="€">
 
-                        </div>
-                        <div class=" item-input">
-                            <label class="input-label formfont">Informacion adicional</label>
-                            <textarea placeholder="Informacion adicional para alérgenos"></textarea>
-                        </div>
-                    </div>
-                    <div class="col col-50 col-center">
-                        <div class="col col-offset-33 ">
-                            <label class="formfont" for="imagen">Imagen</label>
-                            <div  id="img_produ">
-                               
-                            </div>
-                            <input type="button" class="button button-assertive" name="eliminar" value="Eliminar imagen">
-                            <input type="button" class="button button-balanced" name="establecer" value="Establecer imagen">
-                        </div>
-                    </div>
-                </div >
-                <div id="add_produ" class="row ">
-                <input type="submit" class="button button-balanced  col-offset-33" name="anadir" value="Añadir producto">
-                    </div>
-            </form>
+            </div>
+            <div class=" item-input">
+              <label class="input-label formfont">Informacion adicional</label>
+              <textarea placeholder="Informacion adicional para alérgenos"></textarea>
+            </div>
+          </div>
+          <div class="col col-50 col-center">
+            <div class="col col-offset-33 " id="div_img_produ">
 
+              <div id="img_produ">
 
+              </div>
+              <div id="btns_img">
+                <input type="button" class="button button-assertive" name="eliminar" value="Eliminar imagen">
+                <input type="button" class="button button-balanced" name="establecer" value="Establecer imagen">
+              </div>
+            </div>
+          </div>
         </div>
-    </ion-content>
+        <div id="add_produ" class="row ">
+          <input type="submit" class="button button-balanced  col-offset-33" name="anadir" value="Añadir producto">
+        </div>
+      </form>
+
+
+    </div>
+  </ion-content>
 </ion-view>

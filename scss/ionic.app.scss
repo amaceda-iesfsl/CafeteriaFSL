@@ -21,6 +21,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "scss/admin/nuevo-producto";
+@import "scss/admin/nueva-oferta";
 @import "scss/app/home";
 
 
@@ -110,6 +111,7 @@ ion-content {
     font-size: 150%;
     margin-bottom: 5%;
     margin-right: 5%;
+    width:auto;
 }
 
 @media (min-width: 600px) {
