@@ -20,7 +20,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
+@import "scss/nuevo-producto";
 .center {
     text-align: center;
 }
@@ -94,6 +94,9 @@ ion-content {
 
 .margin-0 {
     margin: 0px;
+}
+.formfont{
+    font-size: 150%;
 }
 
 @media (min-width: 600px) {

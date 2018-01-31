@@ -9613,10 +9613,10 @@ a.button {
     margin-top: env(safe-area-inset-top); }
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header {
-  padding-left: calc( constant(safe-area-inset-left) + 5px);
+  padding-left: calc( constant(safe-area-inset-left) + 5px);
   padding-left: calc(env(safe-area-inset-left) + 5px);
-  padding-right: calc( constant(safe-area-inset-right) + 5px);
-  padding-right: calc( env(safe-area-inset-right) + 5px); }
+  padding-right: calc( constant(safe-area-inset-right) + 5px);
+  padding-right: calc( env(safe-area-inset-right) + 5px); }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header .buttons:last-child {
     right: calc(constant(safe-area-inset-right) + 5px);
     right: calc(env(safe-area-inset-right) + 5px); }
@@ -9872,6 +9872,13 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+#img_produ {
+  width: 300px;
+  height: 300px;
+  border: 3px solid black;
+  margin-bottom: 20px;
+  background-color: antiquewhite; }
+
 .center {
   text-align: center; }
 
@@ -9930,6 +9937,9 @@ ion-content {
 
 .margin-0 {
   margin: 0px; }
+
+.formfont {
+  font-size: 150%; }
 
 @media (min-width: 600px) {
   .category-card {

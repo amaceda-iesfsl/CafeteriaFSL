@@ -4,16 +4,19 @@
         <h2 class="title">Iniciar Sesión</h2>
     </div>
 -->
-    <ion-content >
+    <ion-content>
         <div class="row">
-            <form class="col-md-6 col-md-offset-3 ">
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" placeholder="Nombre del producto" />
-                </div>
-                <div>
-                    <label for="categorias">Categoria</label>
-                    <select name="categorias">
+
+            <form class="col  col-offset-10 ">
+                <div class="row">
+                    <div class="col col-40 col-center">
+                        <div class=" item-input">
+                            <label class="input-label formfont" for="nombre">Nombre</label>
+                            <input type="text" name="nombre" placeholder="Nombre del producto" />
+                        </div>
+                        <div class=" item-input " >
+                            <label class="input-label formfont" for="categorias">Categoria</label>
+                            <select class="item-select" name="categorias">
                         <option>Elige categoria</option>
                         <option >Ofertas</option>
                         <option>Bocadillos</option>
@@ -21,28 +24,33 @@
                         <option>bolleria</option>
                         <option>Cafes</option>
                 </select>
-                </div>
-                <div>
-                    <label for="ingredientes">Ingredientes</label>
-                    <textarea name="ingredientes" placeholder="ingredientes de producto"></textarea>
-                </div>
-                <div>
-                    <label for="precio">Precio</label>
-                    <input type="number" name="precio">
+                        </div>
+                        <div class=" item-input">
+                            <label class="input-label formfont" for="ingredientes">Ingredientes</label>
+                            <textarea name="ingredientes" placeholder="ingredientes de producto"></textarea>
+                        </div>
+                        <div class=" item-input">
+                            <label class="input-label formfont" for="precio">Precio</label>
+                            <input type="number" name="precio">
 
-                </div>
-                <div>
-                    <label>Informacion adicional</label>
-                    <textarea placeholder="Informacion adicional para alérgenos"></textarea>
-                </div>
-                <div>
-                    <label for="imagen">Imagen</label>
-                    <div id="img_produ">
+                        </div>
+                        <div class=" item-input">
+                            <label class="input-label formfont">Informacion adicional</label>
+                            <textarea placeholder="Informacion adicional para alérgenos"></textarea>
+                        </div>
                     </div>
-                    <input type="button" name="eliminar" value="Eliminar imagen">
-                    <input type="button" name="establecer" value="Establecer imagen">
+                    <div class="col col-50 col-center">
+                        <div class="col col-offset-33 ">
+                            <label class="formfont" for="imagen">Imagen</label>
+                            <div  id="img_produ">
+                               
+                            </div>
+                            <input type="button" class="button button-assertive" name="eliminar" value="Eliminar imagen">
+                            <input type="button" class="button button-balanced" name="establecer" value="Establecer imagen">
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" name="anadir" value="Añadir producto">
+                <input type="submit" class="button button-balanced  col-bottom col-offset-33" name="anadir" value="Añadir producto">
             </form>
 
 

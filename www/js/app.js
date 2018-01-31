@@ -74,10 +74,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 }
             })
 
-            .state('bocadillos', {
-                url: '/productos/bocadillos',
-                templateUrl: 'templates/productos/bocadillos.html'
-            })
 
             /* ============= ADMIN SITES =========== */
             .state('admin-home', {
@@ -85,16 +81,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/admin/home.html'})
 
             .state('nuevo-producto', {
-                url: '/nuevo-producto',
+                url: '/admin/nuevo-producto',
                 templateUrl: 'templates/admin/nuevo-producto.html'
             });
- /*           .state('adminHome', {
-                url: '/adminHome',
-                templateUrl: 'templates/adminHome.html'
+ 
 
-            });
 
-*/
+       
+
         /*
         $routeProvider.when('/hipoteca/detalle/:idHipoteca', {
             templateUrl: "html/detalle.html",
