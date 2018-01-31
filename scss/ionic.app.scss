@@ -21,6 +21,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "scss/nuevo-producto";
+
+
+
 .center {
     text-align: center;
 }
@@ -44,6 +47,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
             height: 6rem;
         }
     }
+}
+
+.button-small{
+    font-size: 20px;
+    margin: 0px;
 }
 
 /*
@@ -85,7 +93,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 ion-content {
-    background-color: $stable;
+    background-color: #efefef;
 }
 
 .padding-0 {

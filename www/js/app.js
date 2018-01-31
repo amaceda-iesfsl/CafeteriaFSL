@@ -61,11 +61,40 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/pedidos-recientes.html'
             })
 
+
+            // --------------- PRODUCTOS
             .state('bocadillos', {
                 url: '/productos/bocadillos',
                 templateUrl: 'templates/productos/bocadillos.html'
             })
 
+            .state('bebidas', {
+                url: '/productos/bebidas',
+                params:{
+                    type: 'bebidas',
+                },
+                templateUrl: 'templates/productos/list.html'
+            })
+
+            .state('cafes', {
+                url: '/productos/cafes',
+                params:{
+                    type: 'cafes',
+                },
+                templateUrl: 'templates/productos/list.html'
+            })
+
+            .state('bolleria', {
+                url: '/productos/bolleria',
+                params:{
+                    type: 'bolleria',
+                },
+                templateUrl: 'templates/productos/list.html'
+            })
+
+
+
+            // --------------- PEDIDOS
             .state('detallePedido', {
                 url: '/detalle-pedido',
                 templateUrl: 'templates/detalle-pedido.html',
@@ -73,7 +102,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 resolve: {
                     pedido: ['pedidoResource',
                                 function (pedidoResource) {
-                            return pedidoResource.get();
+                            return pedidoResource.get('pedido');
                                 }
                             ]
                 }

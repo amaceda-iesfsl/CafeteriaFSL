@@ -9898,6 +9898,10 @@ a.button {
   .category-card .item-image img {
     height: 6rem; }
 
+.button-small {
+  font-size: 20px;
+  margin: 0px; }
+
 /*
 .card {
     .card-header-right {
@@ -9930,7 +9934,7 @@ a.button {
   font-size: 16px; }
 
 ion-content {
-  background-color: #f8f8f8; }
+  background-color: #efefef; }
 
 .padding-0 {
   padding: 0px; }

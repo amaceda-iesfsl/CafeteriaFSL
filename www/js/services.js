@@ -9,9 +9,9 @@ angular.module('app.services', [])
 }]);
 
 function PedidoResource($http, baseUrl) {
-    this.get = function () {
+    this.get = function (tipo) {
         return new Promise(function (resolve, reject) {
-            $http.get(baseUrl + 'data.json')
+            $http.get(baseUrl + tipo+ '.json')
                 .then(function successCallback(response) {
                     resolve(response.data);
                 }, function errorCallback(response) {
