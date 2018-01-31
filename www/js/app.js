@@ -61,6 +61,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/pedidos-recientes.html'
             })
 
+            .state('bocadillos', {
+                url: '/productos/bocadillos',
+                templateUrl: 'templates/productos/bocadillos.html'
+            })
+
             .state('detallePedido', {
                 url: '/detalle-pedido',
                 templateUrl: 'templates/detalle-pedido.html',
