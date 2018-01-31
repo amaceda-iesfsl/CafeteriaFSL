@@ -9873,11 +9873,18 @@ a.button {
   transition-duration: 0s; }
 
 #img_produ {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border: 3px solid black;
   margin-bottom: 20px;
   background-color: antiquewhite; }
+
+textarea {
+  border: 2px solid #beb7b7;
+  min-height: 100px; }
+
+#add_produ {
+  margin-top: 5%; }
 
 .center {
   text-align: center; }
@@ -9943,7 +9950,9 @@ ion-content {
   margin: 0px; }
 
 .formfont {
-  font-size: 150%; }
+  font-size: 150%;
+  margin-bottom: 5%;
+  margin-right: 5%; }
 
 @media (min-width: 600px) {
   .category-card {
