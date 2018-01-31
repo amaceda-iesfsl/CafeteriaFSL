@@ -1,8 +1,15 @@
 #img_produ{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border: 3px solid black;
     margin-bottom: 20px;
     background-color: antiquewhite;
 }
-
+textarea{
+    border:2px solid #beb7b7; 
+    min-height:100px;  
+    
+}
+#add_produ{
+    margin-top: 5%;
+}
