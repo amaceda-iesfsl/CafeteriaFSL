@@ -9886,14 +9886,14 @@ textarea {
 #add_produ {
   margin-top: 5%; }
 
+.bar-main button, .bar-main a {
+  margin: 0px 3px; }
+
 .center {
   text-align: center; }
 
 .right {
   text-align: right; }
-
-.bar-main button, .bar-main a {
-  margin: 0px 3px; }
 
 .category-card a {
   text-decoration: none; }
