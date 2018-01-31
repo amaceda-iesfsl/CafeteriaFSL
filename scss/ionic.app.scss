@@ -31,6 +31,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     text-align: right;
 }
 
+.bar-main{
+    button, a{
+        margin: 0px 3px;
+    }
+}
+
 .category-card {
     a {
         text-decoration: none;
