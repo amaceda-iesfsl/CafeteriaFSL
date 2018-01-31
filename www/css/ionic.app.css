@@ -9613,10 +9613,10 @@ a.button {
     margin-top: env(safe-area-inset-top); }
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header {
-  padding-left: calc( constant(safe-area-inset-left) + 5px);
+  padding-left: calc( constant(safe-area-inset-left) + 5px);
   padding-left: calc(env(safe-area-inset-left) + 5px);
-  padding-right: calc( constant(safe-area-inset-right) + 5px);
-  padding-right: calc( env(safe-area-inset-right) + 5px); }
+  padding-right: calc( constant(safe-area-inset-right) + 5px);
+  padding-right: calc( env(safe-area-inset-right) + 5px); }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header .buttons:last-child {
     right: calc(constant(safe-area-inset-right) + 5px);
     right: calc(env(safe-area-inset-right) + 5px); }
@@ -9892,6 +9892,9 @@ textarea {
 .right {
   text-align: right; }
 
+.bar-main button, .bar-main a {
+  margin: 0px 3px; }
+
 .category-card a {
   text-decoration: none; }
 
@@ -9904,6 +9907,10 @@ textarea {
   background-size: cover; }
   .category-card .item-image img {
     height: 6rem; }
+
+.button-small {
+  font-size: 20px;
+  margin: 0px; }
 
 /*
 .card {
@@ -9937,7 +9944,7 @@ textarea {
   font-size: 16px; }
 
 ion-content {
-  background-color: #f8f8f8; }
+  background-color: #efefef; }
 
 .padding-0 {
   padding: 0px; }

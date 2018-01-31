@@ -32,3 +32,5 @@ package-lock.json
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+/www/css/ionic.app.css
+/www/css/ionic.app.min.css

@@ -21,11 +21,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "scss/nuevo-producto";
+
+
+
 .center {
     text-align: center;
 }
 .right{
     text-align: right;
+}
+
+.bar-main{
+    button, a{
+        margin: 0px 3px;
+    }
 }
 
 .category-card {
@@ -45,6 +54,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         }
     }
 }
+
+.button-small{
+    font-size: 20px;
+    margin: 0px;
+}
+
 /*
 .card {
     .card-header-right {
@@ -84,7 +99,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 ion-content {
-    background-color: $stable;
+    background-color: #efefef;
 }
 
 .padding-0 {
