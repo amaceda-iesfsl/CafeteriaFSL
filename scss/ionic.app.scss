@@ -24,10 +24,17 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .center {
     text-align: center;
 }
+.right{
+    text-align: right;
+}
 
 .category-card {
+    a {
+        text-decoration: none;
+    }
     .item-title {
         font-size: 16px;
+
     }
     .item-image {
         min-height: 6rem;
@@ -36,7 +43,43 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         img {
             height: 6rem;
         }
+    }
+}
+/*
+.card {
+    .card-header-right {
+        position: absolute;
+        right: 10px;
+        z-index: 1000;
+        top: 14px;
+    }
+}*/
 
+.margin{
+    margin:10px;
+}
+
+.margin-sides{
+    margin: 0px 10px
+}
+
+.margin-sides-sm{
+    margin: 0px 5px
+}
+
+.product-list{
+    .item-badge {
+        position: absolute;
+        top: 8px;
+        left: 40px;
+        font-size: 12px;
+        right:auto;
+    }
+    .price{
+        font-size: 16px;
+    }
+    .button-sm{
+        font-size: 16px;
     }
 }
 
@@ -44,9 +87,17 @@ ion-content {
     background-color: $stable;
 }
 
+.padding-0 {
+    padding: 0px;
+}
+
+.margin-0 {
+    margin: 0px;
+}
+
 @media (min-width: 600px) {
     .category-card {
-        max-width:25em;
+        max-width: 25em;
         .item-image {
             min-height: 6rem;
             background-position: bottom;
