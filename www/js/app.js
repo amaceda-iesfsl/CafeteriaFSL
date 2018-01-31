@@ -72,6 +72,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                             ]
                 }
             })
+<<<<<<< HEAD
             .state('adminNuevoproducto', {
                 url: '/adminNuevoproducto',
                 templateUrl: 'templates/adminNuevoproducto.html'
@@ -79,6 +80,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('adminHome', {
                 url: '/adminHome',
                 templateUrl: 'templates/adminHome.html'
+=======
+
+        /* ============= ADMIN SITES =========== */
+            .state('admin-home', {
+                url: '/admin/home',
+                templateUrl: 'templates/admin/home.html'
+>>>>>>> origin/master
             });
 
 

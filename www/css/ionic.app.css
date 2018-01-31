@@ -9613,10 +9613,10 @@ a.button {
     margin-top: env(safe-area-inset-top); }
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header {
-  padding-left: calc( constant(safe-area-inset-left) + 5px);
+  padding-left: calc( constant(safe-area-inset-left) + 5px);
   padding-left: calc(env(safe-area-inset-left) + 5px);
-  padding-right: calc( constant(safe-area-inset-right) + 5px);
-  padding-right: calc( env(safe-area-inset-right) + 5px); }
+  padding-right: calc( constant(safe-area-inset-right) + 5px);
+  padding-right: calc( env(safe-area-inset-right) + 5px); }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header .buttons:last-child {
     right: calc(constant(safe-area-inset-right) + 5px);
     right: calc(env(safe-area-inset-right) + 5px); }
@@ -9879,11 +9879,21 @@ a.button {
   font-size: 16px; }
 
 .category-card .item-image {
-  height: 6rem;
+  min-height: 6rem;
   background-position: bottom;
   background-size: cover; }
   .category-card .item-image img {
-    min-height: 6rem; }
+    height: 6rem; }
 
 ion-content {
   background-color: #f8f8f8; }
+
+@media (min-width: 600px) {
+  .category-card {
+    max-width: 25em; }
+    .category-card .item-image {
+      min-height: 6rem;
+      background-position: bottom;
+      background-size: cover; }
+      .category-card .item-image img {
+        height: 13rem; } }
