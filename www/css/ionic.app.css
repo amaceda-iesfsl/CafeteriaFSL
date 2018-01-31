@@ -9872,6 +9872,13 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+#img_produ {
+  width: 300px;
+  height: 300px;
+  border: 3px solid black;
+  margin-bottom: 20px;
+  background-color: antiquewhite; }
+
 .center {
   text-align: center; }
 
@@ -9890,8 +9897,6 @@ a.button {
   background-size: cover; }
   .category-card .item-image img {
     height: 6rem; }
-<<<<<<< HEAD
-=======
 
 /*
 .card {
@@ -9923,20 +9928,19 @@ a.button {
 
 .product-list .button-sm {
   font-size: 16px; }
->>>>>>> 17f4538a14bd0094b66f64409e1c9a3508c77baa
 
 ion-content {
   background-color: #f8f8f8; }
 
-<<<<<<< HEAD
-=======
 .padding-0 {
   padding: 0px; }
 
 .margin-0 {
   margin: 0px; }
 
->>>>>>> 17f4538a14bd0094b66f64409e1c9a3508c77baa
+.formfont {
+  font-size: 150%; }
+
 @media (min-width: 600px) {
   .category-card {
     max-width: 25em; }

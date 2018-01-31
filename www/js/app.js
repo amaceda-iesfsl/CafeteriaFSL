@@ -73,18 +73,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                             ]
                 }
             })
-<<<<<<< HEAD
-<<<<<<< HEAD
-            .state('adminNuevoproducto', {
-                url: '/adminNuevoproducto',
-                templateUrl: 'templates/adminNuevoproducto.html'
-=======
 
-            .state('bocadillos', {
-                url: '/productos/bocadillos',
-                templateUrl: 'templates/productos/bocadillos.html'
->>>>>>> 17f4538a14bd0094b66f64409e1c9a3508c77baa
-            })
 
             /* ============= ADMIN SITES =========== */
             .state('admin-home', {
@@ -92,27 +81,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/admin/home.html'})
 
             .state('nuevo-producto', {
-                url: '/nuevo-producto',
+                url: '/admin/nuevo-producto',
                 templateUrl: 'templates/admin/nuevo-producto.html'
             });
- /*           .state('adminHome', {
-                url: '/adminHome',
-                templateUrl: 'templates/adminHome.html'
-<<<<<<< HEAD
-=======
+ 
 
-        /* ============= ADMIN SITES =========== */
-            .state('admin-home', {
-                url: '/admin/home',
-                templateUrl: 'templates/admin/home.html'
->>>>>>> origin/master
-            });
-=======
->>>>>>> 17f4538a14bd0094b66f64409e1c9a3508c77baa
 
-            });
+       
 
-*/
         /*
         $routeProvider.when('/hipoteca/detalle/:idHipoteca', {
             templateUrl: "html/detalle.html",
