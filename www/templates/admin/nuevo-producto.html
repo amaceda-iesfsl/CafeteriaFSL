@@ -1,14 +1,12 @@
-<ion-view hide-back-button="true" view-title="Nuevo producto">
-    <!--
-    <div class="bar bar-subheader">
-        <h2 class="title">Iniciar Sesión</h2>
-    </div>
--->
+<ion-view hide-back-button="true" view-title="CFSL-Nuevo producto">
+
+
     <ion-content>
-        <div class="row">
+
+        <div class="row ">
 
             <form class="col  col-offset-10 ">
-                <div class="row">
+                <div class="row responsive-lg">
                     <div class="col col-40 col-center">
                         <div class=" item-input">
                             <label class="input-label formfont" for="nombre">Nombre</label>
@@ -16,7 +14,7 @@
                         </div>
                         <div class=" item-input " >
                             <label class="input-label formfont" for="categorias">Categoria</label>
-                            <select class="item-select" name="categorias">
+                            <select class="item item-input item-select " name="categorias">
                         <option>Elige categoria</option>
                         <option >Ofertas</option>
                         <option>Bocadillos</option>
@@ -49,8 +47,10 @@
                             <input type="button" class="button button-balanced" name="establecer" value="Establecer imagen">
                         </div>
                     </div>
-                </div>
-                <input type="submit" class="button button-balanced  col-bottom col-offset-33" name="anadir" value="Añadir producto">
+                </div >
+                <div id="add_produ" class="row responsive-lg">
+                <input type="submit" class="button button-balanced  col-offset-33" name="anadir" value="Añadir producto">
+                    </div>
             </form>
 
 
