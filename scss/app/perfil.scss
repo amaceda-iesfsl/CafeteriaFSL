@@ -1,0 +1,47 @@
+.profile-card {
+    align-items: center;
+    .profile-img {
+        border-radius: 50px;
+    }
+    .autorizado, .mayor-edad, .saldo {
+        background-color: #cecece;
+        border-color: transparent;
+        color: #fcfcfc;
+        position: relative;
+        margin: 0;
+        padding: 0 12px;
+        min-width: 52px;
+        min-height: 30px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        vertical-align: center;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        cursor: pointer;
+    }
+    .autorizado{
+        background-color: #551095;
+    }
+    .saldo{
+        font-weight: 700;
+        font-size: 16px;
+        color: #2a2a2a;
+    }
+}
+
+.btn-logout{
+    border-radius: 25px;
+}
+
+.denied-action{
+    p{
+        text-align: justify;
+    }
+    .min{
+        font-size: 14px;
+    }
+}
