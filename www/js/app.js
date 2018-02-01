@@ -106,8 +106,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             // --------------- CARRITO
 
             .state('carrito', {
-                url: '/carrito',
-                templateUrl: 'templates/carrito/view.html'
+                url: '/pedido/carrito',
+                templateUrl: 'templates/pedido/carrito.html'
+            })
+
+            .state('pedir', {
+                url: '/pedido/reservar',
+                templateUrl: 'templates/pedido/reservar.html'
             })
 
             // --------------- PEDIDOS
