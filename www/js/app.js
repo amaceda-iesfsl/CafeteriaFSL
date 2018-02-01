@@ -56,11 +56,22 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/home.html'
             })
 
-            .state('recientes', {
-                url: '/recientes',
+            .state('pedidos-recientes', {
+                url: '/pedidos/recientes',
                 templateUrl: 'templates/pedidos-recientes.html'
             })
 
+            // --------------- USUARIO
+
+            .state('perfil', {
+                url: '/perfil',
+                templateUrl: 'templates/perfil/mi-perfil.html'
+            })
+
+            .state('saldo', {
+                url: '/perfil/saldo',
+                templateUrl: 'templates/perfil/anyadir-saldo.html'
+            })
 
             // --------------- PRODUCTOS
             .state('bocadillos', {
@@ -92,7 +103,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/productos/list.html'
             })
 
+            // --------------- CARRITO
 
+            .state('carrito', {
+                url: '/carrito',
+                templateUrl: 'templates/carrito/view.html'
+            })
 
             // --------------- PEDIDOS
             .state('detallePedido', {
@@ -109,7 +125,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
 
 
-            /* ============= ADMIN SITES =========== */
+            /* ============= ADMIN VIEWS =========== */
             .state('admin-home', {
                 url: '/admin/home',
                 templateUrl: 'templates/admin/home.html'})

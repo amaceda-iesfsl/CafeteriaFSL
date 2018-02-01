@@ -1,67 +1,68 @@
 <ion-view hide-back-button="true" view-title="Inicio">
-    <ion-nav-buttons side="right">
-        <div  class="bar-main">
-            <button class="button" ng-click="doSomething()">
-              <i class="icon ion-person"></i>
-            10,00€
-            </button>
-            <a href="#" class="icon"><i class="button icon ion-ios-cart"></i></a>
+    <ion-nav-buttons side="secondary">
+        <div class="bar-main">
+            <a href="#/perfil">
+                <button class="button">
+                  <i class="icon ion-person"></i>
+                10,00€
+                </button>
+            </a>
+            <a href="#/carrito" class="icon"><i class="button icon ion-ios-cart"></i></a>
         </div>
     </ion-nav-buttons>
     <ion-content>
         <div class="row">
             <div class="col col-50">
-
-            <div class="card category-card">
-                <a href="#/productos/bocadillos">
-                <div class="item">
-                    <h2 class="item-title">Bocadillos</h2>
+                <div class="card category-card">
+                    <a href="#/productos/bocadillos">
+                        <div class="item">
+                            <h2 class="item-title">Bocadillos</h2>
+                        </div>
+                        <div class="item item-image">
+                            <img src="img/promo/bocadillos.jpg">
+                        </div>
+                    </a>
                 </div>
-                <div class="item item-image">
-                    <img src="img/promo/bocadillos.jpg">
-                </div>
-                </a>
             </div>
-                </div>
             <div class="col">
-            <div class="card category-card">
-                <a href="#/productos/bebidas">
-                <div class="item">
-                    <h2 class="item-title">Bebidas</h2>
+                <div class="card category-card">
+                    <a href="#/productos/bebidas">
+                        <div class="item">
+                            <h2 class="item-title">Bebidas</h2>
+                        </div>
+                        <div class="item item-image">
+                            <img src="img/promo/bebidas.jpg">
+                        </div>
+                    </a>
                 </div>
-                <div class="item item-image">
-                    <img src="img/promo/bebidas.jpg">
-                    </div>
-                </a>
             </div>
-                </div>
         </div>
 
         <div class="row">
             <div class="col">
-            <div class="card category-card">
-                <a href="#/productos/cafes">
-                <div class="item">
-                    <h2 class="item-title">Cafes</h2>
+                <div class="card category-card">
+                    <a href="#/productos/cafes">
+                        <div class="item">
+                            <h2 class="item-title">Cafes</h2>
+                        </div>
+                        <div class="item item-image">
+                            <img src="img/promo/cafes.jpg">
+                        </div>
+                    </a>
                 </div>
-                <div class="item item-image">
-                    <img src="img/promo/cafes.jpg">
-                    </div>
-                </a>
             </div>
-                </div>
             <div class="col">
-            <div class="card category-card">
-                <a href="#/productos/bolleria">
-                <div class="item">
-                    <h2 class="item-title">Bolleria</h2>
+                <div class="card category-card">
+                    <a href="#/productos/bolleria">
+                        <div class="item">
+                            <h2 class="item-title">Bolleria</h2>
+                        </div>
+                        <div class="item item-image">
+                            <img src="img/promo/bolleria.jpg">
+                        </div>
+                    </a>
                 </div>
-                <div class="item item-image">
-                    <img src="img/promo/bolleria.jpg">
-                    </div>
-                </a>
             </div>
-                </div>
         </div>
         <!--<div class="row">
             <div class="col col-50 col-offset-25">
@@ -70,8 +71,8 @@
         </div>-->
     </ion-content>
     <ion-footer-bar align-title="center" class="bar-calm">
-    <a href="#/recientes">
+        <a href="#/pedidos/recientes">
             <h1 class="title">Recoger</h1>
-            </a>
-</ion-footer-bar>
+        </a>
+    </ion-footer-bar>
 </ion-view>
