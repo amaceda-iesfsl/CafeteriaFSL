@@ -23,12 +23,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "scss/admin/nuevo-producto";
 @import "scss/admin/nueva-oferta";
 @import "scss/app/home";
+@import "scss/app/perfil";
 
 
 
 .center {
     text-align: center;
 }
+
+.flex-center{
+    justify-content: center;
+}
+.flex-right{
+    justify-content: right;
+}
+
 .right{
     text-align: right;
 }
@@ -107,6 +116,7 @@ ion-content {
 .margin-0 {
     margin: 0px;
 }
+
 .formfont{
     font-size: 150%;
     margin-bottom: 5%;

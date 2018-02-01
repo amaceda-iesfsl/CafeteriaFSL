@@ -9613,10 +9613,10 @@ a.button {
     margin-top: env(safe-area-inset-top); }
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header {
-  padding-left: calc( constant(safe-area-inset-left) + 5px);
+  padding-left: calc( constant(safe-area-inset-left) + 5px);
   padding-left: calc(env(safe-area-inset-left) + 5px);
-  padding-right: calc( constant(safe-area-inset-right) + 5px);
-  padding-right: calc( env(safe-area-inset-right) + 5px); }
+  padding-right: calc( constant(safe-area-inset-right) + 5px);
+  padding-right: calc( env(safe-area-inset-right) + 5px); }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header .buttons:last-child {
     right: calc(constant(safe-area-inset-right) + 5px);
     right: calc(env(safe-area-inset-right) + 5px); }
@@ -9913,8 +9913,53 @@ textarea {
 .bar-main button, .bar-main a {
   margin: 0px 3px; }
 
+.profile-card {
+  align-items: center; }
+  .profile-card .profile-img {
+    border-radius: 50px; }
+  .profile-card .autorizado, .profile-card .mayor-edad, .profile-card .saldo {
+    background-color: #cecece;
+    border-color: transparent;
+    color: #fcfcfc;
+    position: relative;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    vertical-align: center;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 35px;
+    cursor: pointer; }
+  .profile-card .autorizado {
+    background-color: #551095; }
+  .profile-card .saldo {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2a2a2a; }
+
+.btn-logout {
+  border-radius: 25px; }
+
+.denied-action p {
+  text-align: justify; }
+
+.denied-action .min {
+  font-size: 14px; }
+
 .center {
   text-align: center; }
+
+.flex-center {
+  justify-content: center; }
+
+.flex-right {
+  justify-content: right; }
 
 .right {
   text-align: right; }
