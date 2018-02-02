@@ -1,0 +1,55 @@
+<ion-view hide-back-button="true" view-title="CFSL-Pedidos pendientes">
+
+
+  <ion-content>
+
+    <div class=" row  " id="new_oferta">
+
+      <form class="col  col-offset-25 ">
+        <div class="row  responsive-lg">
+          <div class="col col-20 col-center">
+            <div>
+              <label class="input-label formfont" for="categorias ">Categoria</label>
+              <select class="item item-input item-select " name="categorias">
+                <option>Elige categoria</option>
+                <option>Bocadillos</option>
+                <option>Bebidas</option>
+                <option>bolleria</option>
+                <option>Cafes</option>
+              </select>
+            </div>
+            <div>
+              <label class="input-label formfont" for="producto">Producto</label>
+              <select class="item item-input item-select " name="producto">
+                <option>Elige producto</option>
+                <option>Bocadillos</option>
+                <option>Bebidas</option>
+                <option>bolleria</option>
+                <option>Cafes</option>
+              </select>
+            </div>
+            <div>
+              <label class="input-label formfont">Precio</label>
+              <input type="number" />
+            </div>
+          </div>
+          <div class="col col-50  col-offset-20">
+            <div class="col">
+              <label class=" input-label  formfont" for="inicio">Fecha de inicio</label>
+              <input type="date" name="inicio" />
+            </div>
+            <div class="col">
+              <label class="item-input   formfont" for="final">Fecha de finalización</label>
+              <input type="date" name="final" />
+            </div>
+          </div>
+        </div>
+        <div class="col col-offset-20 " id="add_oferta">
+          <button class="button button-large button-balanced" >Añadir oferta</button>
+        </div>
+      </form>
+
+
+    </div>
+  </ion-content>
+</ion-view>
