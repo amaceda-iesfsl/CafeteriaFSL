@@ -3863,7 +3863,7 @@ a.subdued {
  * Bar (Headers and Footers)
  * --------------------------------------------------
  */
-.bar {
+.bar, .bar.large-header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -3895,7 +3895,7 @@ a.subdued {
   /* this nifty trick sets an actual 1px border on hi-res displays */
   background-size: 0; }
   @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .bar {
+    .bar, .bar.large-header {
       border: none;
       background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
       background-position: bottom;
@@ -4020,7 +4020,7 @@ a.subdued {
       text-align: right; }
   .bar .title a {
     color: inherit; }
-  .bar .button, .bar button {
+  .bar .button, .bar button, .bar.large-header button {
     z-index: 1;
     padding: 0 8px;
     min-width: initial;
@@ -9951,6 +9951,9 @@ textarea {
 
 .denied-action .min {
   font-size: 14px; }
+
+.large-header.bar {
+  height: 50px; }
 
 .center {
   text-align: center; }
