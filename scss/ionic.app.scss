@@ -24,12 +24,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "scss/admin/nueva-oferta";
 @import "scss/app/home";
 @import "scss/app/perfil";
-
+/*
 .bar.large-header {
     @extend .bar;
     height: 50px;
-
-}
+    margin:auto;
+    h1, button{
+        align-self: center;
+    }
+}*/
 
 .center {
     text-align: center;
