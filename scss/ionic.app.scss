@@ -148,3 +148,11 @@ ion-content {
         }
     }
 }
+
+.info {
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
