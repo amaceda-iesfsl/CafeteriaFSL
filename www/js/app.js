@@ -142,6 +142,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('nueva-oferta', {
               url: '/admin/nueva-oferta',
               templateUrl: 'templates/admin/Nueva-oferta.html'
+            })
+            .state('Pedido-pendientes', {
+              url: '/admin/Pedido-pendientes',
+              templateUrl: 'templates/admin/Pedido-pendientes.html'
             });
  
 
