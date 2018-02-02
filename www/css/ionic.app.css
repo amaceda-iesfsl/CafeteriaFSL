@@ -9613,10 +9613,10 @@ a.button {
     margin-top: env(safe-area-inset-top); }
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header {
-  padding-left: calc( constant(safe-area-inset-left) + 5px);
+  padding-left: calc( constant(safe-area-inset-left) + 5px);
   padding-left: calc(env(safe-area-inset-left) + 5px);
-  padding-right: calc( constant(safe-area-inset-right) + 5px);
-  padding-right: calc( env(safe-area-inset-right) + 5px); }
+  padding-right: calc( constant(safe-area-inset-right) + 5px);
+  padding-right: calc( env(safe-area-inset-right) + 5px); }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header .buttons:last-child {
     right: calc(constant(safe-area-inset-right) + 5px);
     right: calc(env(safe-area-inset-right) + 5px); }
@@ -9952,8 +9952,28 @@ textarea {
 .denied-action .min {
   font-size: 14px; }
 
-.columna1 {
-  margin-top: 200px; }
+.centrar {
+  text-align: center; }
+
+.fila {
+  margin-top: 20%; }
+
+.fila2 {
+  margin-top: 20% !important; }
+
+.resumen {
+  border: #387ef5 10px solid;
+  height: 60%;
+  margin-top: 35%;
+  margin-left: 25%;
+  text-align: left;
+  padding: 5%; }
+
+.dato {
+  color: #387ef5;
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 10%; }
 
 /*
 .bar.large-header {
