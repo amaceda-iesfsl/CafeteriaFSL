@@ -9924,7 +9924,7 @@ textarea {
     position: relative;
     margin: 0;
     padding: 0 12px;
-    min-width: 52px;
+    min-width: 78px;
     min-height: 30px;
     border-width: 1px;
     border-style: solid;
@@ -10048,3 +10048,10 @@ ion-content {
       background-size: cover; }
       .category-card .item-image img {
         height: 13rem; } }
+
+.info {
+  color: #666;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
