@@ -112,7 +112,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
             .state('pedir', {
                 url: '/pedido/reservar',
-                templateUrl: 'templates/pedido/reservar.html'
+                templateUrl: 'templates/pedido/reservar.html',
+                controller: 'OrderCtrl'
             })
 
             // --------------- PEDIDOS

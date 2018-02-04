@@ -53,6 +53,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 
+a, button{
+    text-decoration: none;
+}
 
 .category-card {
     a {
@@ -117,6 +120,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 ion-content {
     background-color: #efefef;
+}
+ion-content.backlight{
+    background-color: $light;
 }
 
 .padding-0 {
