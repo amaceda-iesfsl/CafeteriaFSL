@@ -31,9 +31,10 @@ angular.module('app.controllers', [])
         $scope.doOrder = function () {
             $scope.modal.show();
         }
-        /*
-        $scope.doOrder = function () {
-            $scope.modal.show();
-        }*/
+
+
+        $scope.removeModal = function () {
+            $scope.modal.remove();
+        }
 
     }]);
