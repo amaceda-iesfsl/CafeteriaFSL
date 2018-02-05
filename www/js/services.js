@@ -7,9 +7,14 @@ angular.module('app.services', [])
     .config(['dataBaseUrl', 'pedidoResourceProvider', function (dataBaseUrl, pedidoResourceProvider) {
         pedidoResourceProvider.setBaseUrl(dataBaseUrl)
     }])
+
+    /* DEFINICIÓN DE CLASES */
     .service('producto', function(){
-            this.producto;
-        })
+            this.id = "",
+            this.nombre = "",
+            this.ingredientes = [],
+            this.precio = 0;
+    })
 
     .service('reserva', function(){
         this.dia_recogida = "",
@@ -23,7 +28,9 @@ angular.module('app.services', [])
         this.dia_recogida = "",
         this.hora_recogida = "",
         this.productos = [];
-    });
+    })
+
+;
 
 function PedidoResource($http, baseUrl) {
     this.get = function (tipo) {
