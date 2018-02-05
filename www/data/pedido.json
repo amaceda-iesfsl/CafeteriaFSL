@@ -1,4 +1,14 @@
 {
-    "id": "0010100",
-    "message": "It works!"
+    "dia-recogida":"",
+    "hora-recogida":"",
+    "productos": [
+        {
+            "id" : "0001",
+            "cantidad": 1
+        },
+        {
+            "id" : "0006",
+            "cantidad": 3
+        }
+    ]
 }

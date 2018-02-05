@@ -5,7 +5,10 @@ angular.module('app.services', [])
     .provider("pedidoResource", PedidoResourceProvider)
 
     .config(['dataBaseUrl', 'pedidoResourceProvider', function (dataBaseUrl, pedidoResourceProvider) {
-        pedidoResourceProvider.setBaseUrl(dataBaseUrl);
+        pedidoResourceProvider.setBaseUrl(dataBaseUrl)
+    .service('producto', function(){
+            this.producto;
+        });
 }]);
 
 function PedidoResource($http, baseUrl) {

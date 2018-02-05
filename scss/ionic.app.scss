@@ -94,6 +94,10 @@ a, button{
     margin: 10px;
 }
 
+.margin-top{
+    margin-top:10px !important;
+}
+
 .margin-sides {
     margin: 0px 10px
 }
@@ -167,4 +171,14 @@ ion-content.backlight{
 .info {
     color: #666;
     font-size: 14px;
+}
+
+.hard{
+    color: #3e3e3e !important;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.soft{
+    font-weight: 500;
 }
