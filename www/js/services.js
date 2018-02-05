@@ -18,13 +18,12 @@ angular.module('app.services', [])
         })
 
     .service('pedido', function(){
-        this.codigo = "000001",
-        this.fecha = "07-02-2018 - 10:00",
-        this.dia_recogida = "19-02-2018",
-        this.hora_recogida = "10:50",
+        this.codigo = "",
+        this.fecha = "",
+        this.dia_recogida = "",
+        this.hora_recogida = "",
         this.productos = [];
-        ;
-        });
+    });
 
 function PedidoResource($http, baseUrl) {
     this.get = function (tipo) {
