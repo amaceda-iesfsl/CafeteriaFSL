@@ -1,6 +1,6 @@
 {
-    "dia-recogida":"",
-    "hora-recogida":"",
+    "dia_recogida":"",
+    "hora_recogida":"",
     "productos": [
         {
             "id" : "0001",
