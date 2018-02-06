@@ -2,26 +2,21 @@
 
 
     <ion-content>
+        
         <div class="row">
             <div class="bar bar-header bar-stable">
                 <h1 class="title">Lista de pedidos recogidos</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col col-40">
-                        <a href="#/admin/recogerPedidos"><button class="button button-block button-positive">Pedidos recogidos</button></a>
+        <div class="row" >
+                    <div class="col col-40 col-offset-75">
+                        <button class="button  button-positive" id="opencamara" ng-click="doOrder()">Pedidos recogidos</button>
                     </div>
-            <label class="item item-input" id="filtroRecogida">
-    <input type="text" placeholder="Código pedido">
-  </label>
-
         </div>
 
+        <div class="row center" id="pedidosrecogidos">
 
-
-        <div class="row" id="pedidosrecogidos">
-
-            <div class="col col-80" id="tabla_recogidos">
+            <div class="col col-80 col-offset-10" id="tabla_recogidos">
                 <div class="row header">
                     <div class="col">Código pedido</div>
                     <div class="col">Usuario</div>
