@@ -3,25 +3,25 @@
         {
             "id": "0001",
             "nombre": "Jamón Serrano",
-            "ingredientes":[],
+            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
             "precio": 1.00
         },
         {
             "id": "0002",
             "nombre": "Jamón Serrano2",
-            "ingredientes":[],
+            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
             "precio": 2.00
         },
         {
             "id": "0003",
             "nombre": "Jamón Serrano3",
-            "ingredientes":[],
+            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
             "precio": 3.00
         },
         {
             "id": "0004",
             "nombre": "Jamón Serrano4",
-            "ingredientes":[],
+            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
             "precio": 4.00
         }
     ],

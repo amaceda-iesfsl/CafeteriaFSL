@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
 
-    .controller('PedidoCtrl', ['$scope', 'pedido', function ($scope, pedido) {
+    .controller('PedidoCtrl', ['$scope', 'pedidos', '$stateParams', function ($scope, pedidos, $stateParams) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -9,7 +9,19 @@ angular.module('app.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
 
-        $scope.pedido = pedido;
+        $scope.pedido = findElement(pedidos, "codigo", $stateParams.pedidoId);
+    }])
+
+    .controller('PedidosRecientesCtrl', ['$scope', 'pedidos', function ($scope, pedidos) {
+        // With the new view caching in Ionic, Controllers are only called
+        // when they are recreated or on app start, instead of every page change.
+        // To listen for when this page is active (for example, to refresh data),
+        // listen for the $ionicView.enter event:
+        //
+        //$scope.$on('$ionicView.enter', function(e) {
+        //});
+
+        $scope.pedidos = pedidos;
     }])
 
     .controller('OrderCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
@@ -32,9 +44,47 @@ angular.module('app.controllers', [])
             $scope.modal.show();
         }
 
-
         $scope.removeModal = function () {
             $scope.modal.remove();
         }
 
+    }])
+    .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', function ($scope, $ionicModal, productos, $stateParams) {
+        // With the new view caching in Ionic, Controllers are only called
+        // when they are recreated or on app start, instead of every page change.
+        // To listen for when this page is active (for example, to refresh data),
+        // listen for the $ionicView.enter event:
+        //
+        //$scope.$on('$ionicView.enter', function(e) {
+        //});
+
+        $scope.tipo = $stateParams.type;
+
+        $scope.productos = productos[$scope.tipo];
+
+
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.viewProduct = function(prod){
+            $scope.prod = prod;
+            $scope.modal.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal.hide();
+        }
+
     }]);
+
+function findElement(arr, propName, propValue) {
+  for (var i=0; i < arr.length; i++)
+    if (arr[i][propName] == propValue)
+      return arr[i];
+
+  // will return undefined if not found; you could return a default instead
+}

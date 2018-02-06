@@ -1,0 +1,40 @@
+<ion-view view-title="Pedido {{pedido.codigo}}">
+    <ion-content>
+        <div class="row row-center">
+            <div class="col">
+                <div class="list profile-card">
+                    <div class="item item-thumbnail-left">
+                        <img src="img/promo/QR.jpg">
+                        <br>
+                        <h2 class="code">Código: {{pedido.codigo}}</h2>
+                        <p>{{pedido.dia_recogida+" - "+pedido.hora_recogida}}</p>
+                    </div>
+                    <div class="item item-divider padding-0">
+                        <div class="row">
+                            <div class="col col-50 "><div class="autorizado">{{pedido.estado}}</div></div>
+                            <div class="col col-25 col-offset-20"><div class="saldo">{{pedido.total + " €"}}</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row product-list padding-0">
+            <div class="col">
+                <div class="list card" ng-repeat="producto in pedido.productos">
+                    <div class="item item-avatar item-text-wrap">
+                        <img src="img/promo/bocadillos.jpg">
+                        <div class="row row-center">
+                            <div class="col-70">
+                                <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
+                                <h2>{{producto.id}}</h2>
+                            </div>
+                            <div class="col col-30 right">
+                                <strong><span class="price assertive">{{producto.precio}}</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

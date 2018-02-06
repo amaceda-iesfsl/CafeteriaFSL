@@ -1,0 +1,32 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">{{prod.nombre}}</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="row">
+            <div class="col center">
+                <img src="img/promo/{{tipo}}.jpg" class="col-80"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <h2>{{prod.nombre}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <h3>{{prod.precio}}</h3>
+            </div>
+        </div>
+        <div class="row" ng-if="tipo=='bocadillos'">
+            <div class="col">
+                <p>{{prod.ingredientes}}</p>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col">
+                <button class="button button-positive" ng-click="hideModal()">Cerrar</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

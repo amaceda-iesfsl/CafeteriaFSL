@@ -1,9 +1,11 @@
-{
-    [{
+[
+    {
         "codigo": "000001",
         "fecha": "07-02-2018 - 10:00",
         "dia_recogida": "19-02-2018",
         "hora_recogida": "10:50",
+        "estado": "E",
+        "total": 10.00,
         "productos": [
             {
                 "id": "0001",
@@ -24,6 +26,7 @@
         "fecha": "07-02-2018 - 10:00",
         "dia_recogida": "19-02-2018",
         "hora_recogida": "10:50",
+        "estado": "E",
         "productos": [
             {
                 "id": "0001",
@@ -44,6 +47,7 @@
         "fecha": "07-02-2018 - 10:00",
         "dia_recogida": "19-02-2018",
         "hora_recogida": "10:50",
+        "estado": "E",
         "productos": [
             {
                 "id": "0001",
@@ -58,5 +62,5 @@
                 "cantidad": 3
             }
         ]
-    }]
-}
+    }
+]

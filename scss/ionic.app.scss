@@ -24,6 +24,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "scss/admin/nueva-oferta";
 @import "scss/app/home";
 @import "scss/app/perfil";
+@import "scss/app/product-view";
 @import "scss/admin/home";
 
 /*
@@ -181,4 +182,8 @@ ion-content.backlight{
 
 .soft{
     font-weight: 500;
+}
+
+.product-list-title{
+    text-transform: capitalize;
 }

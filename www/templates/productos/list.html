@@ -1,13 +1,12 @@
 <ion-view view-title="Productos">
     <div class="bar bar-subheader bar-stable">
-        <h2 class="title ">Productos<span class="badge badge-positive margin-sides-sm">10</span></h2>
-
+        <h2 class="title product-list-title">{{tipo}}<span class="badge badge-positive margin-sides-sm">10</span></h2>
     </div>
     <ion-content class="has-subheader">
         <div class="row product-list">
-            <div class="col">
-                <div class="list card">
-                    <div class="item item-avatar item-text-wrap">
+            <div class="col" >
+                <div class="list card" ng-repeat="producto in productos">
+                    <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
                         <img src="img/promo/bocadillos.jpg">
                         <div class="row padding-0">
                             <div class="col padding-0 col-75">
