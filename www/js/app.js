@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('app', ['ionic', 'app.controllers', 'app.services'])
-
     .run(function ($ionicPlatform) {
         $ionicPlatform
             .ready(function () {
@@ -176,31 +175,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
               templateUrl: 'templates/admin/productos.html'
             });
 
-
-       
-
-        /*
-        $routeProvider.when('/hipoteca/detalle/:idHipoteca', {
-            templateUrl: "html/detalle.html",
-            controller: "hipotecaController",
-            resolve: {
-                hipoteca: ['hipotecaResource', '$route',
-                    function (hipotecaResource, $route) {
-                        return hipotecaResource.get($route.current.params.idHipoteca);
-                    }]
-            }
-        });
-
-        $routeProvider.when('/hipoteca/listado', {
-            templateUrl: "html/listado.html",
-            controller: "listadoController",
-            resolve: {
-                hipotecas: ['hipotecaResource', function (hipotecaResource) {
-                    return hipotecaResource.list();
-                }]
-            }
-        });
-        */
         /*
           // Each tab has its own nav history stack:
 
@@ -213,35 +187,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
               }
             }
           })
-
-          .state('tab.chats', {
-              url: '/chats',
-              views: {
-                'tab-chats': {
-                  templateUrl: 'templates/tab-chats.html',
-                  controller: 'ChatsCtrl'
-                }
-              }
-            })
-            .state('tab.chat-detail', {
-              url: '/chats/:chatId',
-              views: {
-                'tab-chats': {
-                  templateUrl: 'templates/chat-detail.html',
-                  controller: 'ChatDetailCtrl'
-                }
-              }
-            })
-
-          .state('tab.account', {
-            url: '/account',
-            views: {
-              'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
-              }
-            }
-          });*/
 
 
 
