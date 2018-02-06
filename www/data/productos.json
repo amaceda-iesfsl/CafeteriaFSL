@@ -4,97 +4,113 @@
             "id": "0001",
             "nombre": "Jamón Serrano",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
-            "precio": 1.00
+            "precio": 1.00,
+            "cantidad": 0
         },
         {
             "id": "0002",
             "nombre": "Jamón Serrano2",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
-            "precio": 2.00
+            "precio": 2.00,
+            "cantidad": 0
         },
         {
             "id": "0003",
             "nombre": "Jamón Serrano3",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
-            "precio": 3.00
+            "precio": 3.00,
+            "cantidad": 0
         },
         {
             "id": "0004",
             "nombre": "Jamón Serrano4",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
-            "precio": 4.00
+            "precio": 4.00,
+            "cantidad": 0
         }
     ],
     "bebidas": [
         {
             "id": "0005",
             "nombre": "Agua1",
-            "precio": 1.50
+            "precio": 1.50,
+            "cantidad": 0
         },
         {
             "id": "0006",
             "nombre": "Agua2",
-            "precio": 2.30
+            "precio": 2.30,
+            "cantidad": 0
         },
         {
             "id": "0007",
             "nombre": "Agua3",
             "ingredientes":[],
-            "precio": 1.20
+            "precio": 1.20,
+            "cantidad": 0
         },
         {
             "id": "0008",
             "nombre": "Agua4",
             "ingredientes":[],
-            "precio": 0.80
+            "precio": 0.80,
+            "cantidad": 0
         }
     ],
     "cafes": [
         {
             "id": "0009",
             "nombre": "Cafe1",
-            "precio": 1.00
+            "precio": 1.00,
+            "cantidad": 0
         },
         {
             "id": "0010",
             "nombre": "Cafe2",
-            "precio": 2.30
+            "precio": 2.30,
+            "cantidad": 0
         },
         {
             "id": "0011",
             "nombre": "Cafe3",
             "ingredientes":[],
-            "precio": 1.00
+            "precio": 1.00,
+            "cantidad": 0
         },
         {
             "id": "0012",
             "nombre": "Cafe4",
             "ingredientes":[],
-            "precio": 1.00
+            "precio": 1.00,
+            "cantidad": 0
         }
     ],
     "bolleria": [
         {
             "id": "0013",
             "nombre": "Bollo1",
-            "precio": 1.50
+            "precio": 1.50,
+            "cantidad": 0
         },
         {
             "id": "0014",
             "nombre": "Bollo2",
-            "precio": 2.30
+            "precio": 2.30,
+            "cantidad": 0
         },
         {
             "id": "0015",
             "nombre": "Bollo3",
             "ingredientes":[],
-            "precio": 1.20
+            "precio": 1.20,
+            "cantidad": 0
         },
         {
             "id": "0016",
             "nombre": "Bollo4",
             "ingredientes":[],
-            "precio": 0.80
+            "precio": 0.80,
+            "cantidad": 0
         }
     ]
 }

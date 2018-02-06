@@ -105,20 +105,26 @@ angular.module('app.controllers', [])
 
         $scope.cart = {
             add: function (itemId) {
-                    pedido.productos.push(findElement($scope.productos, "id", itemId));
-                    console.log($scope.pedido);
-                },
-            remove: function (itemId) {
                 var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
-                console.log(index);
-                if (index >= 0) {
-                    if (pedido.productos[index].cantidad == 1) {
-                        pedido.productos = pedido.productos.slice(index, 1);
-                    } else {
-                        pedido.productos[index].cantidad - 1;
+                if (index < 0) {
+                    var producto = findElement($scope.productos, "id", itemId);
+                    producto.cantidad = 1;
+                    pedido.productos.push(producto);;
+                } else {
+                    if(pedido.productos[index].cantidad < 5){
+                        pedido.productos[index].cantidad += 1;
                     }
                 }
-                console.log($scope.pedido);
+            },
+            remove: function (itemId) {
+                var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                if (index >= 0) {
+                    if (pedido.productos[index].cantidad == 0) {
+                        pedido.productos[index] = null;
+                    } else {
+                        pedido.productos[index].cantidad -= 1;
+                    }
+                }
             }
         }
     }]);
