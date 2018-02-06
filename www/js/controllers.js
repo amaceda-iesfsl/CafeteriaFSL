@@ -23,7 +23,7 @@ angular.module('app.controllers', [])
         $scope.pedidos = pedidos;
     }])
 
-    .controller('OrderCtrl', ['$scope', '$ionicModal', 'pedido', function ($scope, $ionicModal, pedido) {
+    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', function ($scope, $ionicPopup, $ionicModal, pedido) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -34,6 +34,22 @@ angular.module('app.controllers', [])
 
         $scope.pedido = pedido;
         
+        // A confirm dialog
+        $scope.popConfirmar = function () {
+            var myPopup = $ionicPopup.show({
+                title: 'Advertencia',
+                template: '<p style="text-align:justify">Comprueba que el pedido es correcto.<br><br> <p style="text-align:justify; color:red; font-weight:600">Una vez hecho, no se puede cancelar el pedido.</p></p>',
+                buttons: [
+                    { text: 'Cancelar',
+                      type: "button-assertive"},
+                    { text: "Confirmar pedido",
+                        type: 'button-positive',
+                        onTap: function (e) {
+                            $scope.modal.show();
+                        }}
+                ]
+            }); 
+        };
 
         $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
             scope: $scope,

@@ -27,6 +27,10 @@ angular.module('app.services', [])
         this.hora_recogida = "";
     })
 
+    .service('usuario', function () {
+        this.saldo = 10.00;
+    })
+
     .service('pedido', ['reserva', 'cantidadTotal','precioTotal',  function (reserva, cantidadTotal, precioTotal) {
         this.codigo = "000052";
         this.fecha = "";
