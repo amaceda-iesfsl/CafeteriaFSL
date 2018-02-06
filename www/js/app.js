@@ -170,7 +170,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
               url: '/admin/recogidos',
               templateUrl: 'templates/admin/pedido-recogidos.html'
             })
-            .state('productos', {
+            .state('admin-productos', {
               url: '/admin/productos',
               templateUrl: 'templates/admin/productos.html'
             });
