@@ -1,5 +1,4 @@
 angular.module('app.controllers', [])
-
     .controller('PedidoCtrl', ['$scope', 'pedidos', '$stateParams', function ($scope, pedidos, $stateParams) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -24,7 +23,51 @@ angular.module('app.controllers', [])
         $scope.pedidos = pedidos;
     }])
 
-    .controller('OrderCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
+    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', function ($scope, $ionicPopup, $ionicModal, pedido) {
+        // With the new view caching in Ionic, Controllers are only called
+        // when they are recreated or on app start, instead of every page change.
+        // To listen for when this page is active (for example, to refresh data),
+        // listen for the $ionicView.enter event:
+        //
+        //$scope.$on('$ionicView.enter', function(e) {
+        //});
+
+        $scope.pedido = pedido;
+        
+        // A confirm dialog
+        $scope.popConfirmar = function () {
+            var myPopup = $ionicPopup.show({
+                title: 'Advertencia',
+                template: '<p style="text-align:justify">Comprueba que el pedido es correcto.<br><br> <p style="text-align:justify; color:red; font-weight:600">Una vez hecho, no se puede cancelar el pedido.</p></p>',
+                buttons: [
+                    { text: 'Cancelar',
+                      type: "button-assertive"},
+                    { text: "Confirmar pedido",
+                        type: 'button-positive',
+                        onTap: function (e) {
+                            $scope.modal.show();
+                        }}
+                ]
+            }); 
+        };
+
+        $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.doOrder = function () {
+            $scope.modal.show();
+        }
+
+        $scope.removeModal = function () {
+            $scope.modal.hide();
+        }
+
+    }])
+    .controller('lecturaCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -49,31 +92,7 @@ angular.module('app.controllers', [])
         }
 
     }])
-.controller('lecturaCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
-        // With the new view caching in Ionic, Controllers are only called
-        // when they are recreated or on app start, instead of every page change.
-        // To listen for when this page is active (for example, to refresh data),
-        // listen for the $ionicView.enter event:
-        //
-        //$scope.$on('$ionicView.enter', function(e) {
-        //});
 
-        $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
-
-        $scope.doOrder = function () {
-            $scope.modal.show();
-        }
-
-        $scope.removeModal = function () {
-            $scope.modal.hide();
-        }
-
-    }])
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -84,9 +103,10 @@ angular.module('app.controllers', [])
         //});
 
         $scope.tipo = $stateParams.type;
+        $scope.productos = productos[$scope.tipo];
+
         $scope.pedido = pedido;
 
-        $scope.productos = productos[$scope.tipo];
         $ionicModal.fromTemplateUrl('templates/productos/info.html', {
             scope: $scope,
             animation: 'slide-in-up'
@@ -105,16 +125,16 @@ angular.module('app.controllers', [])
 
         $scope.cart = {
             add: function (itemId) {
-                var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
-                if (index < 0) {
-                    var producto = findElement($scope.productos, "id", itemId);
-                    producto.cantidad = 1;
-                    pedido.productos.push(producto);;
-                } else {
-                    if(pedido.productos[index].cantidad < 5){
-                        pedido.productos[index].cantidad += 1;
+                    var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                    if (index < 0) {
+                        var producto = findElement($scope.productos, "id", itemId);
+                        producto.cantidad = 1;
+                        pedido.productos.push(producto);
+                    } else {
+                        if (pedido.productos[index].cantidad < 5) {
+                            pedido.productos[index].cantidad += 1;
+                        }
                     }
-                }
             },
             remove: function (itemId) {
                 var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
