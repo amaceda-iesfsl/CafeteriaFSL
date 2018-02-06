@@ -16,21 +16,22 @@ angular.module('app.services', [])
     .service('producto', function(){
         this.id = "",
         this.nombre = "",
-        this.ingredientes = [],
+        this.ingredientes = "",
         this.precio = 0;
     })
 
     .service('reserva', function(){
         this.dia_recogida = "",
-        this.hora_recogida = "",
-        this.productos =  [];
+        this.hora_recogida = ""
     })
 
-    .service('pedido', function(){
+    .service('pedido', ['reserva', function(reserva){
         this.codigo = "",
         this.fecha = "",
-        this.reserva = undefined;
-    })
+        this.reserva = reserva;
+        this.productos = [];
+        this.cantidad = this.productos.length;
+    }])
 
 ;
 

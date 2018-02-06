@@ -166,9 +166,9 @@ ion-content.backlight{
 .product-info {
     color: #666;
     font-size: 14px;
-    white-space: nowrap;
+    white-space: nowrap !important;
     overflow: hidden;
-    text-overflow: ellipsis;
+        text-overflow: ellipsis;
 }
 
 
@@ -189,4 +189,8 @@ ion-content.backlight{
 
 .product-list-title{
     text-transform: capitalize;
+}
+
+.col-100{
+    max-width: 100%;
 }

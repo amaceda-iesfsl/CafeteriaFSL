@@ -45,11 +45,11 @@ angular.module('app.controllers', [])
         }
 
         $scope.removeModal = function () {
-            $scope.modal.remove();
+            $scope.modal.hide();
         }
 
     }])
-    .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', function ($scope, $ionicModal, productos, $stateParams) {
+    .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -59,10 +59,9 @@ angular.module('app.controllers', [])
         //});
 
         $scope.tipo = $stateParams.type;
+        $scope.pedido = pedido;
 
         $scope.productos = productos[$scope.tipo];
-
-
         $ionicModal.fromTemplateUrl('templates/productos/info.html', {
             scope: $scope,
             animation: 'slide-in-up'
@@ -70,7 +69,7 @@ angular.module('app.controllers', [])
             $scope.modal = modal;
         });
 
-        $scope.viewProduct = function(prod){
+        $scope.viewProduct = function (prod) {
             $scope.prod = prod;
             $scope.modal.show();
         }
@@ -79,12 +78,30 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
+        $scope.cart = {
+            add: function (itemId) {
+                    pedido.productos.push(findElement($scope.productos, "id", itemId));
+                    console.log($scope.pedido);
+                },
+            remove: function (itemId) {
+                var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                console.log(index);
+                if (index >= 0) {
+                    if (pedido.productos[index].cantidad == 1) {
+                        pedido.productos = pedido.productos.slice(index, 1);
+                    } else {
+                        pedido.productos[index].cantidad - 1;
+                    }
+                }
+                console.log($scope.pedido);
+            }
+        }
     }]);
 
 function findElement(arr, propName, propValue) {
-  for (var i=0; i < arr.length; i++)
-    if (arr[i][propName] == propValue)
-      return arr[i];
+    for (var i = 0; i < arr.length; i++)
+        if (arr[i][propName] == propValue)
+            return arr[i];
 
-  // will return undefined if not found; you could return a default instead
+    // will return undefined if not found; you could return a default instead
 }

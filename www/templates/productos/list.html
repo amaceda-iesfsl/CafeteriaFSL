@@ -1,18 +1,18 @@
 <ion-view view-title="Productos">
     <div class="bar bar-subheader bar-stable">
-        <h2 class="title product-list-title">{{tipo}}<span class="badge badge-positive margin-sides-sm">10</span></h2>
+        <h2 class="title product-list-title">{{tipo}}<span class="badge badge-positive margin-sides-sm">{{pedido.cantidad}}</span></h2>
     </div>
     <ion-content class="has-subheader">
         <div class="row product-list">
-            <div class="col" >
+            <div class="col col-100" >
                 <div class="list card" ng-repeat="producto in productos">
                     <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
                         <img src="img/promo/bocadillos.jpg">
                         <div class="row padding-0">
                             <div class="col padding-0 col-75">
                                 <span class="badge badge-dark item-badge">0</span>
-                                <h2>Bocata</h2>
-                                <div class="product-info">Pan, Jamón, Queso y mas</div>
+                                <h2>{{producto.nombre}}</h2>
+                                <div class="product-info">{{producto.ingredientes}}</div>
                             </div>
                             <div class="col padding-0 col-25 right">
                                 <strong><span class="price assertive">2,50€</span></strong>
@@ -21,9 +21,9 @@
                     </div>
                     <div class="item item-divider">
                         <div class="row padding-0 button-bar center">
-                            <button class="button button-small ion-minus button-block button-assertive">
+                            <button ng-click="cart.add(producto.id)" class="button button-small ion-minus button-block button-assertive">
                             </button>
-                            <button class="button button-small ion-plus button-block button-balanced">
+                            <button ng-click="cart.remove(producto.id)" class="button button-small ion-plus button-block button-balanced">
                             </button>
                         </div>
                     </div>
