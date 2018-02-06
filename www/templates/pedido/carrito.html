@@ -1,74 +1,29 @@
 <ion-view view-title="Carrito">
     <div class="bar bar-subheader bar-stable">
-        <h2 class="title ">Productos<span class="badge badge-positive margin-sides-sm">3</span></h2>
+        <h2 class="title ">Productos<span class="badge badge-positive margin-sides-sm">{{pedido.cTotal}}</span></h2>
     </div>
     <ion-content class="has-subheader">
         <div class="row product-list padding-0">
             <div class="col">
-                <div class="list card">
+                <div class="list card" ng-repeat="producto in pedido.productos">
                     <div class="item item-avatar item-text-wrap">
-                        <img src="img/promo/bocadillos.jpg">
+                        <img src="img/promo/{{producto.img}}">
                         <div class="row row-center">
                             <div class="col-70">
-                                <span class="badge badge-dark item-badge">1</span>
-                                <h2>Bocata</h2>
+                                <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
+                                <h2>{{producto.nombre}}</h2>
                             </div>
                             <div class="col col-30 right">
-                                <strong><span class="price assertive">2,50€</span></strong>
-                            </div>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="item item-divider">
-                        <div class="row padding-0 button-bar center">
-                                <button class="button button-small ion-minus button-block button-assertive">
-                                </button>
-                                <button class="button button-small ion-plus button-block button-balanced">
-                                </button>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="list card">
-                    <div class="item item-avatar item-text-wrap">
-                        <img src="img/promo/bocadillos.jpg">
-                        <div class="row row-center">
-                            <div class="col-70">
-                                <span class="badge badge-dark item-badge">2</span>
-                                <h2>Otro bocadillo más</h2>
-                            </div>
-                            <div class="col col-30 right">
-                                <strong><span class="price assertive">3€</span></strong>
+                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
                             </div>
                         </div>
                     </div>
                     <div class="item item-divider">
-                        <div class="row padding-0 button-bar">
-                            <button class="button button-small ion-minus button-block button-assertive">
-                                </button>
-                            <button class="button button-small ion-plus button-block button-balanced">
-                                </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="list card">
-                    <div class="item item-avatar item-text-wrap">
-                        <img src="img/promo/bocadillos.jpg">
-                        <div class="row row-center">
-                            <div class="col-70">
-                                <span class="badge badge-dark item-badge">0</span>
-                                <h2>Este de jamón</h2>
-                            </div>
-                            <div class="col col-30 right">
-                                <strong><span class="price assertive">2€</span></strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-divider">
-                        <div class="row padding-0 button-bar">
-                            <button class="button button-small ion-minus button-block button-assertive">
-                                </button>
-                            <button class="button button-small ion-plus button-block button-balanced">
-                                </button>
+                        <div class="row padding-0 button-bar center">
+                            <button ng-click="cart.remove(producto.id)" class="button button-small ion-minus button-block button-assertive">Eliminar 1
+                            </button>
+                            <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">Eliminar Todos
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -77,9 +32,9 @@
 
     </ion-content>
     <ion-footer-bar align-title="left" class="bar-stable">
-        <h1 class="title">Total: 7,50 €</h1>
+        <h1 class="title">Total: {{pedido.pTotal}} €</h1>
         <div class="buttons">
-            <a href="#/pedido/reservar"><button class="button button-positive">Pedir</button></a>
+            <button class="button button-positive" ui-sref="pedir" ng-disabled="pedido.productos.length == 0">Pedir</button>
         </div>
     </ion-footer-bar>
 </ion-view>

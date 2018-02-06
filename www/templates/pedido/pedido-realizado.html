@@ -16,13 +16,13 @@
         <div class="row">
             <div class="col col-50 right">
                 <strong><p>Código de pedido:</p></strong>
-                <strong><p class="soft">Total pedido:</p></strong>
+                <strong><p class="soft">Precio total:</p></strong>
                 <strong><p class="soft">Fecha de recogida:</p></strong>
             </div>
             <div class="col col-30">
-                <strong><p>011000</p></strong>
-                <p class="soft">3,50 €</p>
-                <p class="soft">19/02/2018 - 10:50</p>
+                <strong><p>{{pedido.codigo}}</p></strong>
+                <p class="soft">{{pedido.precio}} €</p>
+                <p class="soft">{{pedido.reserva.dia_recogida}} - {{pedido.reserva.hora_recogida}}</p>
             </div>
         </div>
         <div class="row center">

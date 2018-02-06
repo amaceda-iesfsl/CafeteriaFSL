@@ -108,7 +108,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
             .state('carrito', {
                 url: '/pedido/carrito',
-                templateUrl: 'templates/pedido/carrito.html'
+                templateUrl: 'templates/pedido/carrito.html',
+                controller: 'OrderCtrl'
             })
 
             .state('pedir', {
@@ -189,7 +190,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
           })
 
 
-
+*/
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/login');
 

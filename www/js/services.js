@@ -13,27 +13,43 @@ angular.module('app.services', [])
     .provider("productoResource", ProductoResourceProvider)
 
     /* DEFINICIÓN DE CLASES */
-    .service('producto', function(){
-        this.id = "",
-        this.nombre = "",
-        this.ingredientes = "",
+    .service('producto', function () {
+        this.id = "";
+        this.nombre = "";
+        this.img = "";
+        this.ingredientes = "";
         this.precio = 0;
         this.cantidad = 0;
     })
 
-    .service('reserva', function(){
-        this.dia_recogida = "",
-        this.hora_recogida = ""
+    .service('reserva', function () {
+        this.dia_recogida = "";
+        this.hora_recogida = "";
     })
 
-    .service('pedido', function(reserva){
-        this.codigo = "",
-        this.fecha = "",
+    .service('pedido', ['reserva', 'cantidadTotal','precioTotal',  function (reserva, cantidadTotal, precioTotal) {
+        this.codigo = "000052";
+        this.fecha = "";
         this.reserva = reserva;
         this.productos = [];
-        this.cTotal = 0;
-    })
+        this.cTotal = cantidadTotal;
+        this.pTotal = precioTotal;
+    }])
 
+    .value('cantidadTotal', function () {
+        var total = 0;
+        for (var i = 0; i < this.productos.length; i++) {
+            total += this.productos[i].cantidad;
+        }
+        return total;
+    })
+    .value('precioTotal', function () {
+        var total = 0;
+        for (var i = 0; i < this.productos.length; i++) {
+            total += this.productos[i].precio;
+        }
+        return total;
+    })
 ;
 
 function PedidoResource($http, baseUrl) {
@@ -48,9 +64,9 @@ function PedidoResource($http, baseUrl) {
         });
     };
 
-    this.list = function(){
+    this.list = function () {
         return new Promise(function (resolve, reject) {
-            $http.get(baseUrl+'historial-pedidos.json')
+            $http.get(baseUrl + 'historial-pedidos.json')
                 .then(function successCallback(response) {
                     resolve(response.data);
                 }, function errorCallback(response) {
@@ -68,35 +84,35 @@ function PedidoResourceProvider() {
     }
     this.$get = ['$http', function ($http) {
         return new PedidoResource($http, _baseUrl);
-  }];
+    }];
 }
 
 
 
 
 function ProductoResource($http, baseUrl) {
-        this.get = function (productoId) {
-            return new Promise(function (resolve, reject) {
-                $http.get(baseUrl + 'productos.json')
-                    .then(function successCallback(response) {
-                        resolve(response.data);
-                    }, function errorCallback(response) {
-                        reject(response.data, response.status);
-                    })
-            });
-        };
+    this.get = function (productoId) {
+        return new Promise(function (resolve, reject) {
+            $http.get(baseUrl + 'productos.json')
+                .then(function successCallback(response) {
+                    resolve(response.data);
+                }, function errorCallback(response) {
+                    reject(response.data, response.status);
+                })
+        });
+    };
 
-        this.list = function(tipo){
-            return new Promise(function (resolve, reject) {
-                $http.get(baseUrl+'productos.json')
-                    .then(function successCallback(response) {
-                        resolve(response.data);
-                    }, function errorCallback(response) {
-                        reject(response.data, response.status);
-                    })
-            });
-        }
+    this.list = function (tipo) {
+        return new Promise(function (resolve, reject) {
+            $http.get(baseUrl + 'productos.json')
+                .then(function successCallback(response) {
+                    resolve(response.data);
+                }, function errorCallback(response) {
+                    reject(response.data, response.status);
+                })
+        });
     }
+}
 
 function ProductoResourceProvider() {
     var _baseUrl;
@@ -105,7 +121,7 @@ function ProductoResourceProvider() {
     }
     this.$get = ['$http', function ($http) {
         return new ProductoResource($http, _baseUrl);
-  }];
+    }];
 }
 
 

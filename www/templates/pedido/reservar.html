@@ -1,6 +1,6 @@
 <ion-view view-title="Pedir">
-    <div class="bar bar-subheader">
-        <h2 class="title">Configura tu pedido</h2>
+    <div class="bar bar-subheader bar-stable">
+        <h1 class="title">Configura tu pedido</h1>
     </div>
     <ion-content class="has-subheader">
         <div class="row">
@@ -29,15 +29,15 @@
                 <div class="item">
                     <div class="row">
                         <div class="col-50"><p class="hard">Productos: </p></div>
-                        <div class="col-50"><p class="right">3 </p></div>
+                        <div class="col-50"><p class="right">{{pedido.codigo}} </p></div>
                     </div>
                     <div class="row">
                         <div class="col-50"><p class="hard">Precio total: </p></div>
-                        <div class="col-50"><p class="right">4,75 €</p></div>
+                        <div class="col-50"><p class="right">{{pedido.pTotal}} €</p></div>
                     </div>
                     <div class="row">
                         <div class="col-50"><p class="hard">Fecha de recogída: </p></div>
-                        <div class="col-50"><p class="right">19/02/2018 - 10:50</p></div>
+                        <div class="col-50"><p class="right">{{pedido.reserva.dia_recogida+" - "+pedido.reserva.hora_recogida}}</p></div>
                     </div>
                 </div>
             </div>

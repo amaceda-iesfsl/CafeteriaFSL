@@ -7,7 +7,7 @@
             <div class="col col-100" >
                 <div class="list card" ng-repeat="producto in productos">
                     <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
-                        <img src="img/promo/bocadillos.jpg">
+                        <img src="img/promo/{{producto.img}}">
                         <div class="row padding-0">
                             <div class="col padding-0 col-75">
                                 <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="item item-divider">
                         <div class="row padding-0 button-bar center">
-                            <button ng-click="cart.remove(producto.id)" class="button button-small ion-minus button-block button-assertive">
+                            <button ng-click="cart.remove(producto.id)" ng-disabled="producto.cantidad<=0" class="button button-small ion-minus button-block button-assertive">
                             </button>
                             <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">
                             </button>
