@@ -155,7 +155,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('pedido-recogidos', {
               url: '/admin/recogidos',
               templateUrl: 'templates/admin/pedido-recogidos.html'
+            })
+            .state('productos', {
+              url: '/admin/productos',
+              templateUrl: 'templates/admin/productos.html'
             });
+
 
        
 
