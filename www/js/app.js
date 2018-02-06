@@ -161,8 +161,19 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('Pedido-pendientes', {
               url: '/admin/Pedido-pendientes',
               templateUrl: 'templates/admin/Pedido-pendientes.html'
+            })
+            .state('balance', {
+              url: '/admin/balance',
+              templateUrl: 'templates/admin/balance.html'
+            })
+            .state('pedido-recogidos', {
+              url: '/admin/recogidos',
+              templateUrl: 'templates/admin/pedido-recogidos.html'
+            })
+            .state('productos', {
+              url: '/admin/productos',
+              templateUrl: 'templates/admin/productos.html'
             });
- 
 
 
        
