@@ -4,38 +4,51 @@ angular.module('app.services', [])
 
     .provider("pedidoResource", PedidoResourceProvider)
 
-    .config(['dataBaseUrl', 'pedidoResourceProvider', function (dataBaseUrl, pedidoResourceProvider) {
-        pedidoResourceProvider.setBaseUrl(dataBaseUrl)
+    .config(['dataBaseUrl', 'pedidoResourceProvider', 'productoResourceProvider', function (dataBaseUrl, pedidoResourceProvider, productoResourceProvider) {
+        pedidoResourceProvider.setBaseUrl(dataBaseUrl);
+        productoResourceProvider.setBaseUrl(dataBaseUrl);
     }])
+
+
+    .provider("productoResource", ProductoResourceProvider)
 
     /* DEFINICIÓN DE CLASES */
     .service('producto', function(){
-            this.id = "",
-            this.nombre = "",
-            this.ingredientes = [],
-            this.precio = 0;
+        this.id = "",
+        this.nombre = "",
+        this.ingredientes = [],
+        this.precio = 0;
     })
 
     .service('reserva', function(){
         this.dia_recogida = "",
         this.hora_recogida = "",
         this.productos =  [];
-        })
+    })
 
     .service('pedido', function(){
         this.codigo = "",
         this.fecha = "",
-        this.dia_recogida = "",
-        this.hora_recogida = "",
-        this.productos = [];
+        this.reserva = undefined;
     })
 
 ;
 
 function PedidoResource($http, baseUrl) {
-    this.get = function (tipo) {
+    this.get = function (pedidoId) {
         return new Promise(function (resolve, reject) {
-            $http.get(baseUrl + tipo+ '.json')
+            $http.get(baseUrl + 'historial-pedidos.json')
+                .then(function successCallback(response) {
+                    resolve(response.data);
+                }, function errorCallback(response) {
+                    reject(response.data, response.status);
+                })
+        });
+    };
+
+    this.list = function(){
+        return new Promise(function (resolve, reject) {
+            $http.get(baseUrl+'historial-pedidos.json')
                 .then(function successCallback(response) {
                     resolve(response.data);
                 }, function errorCallback(response) {
@@ -55,3 +68,42 @@ function PedidoResourceProvider() {
         return new PedidoResource($http, _baseUrl);
   }];
 }
+
+
+
+
+function ProductoResource($http, baseUrl) {
+        this.get = function (productoId) {
+            return new Promise(function (resolve, reject) {
+                $http.get(baseUrl + 'productos.json')
+                    .then(function successCallback(response) {
+                        resolve(response.data);
+                    }, function errorCallback(response) {
+                        reject(response.data, response.status);
+                    })
+            });
+        };
+
+        this.list = function(tipo){
+            return new Promise(function (resolve, reject) {
+                $http.get(baseUrl+'productos.json')
+                    .then(function successCallback(response) {
+                        resolve(response.data);
+                    }, function errorCallback(response) {
+                        reject(response.data, response.status);
+                    })
+            });
+        }
+    }
+
+function ProductoResourceProvider() {
+    var _baseUrl;
+    this.setBaseUrl = function (baseUrl) {
+        _baseUrl = baseUrl;
+    }
+    this.$get = ['$http', function ($http) {
+        return new ProductoResource($http, _baseUrl);
+  }];
+}
+
+

@@ -56,10 +56,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/home.html'
             })
 
-            .state('pedidos-recientes', {
-                url: '/pedidos/recientes',
-                templateUrl: 'templates/pedidos-recientes.html'
-            })
 
             // --------------- USUARIO
 
@@ -74,19 +70,25 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
 
             // --------------- PRODUCTOS
+    /*
             .state('bocadillos', {
                 url: '/productos/bocadillos',
                 templateUrl: 'templates/productos/bocadillos.html'
-            })
+            })*/
 
-            .state('bebidas', {
-                url: '/productos/bebidas',
-                params:{
-                    type: 'bebidas',
-                },
-                templateUrl: 'templates/productos/list.html'
+            .state('productos', {
+                url: '/productos/:type',
+                templateUrl: 'templates/productos/list.html',
+                controller: 'ProductosCtrl',
+                resolve: {
+                    productos: ['productoResource', '$stateParams',
+                                function (productoResource, $stateParams) {
+                                    return productoResource.list();
+                                }
+                            ]
+                }
             })
-
+            /*
             .state('cafes', {
                 url: '/productos/cafes',
                 params:{
@@ -101,7 +103,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                     type: 'bolleria',
                 },
                 templateUrl: 'templates/productos/list.html'
-            })
+            })*/
 
             // --------------- CARRITO
 
@@ -118,13 +120,25 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
             // --------------- PEDIDOS
             .state('detallePedido', {
-                url: '/detalle-pedido',
-                templateUrl: 'templates/detalle-pedido.html',
+                url: '/pedido/view/:pedidoId',
+                templateUrl: 'templates/pedido/detalle-pedido.html',
                 controller: 'PedidoCtrl',
                 resolve: {
-                    pedido: ['pedidoResource',
+                    pedidos: ['pedidoResource', '$stateParams',
+                                function (pedidoResource, $stateParams) {
+                                    return pedidoResource.list();
+                                }
+                            ]
+                }
+            })
+            .state('pedidos-recientes', {
+                url: '/pedidos/recientes',
+                templateUrl: 'templates/pedido/recientes.html',
+                controller: 'PedidosRecientesCtrl',
+                resolve: {
+                    pedidos: ['pedidoResource',
                                 function (pedidoResource) {
-                            return pedidoResource.get('pedido');
+                                    return pedidoResource.list();
                                 }
                             ]
                 }
@@ -156,7 +170,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
               url: '/admin/recogerPedidos',
               templateUrl: 'templates/admin/pedido-recogerPedido.html'
             })
-            .state('productos', {
+            .state('admin-productos', {
               url: '/admin/productos',
               templateUrl: 'templates/admin/productos.html'
             });
