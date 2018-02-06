@@ -168,7 +168,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
             .state('pedido-recogerPedidos', {
               url: '/admin/recogerPedidos',
-              templateUrl: 'templates/admin/pedido-recogerPedido.html'
+              templateUrl: 'templates/admin/pedido-recogerPedido.html',
+              controller:'lecturaCtrl',
             })
             .state('admin-productos', {
               url: '/admin/productos',

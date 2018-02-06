@@ -49,6 +49,31 @@ angular.module('app.controllers', [])
         }
 
     }])
+.controller('lecturaCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
+        // With the new view caching in Ionic, Controllers are only called
+        // when they are recreated or on app start, instead of every page change.
+        // To listen for when this page is active (for example, to refresh data),
+        // listen for the $ionicView.enter event:
+        //
+        //$scope.$on('$ionicView.enter', function(e) {
+        //});
+
+        $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.doOrder = function () {
+            $scope.modal.show();
+        }
+
+        $scope.removeModal = function () {
+            $scope.modal.hide();
+        }
+
+    }])
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
