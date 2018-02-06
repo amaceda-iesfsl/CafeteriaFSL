@@ -1,0 +1,37 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">Pedido realizado <i class="ion-checkmark"></i></h1>
+    </ion-header-bar>
+    <ion-content class="backlight">
+        <div class="row">
+            <div class="col col-80 col-offset-10 center">
+                <p class="info">Presenta el siguiente código QR en la cafetería el día de recogida</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <img src="img/promo/QR.jpg" class="col-80"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50 right">
+                <strong><p>Código de pedido:</p></strong>
+                <strong><p class="soft">Total pedido:</p></strong>
+                <strong><p class="soft">Fecha de recogida:</p></strong>
+            </div>
+            <div class="col col-30">
+                <strong><p>011000</p></strong>
+                <p class="soft">3,50 €</p>
+                <p class="soft">19/02/2018 - 10:50</p>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col col-40 col-offset-10">
+                <a href="#/home" ng-click="removeModal()"><button class="button button-block button-outline button-positive icon-left ion-home">Ir a inicio</button></a>
+            </div>
+            <div class="col col-40">
+                <a href="#/detalle-pedido" ng-click="removeModal()"><button class="button button-block button-positive">Ver pedido</button></a>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
