@@ -18,6 +18,7 @@ angular.module('app.services', [])
         this.nombre = "",
         this.ingredientes = "",
         this.precio = 0;
+        this.cantidad = 0;
     })
 
     .service('reserva', function(){
@@ -25,13 +26,13 @@ angular.module('app.services', [])
         this.hora_recogida = ""
     })
 
-    .service('pedido', ['reserva', function(reserva){
+    .service('pedido', function(reserva){
         this.codigo = "",
         this.fecha = "",
         this.reserva = reserva;
         this.productos = [];
-        this.cantidad = this.productos.length;
-    }])
+        this.cTotal = 0;
+    })
 
 ;
 
