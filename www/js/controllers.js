@@ -20,17 +20,19 @@ angular.module('app.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
         var recientes = pedidos;
-        console.log(recientes);
+        $scope.actual = 0;
         $scope.pedido = recientes[0];
 
-        var nav = {
-            forward: function(fromId){
-                if (recientes[fromId + 1])
-                    $scope.pedido = recientes[fromId+1];
+        $scope.nav = {
+            forward: function(pos){
+                if (recientes[pos + 1])
+                    $scope.pedido = recientes[pos+1];
+                    $scope.actual = pos+1;
             },
-            backward: function(fromId){
-                if (recientes[fromId - 1]){
-                    $scope.pedido = recientes[fromId - 1];
+            backward: function(pos){
+                if (recientes[pos - 1]){
+                    $scope.pedido = recientes[pos - 1];
+                    $scope.actual = pos - 1;
                 }
             }
         }
@@ -45,10 +47,11 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
+        setDate(pedido.reserva);
 
         $scope.pedido = pedido;
 
-        console.log($scope.pedido.productos);
+        console.log($scope.pedido);
 
         // A confirm dialog
         $scope.popConfirmar = function () {
@@ -180,4 +183,28 @@ function findElement(arr, propName, propValue) {
             return arr[i];
 
     // will return undefined if not found; you could return a default instead
+}
+
+function setDate(reserva){
+    var today = new Date();
+
+    // Setting time from today
+    var time = today.getHours() + ":" + today.getMinutes();
+    reserva.hora_recogida = time;
+
+    // Setting date from today
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = dd + '/' + mm  + '/' + yyyy;
+    reserva.dia_recogida = today;
 }
