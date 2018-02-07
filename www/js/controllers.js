@@ -177,7 +177,11 @@ angular.module('app.controllers', [])
             }
         }
 
-    }]);
+    }])
+    .controller('BocadillosCtrl', function($scope) {})
+    .controller('BebidasCtrl', function($scope) {})
+    .controller('CafesCtrl', function($scope) {})
+    .controller('BolleriaCtrl', function($scope) {});
 
 function findElement(arr, propName, propValue) {
     for (var i = 0; i < arr.length; i++)
