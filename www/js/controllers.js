@@ -148,8 +148,6 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
-        console.log($scope.pedido);
-
         $scope.cart = {
             add: function (itemId) {
                     //var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
@@ -163,6 +161,8 @@ angular.module('app.controllers', [])
                             pedido.productos[itemId].cantidad += 1;
                         }
                     }
+                    pedido.cTotal += 1;
+                    pedido.pTotal += producto.precio;
             },
             remove: function (itemId) {
                 if (pedido.productos[itemId]) {
@@ -171,6 +171,8 @@ angular.module('app.controllers', [])
                     } else {
                         pedido.productos[itemId].cantidad -= 1;
                     }
+                    pedido.cTotal -= 1;
+                    pedido.pTotal -= pedido.productos[itemId].precio;
                 }
             }
         }
@@ -208,3 +210,20 @@ function setDate(reserva){
     today = dd + '/' + mm  + '/' + yyyy;
     reserva.dia_recogida = today;
 }
+
+/*
+function calcTotalAmount(productos) {
+    var total = 0;
+    for (var i = 0; i < productos.length; i++) {
+        total += productos[i].cantidad;
+    }
+    return total;
+}
+
+function calcTotalPrice(productos) {
+    var total = 0;
+    for (var i in productos) {
+        total += productos[i].precio * productos[i].cantidad;
+    }
+    return total;
+}*/

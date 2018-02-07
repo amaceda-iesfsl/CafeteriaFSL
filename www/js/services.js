@@ -36,13 +36,13 @@ angular.module('app.services', [])
         this.saldo = 10.00;
     })
 
-    .service('pedido', ['reserva', 'cantidadTotal','precioTotal',  function (reserva, cantidadTotal, precioTotal) {
+    .service('pedido', ['reserva', 'totalPrice', function (reserva, totalPrice) {
         this.codigo = "000052";
         this.fecha = "";
         this.reserva = reserva;
         this.productos = {};
-        this.cTotal = cantidadTotal;
-        this.pTotal = precioTotal;
+        this.cTotal = 0;
+        this.pTotal = totalPrice(this.productos);
     }])
     .service('pendientes ', function () {
         this.id ="";
@@ -51,17 +51,10 @@ angular.module('app.services', [])
         this.estado = "";
     })
 
-    .value('cantidadTotal', function () {
+    .value('totalPrice', function (productos) {
         var total = 0;
-        for (var i = 0; i < this.productos.length; i++) {
-            total += this.productos[i].cantidad;
-        }
-        return total;
-    })
-    .value('precioTotal', function () {
-        var total = 0;
-        for (var i = 0; i < this.productos.length; i++) {
-            total += this.productos[i].precio;
+        for (var i in productos) {
+            total += productos[i].precio;
         }
         return total;
     })
