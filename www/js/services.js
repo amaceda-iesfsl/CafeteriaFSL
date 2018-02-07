@@ -7,7 +7,14 @@ angular.module('app.services', [])
     .config(['dataBaseUrl', 'pedidoResourceProvider', 'productoResourceProvider', function (dataBaseUrl, pedidoResourceProvider, productoResourceProvider) {
         pedidoResourceProvider.setBaseUrl(dataBaseUrl);
         productoResourceProvider.setBaseUrl(dataBaseUrl);
-    }])
+  }])
+
+  .provider("PendientesResource", PendientesResourceProvider)
+
+  .config(['dataBaseUrl', 'PendientesResourceProvider', function (dataBaseUrl, PendientesResourceProvider) {
+    PendientesResourceProvider.setBaseUrl(dataBaseUrl);
+    //productoResourceProvider.setBaseUrl(dataBaseUrl);
+  }])
 
 
     .provider("productoResource", ProductoResourceProvider)
@@ -39,6 +46,13 @@ angular.module('app.services', [])
         this.cTotal = cantidadTotal;
         this.pTotal = precioTotal;
     }])
+    .service('pendiente ', function () {
+        this.codigo = "",
+        this.info = "",
+        this.fecha = "",
+        this.estado = "" 
+        
+    })
 
     .value('cantidadTotal', function () {
         var total = 0;
@@ -126,6 +140,41 @@ function ProductoResourceProvider() {
     this.$get = ['$http', function ($http) {
         return new ProductoResource($http, _baseUrl);
     }];
+}
+
+//-----------------------------pedido-pendiente-------------------------------------------//
+function PendientesResource($http, baseUrl) {
+  this.get = function (pendienteId) {
+    return new Promise(function (resolve, reject) {
+      $http.get(baseUrl + 'pedido-pendiente.json')
+        .then(function successCallback(response) {
+          resolve(response.data);
+        }, function errorCallback(response) {
+          reject(response.data, response.status);
+        })
+    });
+  };
+
+  this.list = function () {
+    return new Promise(function (resolve, reject) {
+      $http.get(baseUrl + 'pedido-pendiente.json')
+        .then(function successCallback(response) {
+          resolve(response.data);
+        }, function errorCallback(response) {
+          reject(response.data, response.status);
+        })
+    });
+  }
+}
+
+function PendientesResourceProvider() {
+  var _baseUrl;
+  this.setBaseUrl = function (baseUrl) {
+    _baseUrl = baseUrl;
+  }
+  this.$get = ['$http', function ($http) {
+    return new PendienteResource($http, _baseUrl);
+  }];
 }
 
 
