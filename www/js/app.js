@@ -160,7 +160,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
             .state('Pedido-pendientes', {
               url: '/admin/Pedido-pendientes',
-              templateUrl: 'templates/admin/Pedido-pendientes.html'
+              templateUrl: 'templates/admin/Pedido-pendientes.html',
+              controller: 'pedpendienteCtrl',
+              resolve: {
+                pendientes: ['pendientesResource',function (pendientesResource) {
+                    return pendientesResource.list();
+                  }
+                ]
+              }
+
             })
             .state('balance', {
               url: '/admin/balance',

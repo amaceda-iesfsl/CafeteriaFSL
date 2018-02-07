@@ -1,13 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\plugins\\phonegap-plugin-barcodescanner\\www",
     "\\www",
     "\\www\\data",
     "\\www\\js",
     "\\www\\templates",
     "\\www\\templates\\admin"
   ],
-  "SelectedNode": "\\www\\data\\usuario.json",
+  "SelectedNode": "\\www\\js\\app.js",
   "PreviewInSolutionExplorer": false
 }

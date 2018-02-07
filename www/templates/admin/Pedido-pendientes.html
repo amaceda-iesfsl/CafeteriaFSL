@@ -32,19 +32,19 @@
                     <div class="col">Fecha y hora</div>
                     <div class="col col-10"></div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>hola</p>
-                    </div>
-                    <div class="col">
-                        <p>hola</p>
-                    </div>
-                    <div class="col">
-                        <p>hola</p>
-                    </div>
-                    <div class="col col-10">
-                        <ion-checkbox></ion-checkbox>
-                    </div>
+                <div class="row" ng-repeat="pendiente in pendientes">
+                  <div class="col">
+                    <p>{{pendiente.id}}</p>
+                  </div>
+                  <div class="col">
+                    <p>{{pendiente.info}}</p>
+                  </div>
+                  <div class="col">
+                    <p>{{pendiente.date}}</p>
+                  </div>
+                  <div class="col col-10">
+                    <ion-checkbox></ion-checkbox>
+                  </div>
                 </div>
             </div>
         </div>

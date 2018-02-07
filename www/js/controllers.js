@@ -93,7 +93,13 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
-    }])
+  }])
+
+  .controller('pedpendienteCtrl', ['$scope', 'pendiente ', function ($scope, pendiente) {
+  
+    console.log(pendiente);
+    $scope.pendiente = pendiente;
+  }])
 
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
