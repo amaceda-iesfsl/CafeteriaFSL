@@ -109,9 +109,9 @@ angular.module('app.controllers', [])
 
   }])
 
-  .controller('pedpendienteCtrl', ['$scope', 'pendientes ', function ($scope, pendientes) {
+  .controller('pedpendienteCtrl', ['$scope', 'pendientes', function ($scope, pendientes) {
   
-    console.log("pendientes"+pendientes);
+    console.log("pendientes "+pendientes);
     $scope.pendientes = pendientes;
     console.log($scope.pendientes);
   }])

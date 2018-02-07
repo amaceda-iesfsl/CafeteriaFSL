@@ -165,7 +165,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
               resolve: {
                 pendientes: ['PendienteResource',
                             function (PendienteResource) {
-                                console.log("app.js"+PendienteResource.list());
+                                console.log("app.js - "+PendienteResource.list());
                                 return PendienteResource.list();
                             }
                         ]

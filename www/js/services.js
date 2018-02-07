@@ -45,12 +45,10 @@ angular.module('app.services', [])
         this.pTotal = precioTotal;
     }])
     .service('pendientes ', function () {
-        
-        this.id ="",
-        this.info = "",
-        this.fecha = "",
-        this.estado = "" 
-        console.log("service");
+        this.id ="";
+        this.info = "";
+        this.fecha = "";
+        this.estado = "";
     })
 
     .value('cantidadTotal', function () {
@@ -155,7 +153,6 @@ function PendienteResource($http, baseUrl) {
   };
 
   this.list = function () {
-      
     return new Promise(function (resolve, reject) {
       $http.get(baseUrl + 'pedido-pendiente.json')
         .then(function successCallback(response) {
