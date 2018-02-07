@@ -184,7 +184,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('admin-productos', {
                 url: '/admin/productos',
                 abstract: true,
-                cache:false,
                 templateUrl: 'templates/admin/productos.html'
             })
 
