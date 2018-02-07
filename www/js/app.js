@@ -69,11 +69,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
 
             // --------------- PRODUCTOS
-    /*
-            .state('bocadillos', {
-                url: '/productos/bocadillos',
-                templateUrl: 'templates/productos/bocadillos.html'
-            })*/
+            /*
+                    .state('bocadillos', {
+                        url: '/productos/bocadillos',
+                        templateUrl: 'templates/productos/bocadillos.html'
+                    })*/
 
             .state('productos', {
                 url: '/productos/:type',
@@ -82,7 +82,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 resolve: {
                     productos: ['productoResource', '$stateParams',
                                 function (productoResource, $stateParams) {
-                                    return productoResource.list();
+                            return productoResource.list();
                                 }
                             ]
                 }
@@ -126,7 +126,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 resolve: {
                     pedidos: ['pedidoResource', '$stateParams',
                                 function (pedidoResource, $stateParams) {
-                                    return pedidoResource.list();
+                            return pedidoResource.list();
                                 }
                             ]
                 }
@@ -138,7 +138,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 resolve: {
                     pedidos: ['pedidoResource',
                                 function (pedidoResource) {
-                                    return pedidoResource.list();
+                            return pedidoResource.list();
                                 }
                             ]
                 }
@@ -148,42 +148,85 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             /* ============= ADMIN VIEWS =========== */
             .state('admin-home', {
                 url: '/admin/home',
-                templateUrl: 'templates/admin/home.html'})
+                templateUrl: 'templates/admin/home.html'
+            })
 
             .state('nuevo-producto', {
                 url: '/admin/nuevo-producto',
                 templateUrl: 'templates/admin/nuevo-producto.html'
             })
             .state('nueva-oferta', {
-              url: '/admin/nueva-oferta',
-              templateUrl: 'templates/admin/Nueva-oferta.html'
+                url: '/admin/nueva-oferta',
+                templateUrl: 'templates/admin/Nueva-oferta.html'
             })
             .state('Pedido-pendientes', {
-              url: '/admin/Pedido-pendientes',
-              templateUrl: 'templates/admin/Pedido-pendientes.html',
-              controller: "pedpendienteCtrl",
-              resolve: {
-                pendientes: ['PendienteResource',
+                url: '/admin/Pedido-pendientes',
+                templateUrl: 'templates/admin/Pedido-pendientes.html',
+                controller: "pedpendienteCtrl",
+                resolve: {
+                    pendientes: ['PendienteResource',
                             function (PendienteResource) {
-                                console.log("app.js - "+PendienteResource.list());
-                                return PendienteResource.list();
+                            console.log("app.js - " + PendienteResource.list());
+                            return PendienteResource.list();
                             }
                         ]
-            }
+                }
             })
             .state('balance', {
-              url: '/admin/balance',
-              templateUrl: 'templates/admin/balance.html'
+                url: '/admin/balance',
+                templateUrl: 'templates/admin/balance.html'
             })
             .state('pedido-recogerPedidos', {
-              url: '/admin/recogerPedidos',
-              templateUrl: 'templates/admin/pedido-recogerPedido.html',
-              controller:'lecturaCtrl',
+                url: '/admin/recogerPedidos',
+                templateUrl: 'templates/admin/pedido-recogerPedido.html',
+                controller: 'lecturaCtrl',
             })
             .state('admin-productos', {
-              url: '/admin/productos',
-              templateUrl: 'templates/admin/productos.html'
+                url: '/admin/productos',
+                abstract: true,
+                cache:false,
+                templateUrl: 'templates/admin/productos.html'
+            })
+
+            .state('admin-productos.bocadillos', {
+                url: '/admin/bocadillos',
+                views: {
+                    'tab-bocadillos': {
+                        templateUrl: 'templates/admin/tab-bocadillos.html',
+                        controller: 'BocadillosCtrl'
+                    }
+                }
+            })
+
+            .state('admin-productos.bebidas', {
+                url: '/admin/bebidas',
+                views: {
+                    'tab-bebidas': {
+                        templateUrl: 'templates/admin/tab-bebidas.html',
+                        controller: 'BebidasCtrl'
+                    }
+                }
+            })
+            .state('admin-productos.cafes', {
+                url: '/admin/cafes',
+                views: {
+                    'tab-cafes': {
+                        templateUrl: 'templates/admin/tab-cafes.html',
+                        controller: 'CafesCtrl'
+                    }
+                }
+            })
+
+            .state('admin-productos.bolleria', {
+                url: '/ademin/bolleria',
+                views: {
+                    'tab-bolleria': {
+                        templateUrl: 'templates/admin/tab-bolleria.html',
+                        controller: 'BolleriaCtrl'
+                    }
+                }
             });
+
 
         /*
           // Each tab has its own nav history stack:
