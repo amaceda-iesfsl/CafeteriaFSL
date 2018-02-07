@@ -3,19 +3,19 @@
       "id": "0001",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0002",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0003",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0004",
@@ -27,25 +27,25 @@
       "id": "0005",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0006",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0007",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     },
     {
       "id": "0008",
       "info": "hola mundo",
       "date": "07/02/2018",
-      "estado": true
+      "estado":true
     }
 ]
 
