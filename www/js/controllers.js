@@ -93,10 +93,11 @@ angular.module('app.controllers', [])
 
   }])
 
-  .controller('pedpendienteCtrl', ['$scope', 'pendiente ', function ($scope, pendiente) {
+  .controller('pedpendienteCtrl', ['$scope', 'pendientes ', function ($scope, pendientes) {
   
-    console.log(pendiente);
-    $scope.pendiente = pendiente;
+    console.log("pendientes"+pendientes);
+    $scope.pendientes = pendientes;
+    console.log($scope.pendientes);
   }])
 
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {

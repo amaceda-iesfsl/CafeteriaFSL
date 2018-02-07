@@ -9,14 +9,12 @@ angular.module('app.services', [])
         productoResourceProvider.setBaseUrl(dataBaseUrl);
   }])
 
-  .provider("PendientesResource", PendientesResourceProvider)
+  .provider("PendienteResource", PendienteResourceProvider)
 
-  .config(['dataBaseUrl', 'PendientesResourceProvider', function (dataBaseUrl, PendientesResourceProvider) {
-    PendientesResourceProvider.setBaseUrl(dataBaseUrl);
-    //productoResourceProvider.setBaseUrl(dataBaseUrl);
+  .config(['dataBaseUrl' , 'PendienteResourceProvider', function (dataBaseUrl, PendienteResourceProvider) {
+    PendienteResourceProvider.setBaseUrl(dataBaseUrl);
+   
   }])
-
-
     .provider("productoResource", ProductoResourceProvider)
 
     /* DEFINICIÓN DE CLASES */
@@ -46,12 +44,13 @@ angular.module('app.services', [])
         this.cTotal = cantidadTotal;
         this.pTotal = precioTotal;
     }])
-    .service('pendiente ', function () {
-        this.codigo = "",
+    .service('pendientes ', function () {
+        
+        this.id ="",
         this.info = "",
         this.fecha = "",
         this.estado = "" 
-        
+        console.log("service");
     })
 
     .value('cantidadTotal', function () {
@@ -143,10 +142,10 @@ function ProductoResourceProvider() {
 }
 
 //-----------------------------pedido-pendiente-------------------------------------------//
-function PendientesResource($http, baseUrl) {
+function PendienteResource($http, baseUrl) {
   this.get = function (pendienteId) {
     return new Promise(function (resolve, reject) {
-      $http.get(baseUrl + 'pedido-pendiente.json')
+      $http.get(baseUrl + 'pedidos-pendiente.jsonsssssssssssss')
         .then(function successCallback(response) {
           resolve(response.data);
         }, function errorCallback(response) {
@@ -156,9 +155,11 @@ function PendientesResource($http, baseUrl) {
   };
 
   this.list = function () {
+      
     return new Promise(function (resolve, reject) {
       $http.get(baseUrl + 'pedido-pendiente.json')
         .then(function successCallback(response) {
+            console.log("this.list ");
           resolve(response.data);
         }, function errorCallback(response) {
           reject(response.data, response.status);
@@ -167,13 +168,13 @@ function PendientesResource($http, baseUrl) {
   }
 }
 
-function PendientesResourceProvider() {
+function PendienteResourceProvider() {
   var _baseUrl;
   this.setBaseUrl = function (baseUrl) {
     _baseUrl = baseUrl;
   }
   this.$get = ['$http', function ($http) {
-    return new PendienteResource($http, _baseUrl);
+    return new PendienteResource($http , _baseUrl);
   }];
 }
 

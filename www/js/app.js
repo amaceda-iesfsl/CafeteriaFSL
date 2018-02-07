@@ -161,14 +161,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('Pedido-pendientes', {
               url: '/admin/Pedido-pendientes',
               templateUrl: 'templates/admin/Pedido-pendientes.html',
-              controller: 'pedpendienteCtrl',
+              controller: "pedpendienteCtrl",
               resolve: {
-                pendientes: ['pendientesResource',function (pendientesResource) {
-                    return pendientesResource.list();
-                  }
-                ]
-              }
-
+                pendientes: ['PendienteResource',
+                            function (PendienteResource) {
+                                console.log("app.js"+PendienteResource.list());
+                                return PendienteResource.list();
+                            }
+                        ]
+            }
             })
             .state('balance', {
               url: '/admin/balance',
