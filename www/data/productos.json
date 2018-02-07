@@ -1,7 +1,7 @@
 {
     "bocadillos": [
         {
-            "id": "0001",
+            "id": "1",
             "nombre": "Jamón Serrano",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -9,7 +9,7 @@
             "cantidad": 0
         },
         {
-            "id": "0002",
+            "id": "2",
             "nombre": "Jamón Serrano2",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -17,7 +17,7 @@
             "cantidad": 0
         },
         {
-            "id": "0003",
+            "id": "3",
             "nombre": "Jamón Serrano3",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -25,7 +25,7 @@
             "cantidad": 0
         },
         {
-            "id": "0004",
+            "id": "4",
             "nombre": "Jamón Serrano4",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -35,28 +35,28 @@
     ],
     "bebidas": [
         {
-            "id": "0005",
+            "id": "5",
             "nombre": "Agua1",
             "img": "bebidas.jpg",
             "precio": 1.50,
             "cantidad": 0
         },
         {
-            "id": "0006",
+            "id": "6",
             "nombre": "Agua2",
             "img": "bebidas.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
-            "id": "0007",
+            "id": "7",
             "nombre": "Agua3",
             "img": "bebidas.jpg",
             "precio": 1.20,
             "cantidad": 0
         },
         {
-            "id": "0008",
+            "id": "8",
             "nombre": "Agua4",
             "img": "bebidas.jpg",
             "precio": 0.80,
@@ -65,28 +65,28 @@
     ],
     "cafes": [
         {
-            "id": "0009",
+            "id": "9",
             "nombre": "Cafe1",
             "img": "cafes.jpg",
             "precio": 1.00,
             "cantidad": 0
         },
         {
-            "id": "0010",
+            "id": "10",
             "nombre": "Cafe2",
             "img": "cafes.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
-            "id": "0011",
+            "id": "11",
             "nombre": "Cafe3",
             "img": "cafes.jpg",
             "precio": 1.00,
             "cantidad": 0
         },
         {
-            "id": "0012",
+            "id": "12",
             "nombre": "Cafe4",
             "img": "cafes.jpg",
             "precio": 1.00,
@@ -95,28 +95,28 @@
     ],
     "bolleria": [
         {
-            "id": "0013",
+            "id": "13",
             "nombre": "Bollo1",
             "img": "bolleria.jpg",
             "precio": 1.50,
             "cantidad": 0
         },
         {
-            "id": "0014",
+            "id": "14",
             "nombre": "Bollo2",
             "img": "bolleria.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
-            "id": "0015",
+            "id": "15",
             "nombre": "Bollo3",
             "img": "bolleria.jpg",
             "precio": 1.20,
             "cantidad": 0
         },
         {
-            "id": "0016",
+            "id": "16",
             "nombre": "Bollo4",
             "img": "bolleria.jpg",
             "precio": 0.80,
