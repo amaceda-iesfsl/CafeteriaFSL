@@ -33,7 +33,7 @@ angular.module('app.controllers', [])
         //});
 
         $scope.pedido = pedido;
-        
+
         // A confirm dialog
         $scope.popConfirmar = function () {
             var myPopup = $ionicPopup.show({
@@ -48,7 +48,7 @@ angular.module('app.controllers', [])
                             $scope.modal.show();
                         }}
                 ]
-            }); 
+            });
         };
 
         $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
@@ -101,11 +101,9 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-
+        $scope.pedido = pedido;
         $scope.tipo = $stateParams.type;
         $scope.productos = productos[$scope.tipo];
-
-        $scope.pedido = pedido;
 
         $ionicModal.fromTemplateUrl('templates/productos/info.html', {
             scope: $scope,
@@ -123,13 +121,15 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
+        console.log($scope.pedido);
+
         $scope.cart = {
             add: function (itemId) {
                     var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                    var producto = findElement($scope.productos, "id", itemId);
                     if (index < 0) {
-                        var producto = findElement($scope.productos, "id", itemId);
                         producto.cantidad = 1;
-                        pedido.productos.push(producto);
+                        pedido.productos[producto.id] = producto;
                     } else {
                         if (pedido.productos[index].cantidad < 5) {
                             pedido.productos[index].cantidad += 1;
@@ -137,16 +137,16 @@ angular.module('app.controllers', [])
                     }
             },
             remove: function (itemId) {
-                var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
-                if (index >= 0) {
-                    if (pedido.productos[index].cantidad == 0) {
-                        pedido.productos[index] = null;
+                if (pedido.productos[itemId] >= 0) {
+                    if (pedido.productos[itemId].cantidad == 0) {
+                        pedido.productos[itemId] = null;
                     } else {
-                        pedido.productos[index].cantidad -= 1;
+                        pedido.productos[itemId].cantidad -= 1;
                     }
                 }
             }
         }
+
     }]);
 
 function findElement(arr, propName, propValue) {

@@ -130,7 +130,7 @@ a, button{
 ion-content {
     background-color: #efefef;
 }
-ion-content.backlight{
+ion-content.clean{
     background-color: $light;
 }
 
@@ -194,4 +194,9 @@ ion-content.backlight{
 
 .col-100{
     max-width: 100%;
+}
+
+p.ingredientes{
+    white-space: normal;
+    text-align: justify;
 }

@@ -5,7 +5,7 @@
     <ion-content>
         <div class="row">
             <div class="col center">
-                <img src="img/promo/{{tipo}}.jpg" class="col-80"/>
+                <img src="img/promo/{{tipo}}.jpg" class="col-80" />
             </div>
         </div>
         <div class="row">
@@ -15,12 +15,16 @@
         </div>
         <div class="row">
             <div class="col center">
-                <h3>{{prod.precio}}</h3>
+                <h3>{{prod.precio}}€</h3>
             </div>
         </div>
+
         <div class="row" ng-if="tipo=='bocadillos'">
-            <div class="col">
-                <p>{{prod.ingredientes}}</p>
+            <div class="col col-100 list">
+                <p class="info">INGREDIENTES</p>
+                <div class="item stable">
+                    <p class="ingredientes">{{prod.ingredientes}}</p>
+                </div>
             </div>
         </div>
         <div class="row center">

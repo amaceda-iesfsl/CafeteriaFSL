@@ -10,12 +10,12 @@
                         <img src="img/promo/{{producto.img}}">
                         <div class="row padding-0">
                             <div class="col padding-0 col-75">
-                                <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
+                                <span class="badge badge-dark item-badge">{{pedido.productos[producto.id].cantidad}}</span>
                                 <h2>{{producto.nombre}}</h2>
                                 <div class="product-info">{{producto.ingredientes}}</div>
                             </div>
                             <div class="col padding-0 col-25 right">
-                                <strong><span class="price assertive">2,50€</span></strong>
+                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
                             </div>
                         </div>
                     </div>
