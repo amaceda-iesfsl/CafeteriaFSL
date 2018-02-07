@@ -2,7 +2,7 @@
     <ion-header-bar class="bar bar-positive">
         <h1 class="title">Pedido realizado <i class="ion-checkmark"></i></h1>
     </ion-header-bar>
-    <ion-content class="backlight">
+    <ion-content class="backlight" ng-controller="BarcodeCtrl">
         <div class="row">
             <div class="col col-80 col-offset-10 center">
                 <p class="info">Presenta el siguiente código QR en la cafetería el día de recogida</p>
@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col center">
-                <img src="img/promo/QR.jpg" class="col-80"/>
+               <button class="col-80" ng-click="readcode">Leer codigo</button>
             </div>
         </div>
         <div class="row">
