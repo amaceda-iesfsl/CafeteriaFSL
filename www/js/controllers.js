@@ -34,6 +34,8 @@ angular.module('app.controllers', [])
 
         $scope.pedido = pedido;
 
+        console.log($scope.pedido.productos);
+
         // A confirm dialog
         $scope.popConfirmar = function () {
             var myPopup = $ionicPopup.show({
@@ -101,9 +103,10 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-        $scope.pedido = pedido;
+
         $scope.tipo = $stateParams.type;
         $scope.productos = productos[$scope.tipo];
+        $scope.pedido = pedido;
 
         $ionicModal.fromTemplateUrl('templates/productos/info.html', {
             scope: $scope,
@@ -127,17 +130,18 @@ angular.module('app.controllers', [])
             add: function (itemId) {
                     var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
                     var producto = findElement($scope.productos, "id", itemId);
-                    if (index < 0) {
-                        producto.cantidad = 1;
+                    if (!pedido.productos[itemId]) {
                         pedido.productos[producto.id] = producto;
+                        pedido.productos[producto.id].cantidad = 1;
+                        //pedido.productos.push(producto);
                     } else {
-                        if (pedido.productos[index].cantidad < 5) {
-                            pedido.productos[index].cantidad += 1;
+                        if (pedido.productos[itemId].cantidad < 5) {
+                            pedido.productos[itemId].cantidad += 1;
                         }
                     }
             },
             remove: function (itemId) {
-                if (pedido.productos[itemId] >= 0) {
+                if (pedido.productos[itemId]) {
                     if (pedido.productos[itemId].cantidad == 0) {
                         pedido.productos[itemId] = null;
                     } else {
