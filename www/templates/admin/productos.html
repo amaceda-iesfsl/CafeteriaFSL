@@ -1,33 +1,19 @@
-<ion-view view-title="CFSL-Pedidos recogidos">
 
-    <ion-content>
-        <div class="row">
-            <div class="bar bar-header bar-stable">
-                <h1 class="title">Productos</h1>
-            </div>
-        </div>
-    </ion-content>
+<ion-tabs class="tabs-positive tabs-striped">
 
-    <ion-tabs class="tabs-positive tabs-striped">
+    <ion-tab class="tab" title="BOCADILLOS" icon-on="" icon-off="" href="#/admin/productos/bocadillos">
+        <ion-nav-view name="tab-bocadillos"></ion-nav-view>
+    </ion-tab>
 
-        <ion-tab class="tab" title="BOCADILLOS" icon-on="" icon-off="" href="#/admin/bocadillos">
-            <ion-nav-view name="tab-bocadillos"></ion-nav-view>
-        </ion-tab>
+    <ion-tab class="tab" title="BEBIDAS" icon-on="" icon-off="" href="#/admin/productos/bebidas">
+        <ion-nav-view name="tab-bebidas"></ion-nav-view>
+    </ion-tab>
 
-        <ion-tab class="tab" title="BEBIDAS" icon-on="" icon-off="" href="#/admin/bebidas">
-            <ion-nav-view name="tab-bebidas"></ion-nav-view>
-        </ion-tab>
+    <ion-tab class="tab" title="CAFÉS" icon-on="" icon-off="" href="#/admin/productos/cafes">
+        <ion-nav-view name="tab-cafes"></ion-nav-view>
+    </ion-tab>
 
-        <ion-tab class="tab" title="CAFÉS" icon-on="" icon-off="" href="#/admin/cafes">
-            <ion-nav-view name="tab-cafes"></ion-nav-view>
-        </ion-tab>
-
-        <ion-tab class="tab" title="BOLLERÍA" icon-on="" icon-off="" href="#/admin/bolleria">
-            <ion-nav-view name="tab-bolleria"></ion-nav-view>
-        </ion-tab>
-
-    </ion-tabs>
-
-
-
-</ion-view>
+    <ion-tab class="tab" title="BOLLERÍA" icon-on="" icon-off="" href="#/admin/productos/bolleria">
+        <ion-nav-view name="tab-bolleria"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

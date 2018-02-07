@@ -47,11 +47,9 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-        setDate(pedido.reserva);
+        setOrderDate(pedido);
 
         $scope.pedido = pedido;
-
-        console.log($scope.pedido);
 
         // A confirm dialog
         $scope.popConfirmar = function () {
@@ -178,10 +176,12 @@ angular.module('app.controllers', [])
         }
 
     }])
+    /*
     .controller('BocadillosCtrl', function($scope) {})
     .controller('BebidasCtrl', function($scope) {})
     .controller('CafesCtrl', function($scope) {})
     .controller('BolleriaCtrl', function($scope) {});
+    */
 
 function findElement(arr, propName, propValue) {
     for (var i = 0; i < arr.length; i++)
@@ -191,12 +191,11 @@ function findElement(arr, propName, propValue) {
     // will return undefined if not found; you could return a default instead
 }
 
-function setDate(reserva){
+function setOrderDate(pedido){
     var today = new Date();
 
     // Setting time from today
     var time = today.getHours() + ":" + today.getMinutes();
-    reserva.hora_recogida = time;
 
     // Setting date from today
     var dd = today.getDate();
@@ -212,7 +211,8 @@ function setDate(reserva){
     }
 
     today = dd + '/' + mm  + '/' + yyyy;
-    reserva.dia_recogida = today;
+
+    pedido.fecha = today+" - " +time;
 }
 
 /*

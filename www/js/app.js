@@ -181,6 +181,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/admin/pedido-recogerPedido.html',
                 controller: 'lecturaCtrl',
             })
+
             .state('admin-productos', {
                 url: '/admin/productos',
                 abstract: true,
@@ -188,40 +189,36 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             })
 
             .state('admin-productos.bocadillos', {
-                url: '/admin/bocadillos',
+                url: '/bocadillos',
                 views: {
                     'tab-bocadillos': {
-                        templateUrl: 'templates/admin/tab-bocadillos.html',
-                        controller: 'BocadillosCtrl'
+                        templateUrl: 'templates/admin/tab-bocadillos.html'
                     }
                 }
             })
 
             .state('admin-productos.bebidas', {
-                url: '/admin/bebidas',
+                url: '/bebidas',
                 views: {
                     'tab-bebidas': {
-                        templateUrl: 'templates/admin/tab-bebidas.html',
-                        controller: 'BebidasCtrl'
+                        templateUrl: 'templates/admin/tab-bebidas.html'
                     }
                 }
             })
             .state('admin-productos.cafes', {
-                url: '/admin/cafes',
+                url: '/cafes',
                 views: {
                     'tab-cafes': {
-                        templateUrl: 'templates/admin/tab-cafes.html',
-                        controller: 'CafesCtrl'
+                        templateUrl: 'templates/admin/tab-cafes.html'
                     }
                 }
             })
 
             .state('admin-productos.bolleria', {
-                url: '/ademin/bolleria',
+                url: '/bolleria',
                 views: {
                     'tab-bolleria': {
-                        templateUrl: 'templates/admin/tab-bolleria.html',
-                        controller: 'BolleriaCtrl'
+                        templateUrl: 'templates/admin/tab-bolleria.html'
                     }
                 }
             });
