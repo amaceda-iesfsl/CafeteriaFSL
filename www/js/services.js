@@ -28,8 +28,8 @@ angular.module('app.services', [])
     })
 
     .service('reserva', function () {
-        this.dia_recogida = "";
-        this.hora_recogida = "";
+        this.dia_recogida;
+        this.hora_recogida = "10:50";
     })
 
     .service('usuario', function () {
@@ -57,6 +57,20 @@ angular.module('app.services', [])
             total += productos[i].precio;
         }
         return total;
+    })
+    // Here is where the magic works
+    .directive('date', function (dateFilter) {
+        return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+
+                var dateFormat = attrs['date'] || 'yyyy-MM-dd';
+
+                ctrl.$formatters.unshift(function (modelValue) {
+                    return dateFilter(modelValue, dateFormat);
+                });
+            }
+        }
     })
 ;
 
