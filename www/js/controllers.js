@@ -19,8 +19,22 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
+        var recientes = pedidos;
+        console.log(recientes);
+        $scope.pedido = recientes[0];
 
-        $scope.pedidos = pedidos;
+        var nav = {
+            forward: function(fromId){
+                if (recientes[fromId + 1])
+                    $scope.pedido = recientes[fromId+1];
+            },
+            backward: function(fromId){
+                if (recientes[fromId - 1]){
+                    $scope.pedido = recientes[fromId - 1];
+                }
+            }
+        }
+
     }])
 
     .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', function ($scope, $ionicPopup, $ionicModal, pedido) {
@@ -134,7 +148,7 @@ angular.module('app.controllers', [])
 
         $scope.cart = {
             add: function (itemId) {
-                    var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                    //var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
                     var producto = findElement($scope.productos, "id", itemId);
                     if (!pedido.productos[itemId]) {
                         pedido.productos[producto.id] = producto;

@@ -42,7 +42,7 @@ angular.module('app.services', [])
         this.codigo = "000052";
         this.fecha = "";
         this.reserva = reserva;
-        this.productos = [];
+        this.productos = {};
         this.cTotal = cantidadTotal;
         this.pTotal = precioTotal;
     }])
