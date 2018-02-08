@@ -4,5 +4,39 @@
             <h2 class="title">Cafés</h2>
         </div>
 
+                <div class="row product-list">
+            <div class="col col-100" >
+                <div class="list card" ng-repeat="producto in productos">
+                    <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
+                       <!--<img src="img/promo/{{producto.img}}">-->
+                        <div class="row padding-0">
+                            <div class="col padding-0 col-75">
+                                <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
+                                <span class="badge badge-dark item-badge" ng-if="!pedido.productos[producto.id]">0</span>
+                                <h2>{{producto.nombre}}</h2>
+                                <div class="product-info">{{producto.ingredientes}}</div>
+                            </div>
+                            <div class="col padding-0 col-25 right">
+                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-divider">
+                        <div class="row padding-0 button-bar center">
+                            <button ng-click="cart.remove(producto.id)" ng-disabled="!pedido.productos[producto.id] || pedido.productos[producto.id].cantidad==0" class="button button-small ion-minus button-block button-assertive">
+                            </button>
+                            <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50 col-offset-25">
+
+            </div>
+        </div>
+
   </ion-content>
 </ion-view>

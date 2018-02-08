@@ -192,8 +192,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 url: '/bocadillos',
                 views: {
                     'tab-bocadillos': {
-                        templateUrl: 'templates/admin/tab-bocadillos.html'
+                        templateUrl: 'templates/admin/tab-bocadillos.html',
+                        controller: 'BocadillosCtrl'
                     }
+                },
+                resolve: {
+                    productos: ['productoResource',
+                                function (productoResource) {
+                            return productoResource.list();
+                                }
+                            ]
                 }
             })
 
@@ -201,16 +209,33 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 url: '/bebidas',
                 views: {
                     'tab-bebidas': {
-                        templateUrl: 'templates/admin/tab-bebidas.html'
+                        templateUrl: 'templates/admin/tab-bebidas.html',
+                        controller: 'BebidasCtrl'
                     }
+                },
+                resolve: {
+                    productos: ['productoResource',
+                                function (productoResource) {
+                            return productoResource.list();
+                                }
+                            ]
                 }
+
             })
             .state('admin-productos.cafes', {
                 url: '/cafes',
                 views: {
                     'tab-cafes': {
-                        templateUrl: 'templates/admin/tab-cafes.html'
+                        templateUrl: 'templates/admin/tab-cafes.html',
+                        controller: 'CafesCtrl'
                     }
+                },
+                resolve: {
+                    productos: ['productoResource',
+                                function (productoResource) {
+                            return productoResource.list();
+                                }
+                            ]
                 }
             })
 
@@ -218,8 +243,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 url: '/bolleria',
                 views: {
                     'tab-bolleria': {
-                        templateUrl: 'templates/admin/tab-bolleria.html'
+                        templateUrl: 'templates/admin/tab-bolleria.html',
+                        controller: 'BolleriaCtrl'
                     }
+                },
+                resolve: {
+                    productos: ['productoResource',
+                                function (productoResource) {
+                            return productoResource.list();
+                                }
+                            ]
                 }
             });
 

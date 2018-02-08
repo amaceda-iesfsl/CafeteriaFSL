@@ -176,12 +176,101 @@ angular.module('app.controllers', [])
         }
 
     }])
-    /*
-    .controller('BocadillosCtrl', function($scope) {})
-    .controller('BebidasCtrl', function($scope) {})
-    .controller('CafesCtrl', function($scope) {})
-    .controller('BolleriaCtrl', function($scope) {});
-    */
+
+    .controller('BocadillosCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+
+        $scope.tipo = "bocadillos";
+        $scope.productos = productos[$scope.tipo];
+
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.viewProduct = function (prod) {
+            $scope.prod = prod;
+            $scope.modal.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal.hide();
+        }
+
+    }])
+
+    .controller('BebidasCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+
+        $scope.tipo = "bebidas";
+        $scope.productos = productos[$scope.tipo];
+
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.viewProduct = function (prod) {
+            $scope.prod = prod;
+            $scope.modal.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal.hide();
+        }
+
+    }])
+
+    .controller('CafesCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+
+        $scope.tipo = "cafes";
+        $scope.productos = productos[$scope.tipo];
+
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.viewProduct = function (prod) {
+            $scope.prod = prod;
+            $scope.modal.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal.hide();
+        }
+
+    }])
+
+    .controller('BolleriaCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+
+        $scope.tipo = "bolleria";
+        $scope.productos = productos[$scope.tipo];
+
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.viewProduct = function (prod) {
+            $scope.prod = prod;
+            $scope.modal.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal.hide();
+        }
+
+    }]);
+
+
+
 
 function findElement(arr, propName, propValue) {
     for (var i = 0; i < arr.length; i++)
