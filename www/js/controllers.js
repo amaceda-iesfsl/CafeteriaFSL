@@ -180,7 +180,7 @@ angular.module('app.controllers', [])
         $scope.modal.show();
     }
 
-    $scope.g = function () {
+    $scope.removeModal = function () {
         $scope.modal.hide();
     }
   
