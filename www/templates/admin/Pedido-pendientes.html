@@ -10,45 +10,48 @@
         <div class="row" id="pedidospendientes">
             <div class="col col-20">
                 <button class="button button-full button-positive">
-                      Lunes
-                    </button>
+                    Lunes
+                </button>
                 <button class="button button-full button-positive">
-                      Martes
-                    </button>
+                    Martes
+                </button>
                 <button class="button button-full button-positive">
-                      Miercoles
-                    </button>
+                    Miercoles
+                </button>
                 <button class="button button-full button-positive">
-                      Jueves
-                    </button>
+                    Jueves
+                </button>
                 <button class="button button-full button-positive">
-                      Viernes
-                    </button>
+                    Viernes
+                </button>
             </div>
             <div class="col col-80" id="tabla_pendientes">
                 <div class="row header">
-                    <div class="col">Num.pedido</div>
-                    <div class="col">Info pedido</div>
-                    <div class="col">Fecha y hora</div>
+                    <div class="col">
+                        <p>Num.pedido</p>
+                    </div>
+                    <div class="col">
+                        <p>Info pedido</p>
+                    </div>
+                    <div class="col">
+                        <p>Fecha y hora</p>
+                    </div>
                     <div class="col col-10"></div>
                 </div>
                 <div class="row" ng-repeat="pendiente in pendientes">
-                  <div class="col">
-                    <p>{{pendiente.id}}</p>
-                  </div>
-                  <div class="col">
-                    <p>{{pendiente.info}}</p>
-                  </div>
-                  <div class="col">
-<<<<<<< HEAD
-                    <p>{{pendiente.fecha}}</p>
-=======
-                    <p>{{pendiente.date}}</p>
->>>>>>> 211fa3e9a3d7d42b8e561e6cbbd64d02a71a6972
-                  </div>
-                  <div class="col col-10">
-                    <ion-checkbox></ion-checkbox>
-                  </div>
+                    <div class="col">
+                        <button class="button button-block  button-positive" id="opencamara" ng-click="doOrder()">{{pendiente.id}}</button>
+                    </div>
+                    <div class="col">
+                        <p>{{pendiente.info}}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{pendiente.date}}</p>
+                    </div>
+                    <div class="col col-10">
+
+                        <ion-checkbox ng-checked="isChecked={{pendiente.estado}}"></ion-checkbox>
+                    </div>
                 </div>
             </div>
         </div>
