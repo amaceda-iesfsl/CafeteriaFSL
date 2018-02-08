@@ -172,30 +172,6 @@ angular.module('app.controllers', [])
         $scope.pendientes = pendientes;
         console.log($scope.pendientes);
 
-<<<<<<< HEAD
-    }])
-
-    .controller('pedpendienteCtrl', ['$scope', 'pendientes', '$ionicModal', function ($scope, pendientes, $ionicModal) {
-        $ionicModal.fromTemplateUrl('templates/admin/Especificacion-articulo.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
-
-        $scope.doOrder = function () {
-            $scope.modal.show();
-        }
-
-        $scope.g = function () {
-            $scope.modal.hide();
-        }
-
-        console.log("pendientes" + pendientes);
-        $scope.pendientes = pendientes;
-        console.log($scope.pendientes);
-    }])
-=======
   }])
 
   .controller('pedpendienteCtrl', ['$scope', 'pendientes', '$ionicModal', function ($scope, pendientes , $ionicModal) {
@@ -218,7 +194,6 @@ angular.module('app.controllers', [])
     $scope.pendientes = pendientes;
     console.log($scope.pendientes);
   }])
->>>>>>> f025f595b0987fc74df9c4adc4ea87e96fd5e5f8
 
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
