@@ -1,7 +1,23 @@
 <ion-view view-title="CFSL-Productos">
-  <ion-content>
-       <div class="bar bar-header bar-stable">
+    <ion-content>
+        <div class="bar bar-header bar-stable">
             <h2 class="title">Bebidas</h2>
         </div>
-  </ion-content>
+        <div class="row row-offset-10 contenido">
+                <div class="col col-33" ng-repeat="producto in productos">
+                    <div class="item item-avatar item-text-wrap mostrarProducto" ng-click="viewProduct({{producto}})">
+                        <img src="img/promo/{{producto.img}}">
+                        <div class="row infoProducto">
+                            <div class="col col-75">
+                                <h2>{{producto.nombre}}</h2>
+                                <div class="product-info">{{producto.ingredientes}}</div>
+                            </div>
+                            <div class="col col-25 right">
+                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </ion-content>
 </ion-view>

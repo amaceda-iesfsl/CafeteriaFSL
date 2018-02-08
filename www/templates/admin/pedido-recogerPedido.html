@@ -2,71 +2,56 @@
 
 
     <ion-content>
-        
+
         <div class="row">
             <div class="bar bar-header bar-stable">
                 <h1 class="title">Lista de pedidos recogidos</h1>
             </div>
         </div>
-        <div class="row" >
-                    <div class="col col-40 col-offset-75">
-                        <button class="button  button-positive" id="opencamara" ng-click="doOrder()">Pedidos recogidos</button>
-                    </div>
+        <div class="row">
+            <div class="col col-40 col-offset-75">
+                <button class="button  button-positive" id="opencamara" ng-click="doOrder()">Pedidos recogidos</button>
+            </div>
         </div>
 
         <div class="row center" id="pedidosrecogidos">
 
             <div class="col col-80 col-offset-10" id="tabla_recogidos">
                 <div class="row header">
-                    <div class="col">Código pedido</div>
-                    <div class="col">Usuario</div>
-                    <div class="col">Fecha y hora</div>
+                    <div class="col">
+                        <p>Num.pedido</p>
+                    </div>
+                    <div class="col">
+                        <p>Info pedido</p>
+                    </div>
+                    <div class="col">
+                        <p>Fecha y hora</p>
+                    </div>
+                    <div class="col">
+                            <p>Celda</p>
+                        </div>
                     <div class="col col-10"></div>
                 </div>
-                <div class="row">
+                <div class="row" ng-repeat="pendiente in pendientes">
                     <div class="col">
-                        <p>123</p>
+                        <a href="www.{{pendiente.id}}">
+                            <p>{{pendiente.id}}</p>
+                        </a>
                     </div>
                     <div class="col">
-                        <p>Alejandro</p>
+                        <p>{{pendiente.info}}</p>
                     </div>
                     <div class="col">
-                        <p>10:50</p>
+                        <p>{{pendiente.date}}</p>
                     </div>
+                    <div class="col">
+                            <p>{{pendiente.celda}}</p>
+                        </div>
                     <div class="col col-10">
-                        <ion-checkbox></ion-checkbox>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>456</p>
-                    </div>
-                    <div class="col">
-                        <p>Vicente</p>
-                    </div>
-                    <div class="col">
-                        <p>10:50</p>
-                    </div>
-                    <div class="col col-10">
-                        <ion-checkbox></ion-checkbox>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>789</p>
-                    </div>
-                    <div class="col">
-                        <p>Javier</p>
-                    </div>
-                    <div class="col">
-                        <p>11:00</p>
-                    </div>
-                    <div class="col col-10">
-                        <ion-checkbox></ion-checkbox>
-                    </div>
-                </div>
 
-
+                        <ion-checkbox ng-checked="isChecked={{pendiente.estado}}"></ion-checkbox>
+                    </div>
+                </div>
 
             </div>
         </div>
