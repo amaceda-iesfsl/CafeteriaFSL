@@ -47,7 +47,7 @@
     <ion-footer-bar align-title="left" class="bar-stable">
         <h1 class="title col-50">Total: {{pedido.pTotal}} €</h1>
         <div class="buttons order-bar-btn">
-            <button class="button button-block button-positive" ui-sref="pedir" ng-disabled="pedido.productos.length == 0">Pedir</button>
+            <button class="button button-block button-positive" ui-sref="pedir" ng-disabled="pedido.cTotal == 0">Pedir</button>
         </div>
     </ion-footer-bar>
 </ion-view>

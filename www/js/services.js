@@ -45,6 +45,10 @@ angular.module('app.services', [])
         this.pTotal = totalPrice(this.productos);
     }])
 
+    .service('historialPedidos', function(){
+        this.pedidos = [];
+    })
+
     .service('pendientes ', function () {
         this.id ="";
         this.info = "";

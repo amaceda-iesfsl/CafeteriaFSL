@@ -6,20 +6,30 @@
             "dia_recogida": "29-01-2018",
             "hora_recogida": "10:50"
         },
-        "estado": "E",
+        "estado": "Entregado",
         "pTotal": 10.00,
         "productos": {
-            "0001" : {
-                "id": "0001",
-                "cantidad": 1
-            },
-            "0002" : {
-                "id": "0002",
-                "cantidad": 2
-            },
             "0003" : {
                 "id": "0003",
-                "cantidad": 3
+                "nombre": "Jamón Serrano3",
+                "img": "bocadillos.jpg",
+                "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
+                "precio": 3.00,
+                "cantidad": 1
+            },
+            "0006" : {
+                "id": "0006",
+                "nombre": "Agua2",
+                "img": "bebidas.jpg",
+                "precio": 2.30,
+                "cantidad": 1
+            },
+            "0013" : {
+                "id": "13",
+                "nombre": "Bollo1",
+                "img": "bolleria.jpg",
+                "precio": 1.50,
+                "cantidad": 1
             }
         }
     },
@@ -31,7 +41,7 @@
             "hora_recogida": "10:50"
         },
         "pTotal": 10.00,
-        "estado": "E",
+        "estado": "Entregado",
         "productos": [
             {
                 "id": "0001",
@@ -55,7 +65,7 @@
             "hora_recogida": "14:05"
         },
         "pTotal": 10.00,
-        "estado": "E",
+        "estado": "Entregado",  
         "productos": [
             {
                 "id": "0001",

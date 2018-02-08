@@ -44,6 +44,27 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     }
 }*/
 
+.estado {
+        background-color: #cecece;
+        border-color: transparent;
+        color: #fcfcfc;
+        position: relative;
+        margin: 0;
+        padding: 0 12px;
+        min-width: 78px;
+        min-height: 30px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        vertical-align: center;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        cursor: pointer;
+ }
+
 .center {
     text-align: center;
 }
@@ -60,25 +81,40 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     text-align: right;
 }
 
+.total{
+    font-size:18px;
+}
 
 a, button{
     text-decoration: none;
 }
 
 .category-card {
+
+    .item{
+        padding:0px;
+        height:9rem;
+    }
     a {
         text-decoration: none;
     }
     .item-title {
         font-size: 16px;
-
+        padding:10px;
+        //background-color: rgba(241, 241, 241, 0.918);
+        text-align:center;
+        font-weight: 600;
     }
     .item-image {
-        min-height: 6rem;
+        min-height: 9rem;
         background-position: bottom;
         background-size: cover;
         img {
-            height: 6rem;
+            position:absolute;
+            left:-5%;
+            top: -5%;
+            height:100%;
+            width:auto;
         }
     }
 }

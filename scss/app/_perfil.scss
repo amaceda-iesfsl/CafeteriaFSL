@@ -3,29 +3,17 @@
     .profile-img {
         border-radius: 50px;
     }
-    .autorizado, .mayor-edad, .saldo {
-        background-color: #cecece;
-        border-color: transparent;
-        color: #fcfcfc;
-        position: relative;
-        margin: 0;
-        padding: 0 12px;
-        min-width: 78px;
-        min-height: 30px;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 3px;
-        vertical-align: center;
-        text-align: center;
-        text-overflow: ellipsis;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 35px;
-        cursor: pointer;
+
+    .autorizado, .pendiente{
+        @extend .estado;
+        background-color: #551095 !important;
     }
-    .autorizado{
-        background-color: #551095;
+
+    .mayor-edad, .entregado {
+        @extend .estado;
+        background-color: #109526 !important;
     }
+
     .saldo{
         font-weight: 700;
         font-size: 16px;

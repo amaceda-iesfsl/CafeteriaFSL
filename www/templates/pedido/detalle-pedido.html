@@ -11,8 +11,8 @@
                     </div>
                     <div class="item item-divider padding-0">
                         <div class="row">
-                            <div class="col col-50 "><div class="autorizado">{{pedido.estado}}</div></div>
-                            <div class="col col-25 col-offset-20"><div class="saldo">{{pedido.total + " €"}}</div></div>
+                            <div class="col col-50 "><div class="entregado">{{pedido.estado}}</div></div>
+                            <div class="col col-50 col-center right"><div class="total">Total: {{pedido.pTotal + " €"}}</div></div>
                         </div>
                     </div>
                 </div>
@@ -22,14 +22,14 @@
             <div class="col">
                 <div class="list card" ng-repeat="producto in pedido.productos">
                     <div class="item item-avatar item-text-wrap">
-                        <img src="img/promo/bocadillos.jpg">
-                        <div class="row row-center">
+                        <img src="img/promo/{{producto.img}}">
+                        <div class="row row-center padding-0">
                             <div class="col-70">
-                                <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
-                                <h2>{{producto.id}}</h2>
+                                <h2 class="product-name">{{producto.nombre}}</h2>
+                                <p>Cantidad: {{producto.cantidad}}</p>
                             </div>
                             <div class="col col-30 right">
-                                <strong><span class="price assertive">{{producto.precio}}</span></strong>
+                                <strong><span class="price calm">{{producto.precio}} €</span></strong>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
         $scope.pedido = findElement(pedidos, "codigo", $stateParams.pedidoId);
     }])
 
-    .controller('PedidosRecientesCtrl', ['$scope', 'pedidos', function ($scope, pedidos) {
+    .controller('PedidosRecientesCtrl', ['$scope', 'historialPedidos', function ($scope, historialPedidos) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -19,29 +19,29 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-        var recientes = pedidos;
-        $scope.actual = 0;
-        $scope.pedido = recientes[0];
+        var recientes = historialPedidos;
+        $scope.actual = recientes.length;
+        $scope.pedido = recientes[$scope.actual];
 
         $scope.nav = {
-            forward: function(pos){
+            forward: function (pos) {
                 if (recientes[pos + 1])
-                    $scope.pedido = recientes[pos+1];
-                    $scope.actual = pos+1;
+                    $scope.pedido = recientes[pos + 1];
+                $scope.actual = pos + 1;
             },
-            backward: function(pos){
-                if (recientes[pos - 1]){
+            backward: function (pos) {
+                if (recientes[pos - 1]) {
                     $scope.pedido = recientes[pos - 1];
                     $scope.actual = pos - 1;
                 }
             },
-            hasOlder: function(pos){
-                if (recientes[pos + 1]){
+            hasOlder: function (pos) {
+                if (recientes[pos + 1]) {
                     return true;
                 }
                 return false;
             },
-            hasNewer: function(pos){
+            hasNewer: function (pos) {
                 if (recientes[pos - 1]) {
                     return true;
                 }
@@ -50,10 +50,10 @@ angular.module('app.controllers', [])
 
         }
 
-        $scope.pedidos = pedidos;
+        $scope.pedidos = historialPedidos;
     }])
 
-    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', 'productoResource', function ($scope, $ionicPopup, $ionicModal, pedido, productoResource) {
+    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', 'productoResource', 'historialPedidos', function ($scope, $ionicPopup, $ionicModal, pedido, productoResource, historialPedidos) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -64,21 +64,25 @@ angular.module('app.controllers', [])
 
         $scope.pedido = pedido;
 
-        console.log($scope.pedido.productos);
-
         // A confirm dialog
         $scope.popConfirmar = function () {
             var myPopup = $ionicPopup.show({
                 title: 'Advertencia',
                 template: '<p style="text-align:justify">Comprueba que el pedido es correcto.<br><br> <p style="text-align:justify; color:red; font-weight:600">Una vez hecho, no se puede cancelar el pedido.</p></p>',
                 buttons: [
-                    { text: 'Cancelar',
-                      type: "button-assertive"},
-                    { text: "Confirmar pedido",
+                    {
+                        text: 'Cancelar',
+                        type: "button-assertive"
+                    },
+                    {
+                        text: "Confirmar pedido",
                         type: 'button-positive',
                         onTap: function (e) {
+                            historialPedidos.pedidos.push(pedido);
+                            console.log(historialPedidos);
                             $scope.modal.show();
-                        }}
+                        }
+                    }
                 ]
             });
         };
@@ -114,6 +118,7 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
+
         $scope.cart = {
             MAX_ITEMS: 10,
             add: function (itemId) {
@@ -123,7 +128,7 @@ angular.module('app.controllers', [])
                         pedido.productos[itemId].cantidad += 1;
                     }
                     pedido.cTotal += 1;
-                    pedido.pTotal += producto.precio;
+                    pedido.pTotal += pedido.productos[itemId].precio;
                 }
             },
             remove: function (itemId) {
@@ -138,8 +143,9 @@ angular.module('app.controllers', [])
             }
         }
 
+        console.log($scope.pedido);
     }])
-    .controller('lecturaCtrl', ['$scope', '$ionicModal','pendientes', function ($scope, $ionicModal , pendientes) {
+    .controller('lecturaCtrl', ['$scope', '$ionicModal', 'pendientes', function ($scope, $ionicModal, pendientes) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -162,32 +168,32 @@ angular.module('app.controllers', [])
         $scope.removeModal = function () {
             $scope.modal.hide();
         }
-        console.log("pendientes"+pendientes);
+        console.log("pendientes" + pendientes);
         $scope.pendientes = pendientes;
         console.log($scope.pendientes);
 
-  }])
+    }])
 
-  .controller('pedpendienteCtrl', ['$scope', 'pendientes', '$ionicModal', function ($scope, pendientes , $ionicModal) {
-    $ionicModal.fromTemplateUrl('templates/admin/Especificacion-articulo.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function (modal) {
-        $scope.modal = modal;
-    });
+    .controller('pedpendienteCtrl', ['$scope', 'pendientes', '$ionicModal', function ($scope, pendientes, $ionicModal) {
+        $ionicModal.fromTemplateUrl('templates/admin/Especificacion-articulo.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
 
-    $scope.doOrder = function () {
-        $scope.modal.show();
-    }
+        $scope.doOrder = function () {
+            $scope.modal.show();
+        }
 
-    $scope.g = function () {
-        $scope.modal.hide();
-    }
-  
-    console.log("pendientes"+pendientes);
-    $scope.pendientes = pendientes;
-    console.log($scope.pendientes);
-  }])
+        $scope.g = function () {
+            $scope.modal.hide();
+        }
+
+        console.log("pendientes" + pendientes);
+        $scope.pendientes = pendientes;
+        console.log($scope.pendientes);
+    }])
 
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
@@ -218,22 +224,23 @@ angular.module('app.controllers', [])
             $scope.modal_info.hide();
         }
 
-        console.log($scope.pedido);
 
         $scope.cart = {
             MAX_ITEMS: 10,
             add: function (itemId) {
-                    var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
-                    var producto = findElement($scope.productos, "id", itemId);
-                    if (!pedido.productos[itemId]) {
-                        pedido.productos[producto.id] = producto;
-                        pedido.productos[producto.id].cantidad = 1;
-                        //pedido.productos.push(producto);
-                    } else {
-                        if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
-                            pedido.productos[itemId].cantidad += 1;
-                        }
+                //var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                var producto = findElement($scope.productos, "id", itemId);
+                if (!pedido.productos[itemId]) {
+                    pedido.productos[producto.id] = producto;
+                    pedido.productos[producto.id].cantidad = 1;
+                    //pedido.productos.push(producto);
+                } else {
+                    if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
+                        pedido.productos[itemId].cantidad += 1;
                     }
+                }
+                pedido.cTotal += 1;
+                pedido.pTotal += producto.precio;
             },
             remove: function (itemId) {
                 if (pedido.productos[itemId]) {
@@ -249,7 +256,7 @@ angular.module('app.controllers', [])
 
     }])
 
-    .controller('BocadillosCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+    .controller('BocadillosCtrl', ['$scope', '$ionicModal', 'productos', function ($scope, $ionicModal, productos) {
 
         $scope.tipo = "bocadillos";
         $scope.productos = productos[$scope.tipo];
@@ -271,7 +278,7 @@ angular.module('app.controllers', [])
         }
     }])
 
-    .controller('BebidasCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+    .controller('BebidasCtrl', ['$scope', '$ionicModal', 'productos', function ($scope, $ionicModal, productos) {
 
         $scope.tipo = "bebidas";
         $scope.productos = productos[$scope.tipo];
@@ -293,7 +300,7 @@ angular.module('app.controllers', [])
         }
     }])
 
-    .controller('CafesCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+    .controller('CafesCtrl', ['$scope', '$ionicModal', 'productos', function ($scope, $ionicModal, productos) {
 
         $scope.tipo = "cafes";
         $scope.productos = productos[$scope.tipo];
@@ -315,7 +322,7 @@ angular.module('app.controllers', [])
         }
     }])
 
-    .controller('BolleriaCtrl', ['$scope', '$ionicModal', 'productos',  function ($scope, $ionicModal, productos) {
+    .controller('BolleriaCtrl', ['$scope', '$ionicModal', 'productos', function ($scope, $ionicModal, productos) {
 
         $scope.tipo = "bolleria";
         $scope.productos = productos[$scope.tipo];

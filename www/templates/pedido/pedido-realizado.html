@@ -22,7 +22,7 @@
             <div class="col col-30">
                 <strong><p>{{pedido.codigo}}</p></strong>
                 <p class="soft">{{pedido.pTotal}} €</p>
-                <p class="soft">{{pedido.reserva.dia_recogida}} - {{pedido.reserva.hora_recogida}}</p>
+                <p class="soft">{{pedido.reserva.dia_recogida | date : 'dd/MM/yyyy'}} - {{pedido.reserva.hora_recogida}}</p>
             </div>
         </div>
         <div class="row center">
@@ -30,7 +30,7 @@
                 <a href="#/home" ng-click="removeModal()"><button class="button button-block button-outline button-positive icon-left ion-home">Ir a inicio</button></a>
             </div>
             <div class="col col-40">
-                <a href="#/detalle-pedido" ng-click="removeModal()"><button class="button button-block button-positive">Ver pedido</button></a>
+                <a href="#/pedido/view/{{pedido.codigo}}" ng-click="removeModal()"><button class="button button-block button-positive">Ver pedido</button></a>
             </div>
         </div>
     </ion-content>
