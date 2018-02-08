@@ -39,6 +39,7 @@
                     <div class="col col-10"></div>
                 </div>
                 <div class="row" ng-repeat="pendiente in pendientes">
+<<<<<<< HEAD
                     <div class="col">
                         <button class="button button-block  button-positive" id="opencamara" ng-click="doOrder()">{{pendiente.id}}</button>
                     </div>
@@ -52,6 +53,24 @@
 
                         <ion-checkbox ng-checked="isChecked={{pendiente.estado}}"></ion-checkbox>
                     </div>
+=======
+                  <div class="col">
+                    <p>{{pendiente.id}}</p>
+                  </div>
+                  <div class="col">
+                    <p>{{pendiente.info}}</p>
+                  </div>
+                  <div class="col">
+<<<<<<< HEAD
+                    <p>{{pendiente.fecha}}</p>
+=======
+                    <p>{{pendiente.date}}</p>
+>>>>>>> 211fa3e9a3d7d42b8e561e6cbbd64d02a71a6972
+                  </div>
+                  <div class="col col-10">
+                    <ion-checkbox></ion-checkbox>
+                  </div>
+>>>>>>> 04e48c955aa4891222d46207c7c46e3616f53b7c
                 </div>
             </div>
         </div>

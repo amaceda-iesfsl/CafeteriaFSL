@@ -1,7 +1,7 @@
 {
     "bocadillos": [
         {
-            "id": "1",
+            "id": "0001",
             "nombre": "Jamón Serrano",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -9,7 +9,7 @@
             "cantidad": 0
         },
         {
-            "id": "2",
+            "id": "0002",
             "nombre": "Jamón Serrano2",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -17,7 +17,7 @@
             "cantidad": 0
         },
         {
-            "id": "3",
+            "id": "0003",
             "nombre": "Jamón Serrano3",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -25,7 +25,7 @@
             "cantidad": 0
         },
         {
-            "id": "4",
+            "id": "0004",
             "nombre": "Jamón Serrano4",
             "img": "bocadillos.jpg",
             "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
@@ -35,28 +35,28 @@
     ],
     "bebidas": [
         {
-            "id": "5",
+            "id": "0005",
             "nombre": "Agua1",
             "img": "bebidas.jpg",
             "precio": 1.50,
             "cantidad": 0
         },
         {
-            "id": "6",
+            "id": "0006",
             "nombre": "Agua2",
             "img": "bebidas.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
-            "id": "7",
+            "id": "0007",
             "nombre": "Agua3",
             "img": "bebidas.jpg",
             "precio": 1.20,
             "cantidad": 0
         },
         {
-            "id": "8",
+            "id": "0008",
             "nombre": "Agua4",
             "img": "bebidas.jpg",
             "precio": 0.80,

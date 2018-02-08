@@ -1,13 +1,14 @@
-<ion-view view-title="Productos">
-    <div class="bar bar-subheader bar-stable">
-        <h2 class="title product-list-title">{{tipo}}<span class="badge badge-positive margin-sides-sm"></span></h2>
-    </div>
-    <ion-content class="has-subheader">
+<ion-view view-title="CFSL-Productos">
+  <ion-content>
+       <div class="bar bar-header bar-stable">
+            <h2 class="title">Bocadillos</h2>
+        </div>
+
         <div class="row product-list">
             <div class="col col-100" >
                 <div class="list card" ng-repeat="producto in productos">
                     <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
-                        <img src="img/promo/{{producto.img}}">
+                        <!--<img src="img/promo/{{producto.img}}">-->
                         <div class="row padding-0">
                             <div class="col padding-0 col-75">
                                 <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
@@ -36,5 +37,9 @@
 
             </div>
         </div>
-    </ion-content>
+
+
+
+
+  </ion-content>
 </ion-view>

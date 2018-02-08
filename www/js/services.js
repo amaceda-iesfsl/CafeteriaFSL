@@ -28,44 +28,49 @@ angular.module('app.services', [])
     })
 
     .service('reserva', function () {
-        this.dia_recogida = "";
-        this.hora_recogida = "";
+        this.dia_recogida;
+        this.hora_recogida = "10:50";
     })
 
     .service('usuario', function () {
         this.saldo = 10.00;
     })
 
-    .service('pedido', ['reserva', 'cantidadTotal','precioTotal',  function (reserva, cantidadTotal, precioTotal) {
+    .service('pedido', ['reserva', 'totalPrice', function (reserva, totalPrice) {
         this.codigo = "000052";
         this.fecha = "";
         this.reserva = reserva;
-        this.productos = [];
-        this.cTotal = cantidadTotal;
-        this.pTotal = precioTotal;
+        this.productos = {};
+        this.cTotal = 0;
+        this.pTotal = totalPrice(this.productos);
     }])
     .service('pendientes ', function () {
-        
-        this.id ="",
-        this.info = "",
-        this.fecha = "",
-        this.estado = "" 
-        console.log("service");
+        this.id ="";
+        this.info = "";
+        this.fecha = "";
+        this.estado = "";
     })
 
-    .value('cantidadTotal', function () {
+    .value('totalPrice', function (productos) {
         var total = 0;
-        for (var i = 0; i < this.productos.length; i++) {
-            total += this.productos[i].cantidad;
+        for (var i in productos) {
+            total += productos[i].precio;
         }
         return total;
     })
-    .value('precioTotal', function () {
-        var total = 0;
-        for (var i = 0; i < this.productos.length; i++) {
-            total += this.productos[i].precio;
+    // Here is where the magic works
+    .directive('date', function (dateFilter) {
+        return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+
+                var dateFormat = attrs['date'] || 'yyyy-MM-dd';
+
+                ctrl.$formatters.unshift(function (modelValue) {
+                    return dateFilter(modelValue, dateFormat);
+                });
+            }
         }
-        return total;
     })
 ;
 
@@ -155,7 +160,6 @@ function PendienteResource($http, baseUrl) {
   };
 
   this.list = function () {
-      
     return new Promise(function (resolve, reject) {
       $http.get(baseUrl + 'pedido-pendiente.json')
         .then(function successCallback(response) {

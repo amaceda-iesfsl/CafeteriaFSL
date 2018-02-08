@@ -4,7 +4,7 @@
     </div>
     <ion-content class="has-subheader">
         <div class="row product-list padding-0">
-            <div class="col">
+            <div class="col" ng-if="pedido.cTotal > 0">
                 <div class="list card" ng-repeat="producto in pedido.productos">
                     <div class="item item-avatar item-text-wrap">
                         <img src="img/promo/{{producto.img}}">
@@ -20,20 +20,22 @@
                     </div>
                     <div class="item item-divider">
                         <div class="row padding-0 button-bar center">
-                            <button ng-click="cart.remove(producto.id)" class="button button-small ion-minus button-block button-assertive">Eliminar 1
+                            <button ng-click="cart.remove(producto.id)" class="button button-small button-assertive"> Eliminar 1
                             </button>
-                            <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">Eliminar Todos
+                            <button ng-click="cart.add(producto.id)" class="col-33 button button-small button-assertive btn-delete-all">Todos
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col padding-top-50 center" ng-if="pedido.cTotal === 0">
+                <p class="info dummy-text">Ups, no has añadido nada al carrito</p>
+            </div>
         </div>
-
     </ion-content>
     <ion-footer-bar align-title="left" class="bar-stable">
-        <h1 class="title">Total: {{pedido.pTotal}} €</h1>
-        <div class="buttons">
+        <h1 class="title col-50">Total: {{pedido.pTotal}} €</h1>
+        <div class="buttons order-bar-btn">
             <button class="button button-positive" ui-sref="pedir" ng-disabled="pedido.productos.length == 0">Pedir</button>
         </div>
     </ion-footer-bar>
