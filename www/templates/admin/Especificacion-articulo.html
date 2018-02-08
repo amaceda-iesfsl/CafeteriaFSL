@@ -1,29 +1,59 @@
-<ion-view view-title="CFSL-Articulo : ">
+<ion-modal-view>
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title"> Agrupacion </h1>
+    </ion-header-bar>
+    <ion-content class="backlight" ng-controller="BarcodeCtrl">
+        <div class="row">
 
-
-    <ion-content>
-        <div id="especificacionarticulos">
-            <div id="tabla_especificacion">
-                <div class="row header">
-                    <div class="col col-20">Producto</div>
-                    <div class="col col-75">Ingredientes</div>
-                    <div class="col col-10">Estado</div>
-
-                </div>
-                <div class="row">
-                    <div class="col col-20">
-                        <p>hola</p>
-                    </div>
-                    <div class="col col-75">
-                        <p>hola</p>
-                    </div>
-
-                    <div class="col col-10">
-                        <ion-checkbox></ion-checkbox>
-                    </div>
-                </div>
-            </div>
         </div>
-
+            <div id="especificacionarticulos">
+                    <div id="tabla_especificacion">
+                        <div class="row header">
+                            <div class="col col-20">Producto</div>
+                            <div class="col col-70">Ingredientes</div>
+                            <div class="col col-10">Estado</div>
+        
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">
+                                <p>hola</p>
+                            </div>
+                            <div class="col col-70">
+                                <p>hola</p>
+                            </div>
+        
+                            <div class="col col-10">
+                                <ion-checkbox></ion-checkbox>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col col-20">
+                                    <p>hola</p>
+                                </div>
+                                <div class="col col-70">
+                                    <p>hola</p>
+                                </div>
+            
+                                <div class="col col-10">
+                                    <ion-checkbox></ion-checkbox>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col col-20">
+                                        <p>hola</p>
+                                    </div>
+                                    <div class="col col-70">
+                                        <p>hola</p>
+                                    </div>
+                
+                                    <div class="col col-10">
+                                        <ion-checkbox></ion-checkbox>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="row">
+                            <button class="button button-block  button-positive" id="opencamara" ng-click="removeModal()">Cerrar agrupacion</button>
+                        </div>
+                </div>
     </ion-content>
-</ion-view>
+</ion-modal-view>

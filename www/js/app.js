@@ -178,7 +178,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             .state('pedido-recogerPedidos', {
               url: '/admin/recogerPedidos',
               templateUrl: 'templates/admin/pedido-recogerPedido.html',
-              controller:'lecturaCtrl',
+              controller: "lecturaCtrl",
+              resolve: {
+                pendientes: ['PendienteResource',
+                            function (PendienteResource) {
+                                console.log("app.js"+PendienteResource.list());
+                                return PendienteResource.list();
+                            }
+                        ]
+            }
             })
             .state('admin-productos', {
               url: '/admin/productos',

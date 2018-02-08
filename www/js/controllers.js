@@ -69,7 +69,7 @@ angular.module('app.controllers', [])
         }
 
     }])
-    .controller('lecturaCtrl', ['$scope', '$ionicModal', function ($scope, $ionicModal) {
+    .controller('lecturaCtrl', ['$scope', '$ionicModal','pendientes', function ($scope, $ionicModal , pendientes) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -92,10 +92,27 @@ angular.module('app.controllers', [])
         $scope.removeModal = function () {
             $scope.modal.hide();
         }
+        console.log("pendientes"+pendientes);
+        $scope.pendientes = pendientes;
+        console.log($scope.pendientes);
 
   }])
 
-  .controller('pedpendienteCtrl', ['$scope', 'pendientes ', function ($scope, pendientes) {
+  .controller('pedpendienteCtrl', ['$scope', 'pendientes', '$ionicModal', function ($scope, pendientes , $ionicModal) {
+    $ionicModal.fromTemplateUrl('templates/admin/Especificacion-articulo.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.doOrder = function () {
+        $scope.modal.show();
+    }
+
+    $scope.g = function () {
+        $scope.modal.hide();
+    }
   
     console.log("pendientes"+pendientes);
     $scope.pendientes = pendientes;
