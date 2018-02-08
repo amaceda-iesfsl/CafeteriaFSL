@@ -1,39 +1,42 @@
 <ion-view view-title="Productos">
     <div class="bar bar-subheader bar-stable">
-        <h2 class="title product-list-title">{{tipo}}<span class="badge badge-positive margin-sides-sm"></span></h2>
+        <h2 class="title product-list-title">{{tipo}}
+            <span class="badge badge-positive margin-sides-sm"></span>
+        </h2>
     </div>
     <ion-content class="has-subheader">
         <div class="row product-list">
-            <div class="col col-100" >
-                <div class="list card" ng-repeat="producto in productos">
-                    <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
-                        <img src="img/promo/{{producto.img}}">
-                        <div class="row padding-0">
-                            <div class="col padding-0 col-75">
-                                <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
-                                <span class="badge badge-dark item-badge" ng-if="!pedido.productos[producto.id]">0</span>
-                                <h2>{{producto.nombre}}</h2>
-                                <div class="product-info">{{producto.ingredientes}}</div>
-                            </div>
-                            <div class="col padding-0 col-25 right">
-                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
+            <div class="col col-100">
+                <div class="col padding-0" ng-repeat="producto in productos">
+                    <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
+                    <span class="badge badge-dark item-badge" ng-if="!pedido.productos[producto.id]">0</span>
+                    <div class="row padding-0">
+                        <div class="col col-10 col-center btn-amount-left padding-0">
+                            <button ng-click="cart.remove(producto.id)" ng-disabled="!pedido.productos[producto.id] || pedido.productos[producto.id].cantidad==0"
+                                class="button button-small button-block ion-minus button-assertive">
+                            </button>
+                        </div>
+                        <div class="col col-80 padding-0">
+                            <div class="list card">
+                                <div class="item item-text-wrap" ng-click="viewProduct({{producto}})">
+                                    <div class="row padding-0">
+                                        <div class="col padding-0 col-80">
+                                            <div><h2 class="product-name">{{producto.nombre}}</h2> </div>
+                                            <div class="product-info">{{producto.ingredientes}}</div>
+                                        </div>
+                                        <div class="col padding-0  col-center right">
+                                            <span class="price calm">{{producto.precio}}€</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item item-divider">
-                        <div class="row padding-0 button-bar center">
-                            <button ng-click="cart.remove(producto.id)" ng-disabled="!pedido.productos[producto.id] || pedido.productos[producto.id].cantidad==0" class="button button-small ion-minus button-block button-assertive">
-                            </button>
+                        <div class="col col-10 col-center btn-amount-right padding-0">
                             <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-50 col-offset-25">
-
             </div>
         </div>
     </ion-content>

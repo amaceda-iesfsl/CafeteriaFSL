@@ -34,12 +34,25 @@ angular.module('app.controllers', [])
                     $scope.pedido = recientes[pos - 1];
                     $scope.actual = pos - 1;
                 }
+            },
+            hasOlder: function(pos){
+                if (recientes[pos + 1]){
+                    return true;
+                }
+                return false;
+            },
+            hasNewer: function(pos){
+                if (recientes[pos - 1]) {
+                    return true;
+                }
+                return false;
             }
+
         }
 
     }])
 
-    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', function ($scope, $ionicPopup, $ionicModal, pedido) {
+    .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', 'productoResource', function ($scope, $ionicPopup, $ionicModal, pedido, productoResource) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -68,6 +81,22 @@ angular.module('app.controllers', [])
             });
         };
 
+        $ionicModal.fromTemplateUrl('templates/productos/info.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal_info = modal;
+        });
+
+        $scope.viewProduct = function (prod) {
+            $scope.prod = prod;
+            $scope.modal_info.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal_info.hide();
+        }
+
         $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
             scope: $scope,
             animation: 'slide-in-up'
@@ -81,6 +110,30 @@ angular.module('app.controllers', [])
 
         $scope.removeModal = function () {
             $scope.modal.hide();
+        }
+
+        $scope.cart = {
+            MAX_ITEMS: 10,
+            add: function (itemId) {
+                var producto = productoResource.get(itemId);
+                if (pedido.productos[itemId]) {
+                    if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
+                        pedido.productos[itemId].cantidad += 1;
+                    }
+                    pedido.cTotal += 1;
+                    pedido.pTotal += producto.precio;
+                }
+            },
+            remove: function (itemId) {
+                if (pedido.productos[itemId]) {
+                    pedido.productos[itemId].cantidad -= 1;
+                    pedido.cTotal -= 1;
+                    pedido.pTotal -= pedido.productos[itemId].precio;
+                    if (pedido.productos[itemId].cantidad == 0) {
+                        delete pedido.productos[itemId];
+                    }
+                }
+            }
         }
 
     }])
@@ -134,19 +187,20 @@ angular.module('app.controllers', [])
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {
-            $scope.modal = modal;
+            $scope.modal_info = modal;
         });
 
         $scope.viewProduct = function (prod) {
             $scope.prod = prod;
-            $scope.modal.show();
+            $scope.modal_info.show();
         }
 
         $scope.hideModal = function () {
-            $scope.modal.hide();
+            $scope.modal_info.hide();
         }
 
         $scope.cart = {
+            MAX_ITEMS: 10,
             add: function (itemId) {
                     //var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
                     var producto = findElement($scope.productos, "id", itemId);
@@ -155,7 +209,7 @@ angular.module('app.controllers', [])
                         pedido.productos[producto.id].cantidad = 1;
                         //pedido.productos.push(producto);
                     } else {
-                        if (pedido.productos[itemId].cantidad < 5) {
+                        if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
                             pedido.productos[itemId].cantidad += 1;
                         }
                     }
@@ -164,13 +218,12 @@ angular.module('app.controllers', [])
             },
             remove: function (itemId) {
                 if (pedido.productos[itemId]) {
-                    if (pedido.productos[itemId].cantidad == 0) {
-                        pedido.productos[itemId] = null;
-                    } else {
-                        pedido.productos[itemId].cantidad -= 1;
-                    }
+                    pedido.productos[itemId].cantidad -= 1;
                     pedido.cTotal -= 1;
                     pedido.pTotal -= pedido.productos[itemId].precio;
+                    if (pedido.productos[itemId].cantidad == 0) {
+                        delete pedido.productos[itemId];
+                    }
                 }
             }
         }

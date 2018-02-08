@@ -3,40 +3,51 @@
         <h2 class="title ">Productos<span class="badge badge-positive margin-sides-sm">{{pedido.cTotal}}</span></h2>
     </div>
     <ion-content class="has-subheader">
-        <div class="row product-list padding-0">
-            <div class="col" ng-if="pedido.cTotal > 0">
-                <div class="list card" ng-repeat="producto in pedido.productos">
-                    <div class="item item-avatar item-text-wrap">
-                        <img src="img/promo/{{producto.img}}">
-                        <div class="row row-center">
-                            <div class="col-70">
-                                <span class="badge badge-dark item-badge">{{producto.cantidad}}</span>
-                                <h2>{{producto.nombre}}</h2>
-                            </div>
-                            <div class="col col-30 right">
-                                <strong><span class="price assertive">{{producto.precio}}€</span></strong>
+        <div class="row product-list">
+            <div class="col col-100">
+            <div class="col padding-0" ng-repeat="producto in pedido.productos">
+            <div class="col col-center padding-0" ng-if="pedido.cTotal > 0">
+                <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
+                <span class="badge badge-dark item-badge" ng-if="!pedido.productos[producto.id]">0</span>
+                <div class="row padding-0">
+                    <div class="col col-10 col-center btn-amount-left padding-0">
+                        <button ng-click="cart.remove(producto.id)" ng-disabled="!pedido.productos[producto.id] || pedido.productos[producto.id].cantidad==0"
+                            class="button button-small button-block ion-minus button-assertive">
+                        </button>
+                    </div>
+                    <div class="col col-80 padding-0">
+                        <div class="list card">
+                            <div class="item item-text-wrap" ng-click="viewProduct({{producto}})">
+                                <div class="row padding-0">
+                                    <div class="col padding-0 col-80">
+                                        <div>
+                                            <h2 class="product-name">{{producto.nombre}}</h2>
+                                        </div>
+                                        <div class="product-info">{{producto.ingredientes}}</div>
+                                    </div>
+                                    <div class="col padding-0 col-center right">
+                                        <span class="price calm">{{producto.precio}}€</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item item-divider">
-                        <div class="row padding-0 button-bar center">
-                            <button ng-click="cart.remove(producto.id)" class="button button-small button-assertive"> Eliminar 1
-                            </button>
-                            <button ng-click="cart.add(producto.id)" class="col-33 button button-small button-assertive btn-delete-all">Todos
-                            </button>
-                        </div>
+                    <div class="col col-10 col-center btn-amount-right padding-0">
+                        <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">
+                        </button>
                     </div>
-                </div>
+                </div></div>
             </div>
-            <div class="col padding-top-50 center" ng-if="pedido.cTotal === 0">
-                <p class="info dummy-text">Ups, no has añadido nada al carrito</p>
             </div>
+        </div>
+        <div class="col padding-top-50 center" ng-if="pedido.cTotal === 0">
+            <p class="info dummy-text">Ups, no has añadido nada al carrito</p>
         </div>
     </ion-content>
     <ion-footer-bar align-title="left" class="bar-stable">
         <h1 class="title col-50">Total: {{pedido.pTotal}} €</h1>
         <div class="buttons order-bar-btn">
-            <button class="button button-positive" ui-sref="pedir" ng-disabled="pedido.productos.length == 0">Pedir</button>
+            <button class="button button-block button-positive" ui-sref="pedir" ng-disabled="pedido.productos.length == 0">Pedir</button>
         </div>
     </ion-footer-bar>
 </ion-view>

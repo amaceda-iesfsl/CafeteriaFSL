@@ -44,6 +44,7 @@ angular.module('app.services', [])
         this.cTotal = 0;
         this.pTotal = totalPrice(this.productos);
     }])
+
     .service('pendientes ', function () {
         this.id ="";
         this.info = "";
@@ -79,6 +80,7 @@ function PedidoResource($http, baseUrl) {
         return new Promise(function (resolve, reject) {
             $http.get(baseUrl + 'historial-pedidos.json')
                 .then(function successCallback(response) {
+                    
                     resolve(response.data);
                 }, function errorCallback(response) {
                     reject(response.data, response.status);
@@ -117,14 +119,15 @@ function ProductoResource($http, baseUrl) {
         return new Promise(function (resolve, reject) {
             $http.get(baseUrl + 'productos.json')
                 .then(function successCallback(response) {
-                    resolve(response.data);
+                    var productos = response.data;
+                    resolve(findElement(productos, "id", productoId));
                 }, function errorCallback(response) {
                     reject(response.data, response.status);
                 })
         });
     };
 
-    this.list = function (tipo) {
+    this.list = function () {
         return new Promise(function (resolve, reject) {
             $http.get(baseUrl + 'productos.json')
                 .then(function successCallback(response) {

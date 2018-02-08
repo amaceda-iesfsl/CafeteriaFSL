@@ -8,11 +8,7 @@
                 <p class="info">FECHA DE RECOGÍDA</p>
                 <label class="item item-input">
                 <span class="input-label" >Día</span>
-<<<<<<< HEAD
-                <input type="date" name="fecha-recogida" placeholder="" ng-model="pedido.reserva.dia_recogida">
-=======
-                <input type="date" date='dd/MM/yyyy' name="fecha-recogida" placeholder="" ng-model="pedido.reserva.dia_recogida">
->>>>>>> 211fa3e9a3d7d42b8e561e6cbbd64d02a71a6972
+                <input type="date" name="fecha-recogida" placeholder="" ng-model="pedido.reserva.dia_recogida" ui-date ui-date-format="mm/dd/yyyy">
               </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
@@ -33,7 +29,7 @@
                 <div class="item">
                     <div class="row">
                         <div class="col-50"><p class="hard">Productos: </p></div>
-                        <div class="col-50"><p class="right">{{pedido.codigo}} </p></div>
+                        <div class="col-50"><p class="right">{{pedido.cTotal}} </p></div>
                     </div>
                     <div class="row">
                         <div class="col-50"><p class="hard">Precio total: </p></div>
@@ -41,7 +37,7 @@
                     </div>
                     <div class="row">
                         <div class="col-50"><p class="hard">Fecha de recogída: </p></div>
-                        <div class="col-50"><p class="right">{{pedido.reserva.dia_recogida+" - "+pedido.reserva.hora_recogida}}</p></div>
+                        <div class="col-50"><p class="right">{{pedido.reserva.dia_recogida | date : 'dd/MM/yyyy'}} - {{pedido.reserva.hora_recogida}}</p></div>
                     </div>
                 </div>
             </div>

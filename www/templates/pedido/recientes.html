@@ -1,7 +1,13 @@
 <ion-view view-title="Pedidos recientes">
-    <div class="bar bar-subheader bar-stable">
-        <h2 class="title">{{pedido.codigo}}</h2>
-    </div>
+    <ion-header-bar class="bar-subheader bar-stable bar-stable">
+        <div class="buttons">
+            <button class="button icon ion-ios-arrow-back" ng-click="nav.backward(actual)" ng-disabled="!nav.hasNewer(actual)"></button>
+        </div>
+        <h1 class="title">{{pedido.fecha}}</h1>
+        <div class="buttons">
+            <button class="button icon ion-ios-arrow-forward" ng-click="nav.forward(actual)" ng-disabled="!nav.hasOlder(actual)"></button>
+        </div>
+    </ion-header-bar>
     <ion-content class="has-subheader" on-swipe-left="nav.forward(actual)" on-swipe-right="nav.backward(actual)">
         <div class="pedido">
             <div class="row">
@@ -26,7 +32,7 @@
                         <p>{{pedido.codigo}}</p>
                     </strong>
                     <p class="soft">{{pedido.pTotal}} €</p>
-                    <p class="soft">{{pedido.reserva.dia_recogida}} - {{pedido.reserva.hora_recogida}}</p>
+                    <p class="soft">{{pedido.reserva.dia_recogida | date : 'dd/MM/yyyy'}} - {{pedido.reserva.hora_recogida}}</p>
                 </div>
             </div>
             <div class="row">

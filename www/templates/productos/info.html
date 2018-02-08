@@ -1,11 +1,12 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-positive">
+        <button class="button button-positive icon ion-close-circled" ng-click="hideModal()"></button>
         <h1 class="title">{{prod.nombre}}</h1>
     </ion-header-bar>
     <ion-content>
         <div class="row">
             <div class="col center">
-                <img src="img/promo/{{tipo}}.jpg" class="col-80" />
+                <img src="img/promo/{{prod.img}}" class="col-80" />
             </div>
         </div>
         <div class="row">
@@ -27,9 +28,10 @@
                 </div>
             </div>
         </div>
-        <div class="row center">
-            <div class="col">
-                <button class="button button-positive" ng-click="hideModal()">Cerrar</button>
+        <div class="row">
+            <div class="col center">
+                <button class="button button-positive" ng-click="hideModal()" ng-if="!pedido.productos[prod.id].cantidad > 0">Cerrar</button>
+                <button class="button button-assertive" ng-click "removeItem" ng-if="pedido.productos[prod.id].cantidad > 0">Eliminar todos</button>
             </div>
         </div>
     </ion-content>
