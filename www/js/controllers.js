@@ -19,8 +19,24 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
+        var recientes = pedidos;
+        $scope.actual = 0;
+        $scope.pedido = recientes[0];
 
-        $scope.pedidos = pedidos;
+        $scope.nav = {
+            forward: function(pos){
+                if (recientes[pos + 1])
+                    $scope.pedido = recientes[pos+1];
+                    $scope.actual = pos+1;
+            },
+            backward: function(pos){
+                if (recientes[pos - 1]){
+                    $scope.pedido = recientes[pos - 1];
+                    $scope.actual = pos - 1;
+                }
+            }
+        }
+
     }])
 
     .controller('OrderCtrl', ['$scope', '$ionicPopup', '$ionicModal', 'pedido', function ($scope, $ionicPopup, $ionicModal, pedido) {
@@ -31,10 +47,9 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
+        setOrderDate(pedido);
 
         $scope.pedido = pedido;
-
-        console.log($scope.pedido.productos);
 
         // A confirm dialog
         $scope.popConfirmar = function () {
@@ -93,7 +108,14 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
-    }])
+  }])
+
+  .controller('pedpendienteCtrl', ['$scope', 'pendientes', function ($scope, pendientes) {
+  
+    console.log("pendientes "+pendientes);
+    $scope.pendientes = pendientes;
+    console.log($scope.pendientes);
+  }])
 
     .controller('ProductosCtrl', ['$scope', '$ionicModal', 'productos', '$stateParams', 'pedido', function ($scope, $ionicModal, productos, $stateParams, pedido) {
         // With the new view caching in Ionic, Controllers are only called
@@ -124,11 +146,9 @@ angular.module('app.controllers', [])
             $scope.modal.hide();
         }
 
-        console.log($scope.pedido);
-
         $scope.cart = {
             add: function (itemId) {
-                    var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
+                    //var index = pedido.productos.indexOf(findElement($scope.productos, "id", itemId));
                     var producto = findElement($scope.productos, "id", itemId);
                     if (!pedido.productos[itemId]) {
                         pedido.productos[producto.id] = producto;
@@ -139,6 +159,8 @@ angular.module('app.controllers', [])
                             pedido.productos[itemId].cantidad += 1;
                         }
                     }
+                    pedido.cTotal += 1;
+                    pedido.pTotal += producto.precio;
             },
             remove: function (itemId) {
                 if (pedido.productos[itemId]) {
@@ -147,11 +169,19 @@ angular.module('app.controllers', [])
                     } else {
                         pedido.productos[itemId].cantidad -= 1;
                     }
+                    pedido.cTotal -= 1;
+                    pedido.pTotal -= pedido.productos[itemId].precio;
                 }
             }
         }
 
-    }]);
+    }])
+    /*
+    .controller('BocadillosCtrl', function($scope) {})
+    .controller('BebidasCtrl', function($scope) {})
+    .controller('CafesCtrl', function($scope) {})
+    .controller('BolleriaCtrl', function($scope) {});
+    */
 
 function findElement(arr, propName, propValue) {
     for (var i = 0; i < arr.length; i++)
@@ -160,3 +190,44 @@ function findElement(arr, propName, propValue) {
 
     // will return undefined if not found; you could return a default instead
 }
+
+function setOrderDate(pedido){
+    var today = new Date();
+
+    // Setting time from today
+    var time = today.getHours() + ":" + today.getMinutes();
+
+    // Setting date from today
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = dd + '/' + mm  + '/' + yyyy;
+
+    pedido.fecha = today+" - " +time;
+}
+
+/*
+function calcTotalAmount(productos) {
+    var total = 0;
+    for (var i = 0; i < productos.length; i++) {
+        total += productos[i].cantidad;
+    }
+    return total;
+}
+
+function calcTotalPrice(productos) {
+    var total = 0;
+    for (var i in productos) {
+        total += productos[i].precio * productos[i].cantidad;
+    }
+    return total;
+}*/

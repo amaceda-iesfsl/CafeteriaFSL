@@ -20,16 +20,19 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "scss/app/home";
+@import "scss/app/perfil";
+@import "scss/app/product-view";
+@import "scss/app/cart";
+
 @import "scss/admin/nuevo-producto";
 @import "scss/admin/nueva-oferta";
 @import "scss/admin/Pedido_pendiente";
 @import "scss/admin/Especificacion_articulos";
-@import "scss/app/home";
-@import "scss/app/perfil";
-@import "scss/app/product-view";
 @import "scss/admin/home";
 @import "scss/admin/balance";
 @import "scss/admin/pedido-recogerPedido";
+@import "scss/admin/productos";
 
 /*
 .bar.large-header {
@@ -81,7 +84,7 @@ a, button{
 }
 
 .button-small {
-    font-size: 20px;
+    font-size: 16px;
     margin: 0px;
 }
 

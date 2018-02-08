@@ -7,14 +7,14 @@
             <div class="col list">
                 <p class="info">FECHA DE RECOGÍDA</p>
                 <label class="item item-input">
-                <span class="input-label">Día</span>
-                <input type="date" name="fecha-recogida" placeholder="">
+                <span class="input-label" >Día</span>
+                <input type="date" name="fecha-recogida" placeholder="" ng-model="pedido.reserva.dia_recogida">
               </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
                       Hora
                     </div>
-                    <select>
+                    <select ng-model="pedido.reserva.hora_recogida">
                       <option selected>10:50</option>
                       <option>14:05</option>
                       <option>15:20</option>
@@ -44,7 +44,7 @@
         </div>
         <div class="row row-bottom">
             <div class="col col-50 col-offset-25">
-                <button class="button button-block button-positive" ng-click="popConfirmar()">Pedir y pagar</button>
+                <button class="button button-block button-positive" ng-click="popConfirmar()" ng-disabled="pedido.reserva.dia_recogida == null || pedido.reserva.hora_recogida == ''">Pedir y pagar</button>
             </div>
         </div>
     </ion-content>

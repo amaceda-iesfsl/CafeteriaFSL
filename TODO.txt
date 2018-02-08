@@ -1,3 +1,1 @@
 - Al hacer click sobre un producto debería mostrarse un popup/modal donde veamos más detalles de ese producto y poder añadir o eliminar cantidades del carrito.
-
-- Cambiar la función de calcular el total de cantidad y precio y meterla en productosController y orderCtrl

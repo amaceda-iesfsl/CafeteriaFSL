@@ -1,27 +1,23 @@
-<ion-view view-title="CFSL-Pedidos recogidos">
 
-    <ion-content>
-        <div class="row">
-            <div class="bar bar-header bar-stable">
-                <h1 class="title">Productos</h1>
-            </div>
-        </div>
+<ion-tabs class="tabs-positive tabs-striped">
 
-        <div class="tabs">
-            <a class="tab-item active" href="#">
-        <i class="icon ion-home"></i>
-        Test
-      </a>
-            <a class="tab-item" href="#">
-        <i class="icon ion-star"></i>
-        Favorites
-      </a>
-            <a class="tab-item" href="#">
-        <i class="icon ion-gear-a"></i>
-        Settings
-      </a>
-        </div>
+    <ion-tab class="tab" title="BOCADILLOS" icon-on="" icon-off="" href="#/admin/productos/bocadillos">
+        <ion-nav-view name="tab-bocadillos"></ion-nav-view>
+    </ion-tab>
 
+    <ion-tab class="tab" title="BEBIDAS" icon-on="" icon-off="" href="#/admin/productos/bebidas">
+        <ion-nav-view name="tab-bebidas"></ion-nav-view>
+    </ion-tab>
 
-    </ion-content>
-</ion-view>
+    <ion-tab class="tab" title="CAFÉS" icon-on="" icon-off="" href="#/admin/productos/cafes">
+        <ion-nav-view name="tab-cafes"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab class="tab" title="BOLLERÍA" icon-on="" icon-off="" href="#/admin/productos/bolleria">
+        <ion-nav-view name="tab-bolleria"></ion-nav-view>
+    </ion-tab>
+    <ion-tab class="tab" title="HOME"  icon-on="" icon-off="" href="#/admin/home">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>

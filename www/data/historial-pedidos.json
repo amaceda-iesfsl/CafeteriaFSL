@@ -2,30 +2,35 @@
     {
         "codigo": "000001",
         "fecha": "07-02-2018 - 10:00",
-        "dia_recogida": "19-02-2018",
-        "hora_recogida": "10:50",
+        "reserva" : {
+            "dia_recogida": "29-01-2018",
+            "hora_recogida": "10:50"
+        },
         "estado": "E",
-        "total": 10.00,
-        "productos": [
-            {
+        "pTotal": 10.00,
+        "productos": {
+            "0001" : {
                 "id": "0001",
                 "cantidad": 1
             },
-            {
+            "0002" : {
                 "id": "0002",
                 "cantidad": 2
             },
-            {
+            "0003" : {
                 "id": "0003",
                 "cantidad": 3
             }
-        ]
+        }
     },
     {
         "codigo": "000002",
         "fecha": "07-02-2018 - 10:00",
-        "dia_recogida": "19-02-2018",
-        "hora_recogida": "10:50",
+        "reserva": {
+            "dia_recogida": "23-01-2018",
+            "hora_recogida": "10:50"
+        },
+        "pTotal": 10.00,
         "estado": "E",
         "productos": [
             {
@@ -45,8 +50,11 @@
     {
         "codigo": "000003",
         "fecha": "07-02-2018 - 10:00",
-        "dia_recogida": "19-02-2018",
-        "hora_recogida": "10:50",
+        "reserva": {
+            "dia_recogida": "01-02-2018",
+            "hora_recogida": "14:05"
+        },
+        "pTotal": 10.00,
         "estado": "E",
         "productos": [
             {
