@@ -177,7 +177,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                 templateUrl: 'templates/admin/balance.html'
             })
             .state('pedido-recogerPedidos', {
-<<<<<<< HEAD
               url: '/admin/recogerPedidos',
               templateUrl: 'templates/admin/pedido-recogerPedido.html',
               controller: "lecturaCtrl",
@@ -189,11 +188,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                             }
                         ]
             }
-=======
-                url: '/admin/recogerPedidos',
-                templateUrl: 'templates/admin/pedido-recogerPedido.html',
-                controller: 'lecturaCtrl',
->>>>>>> 04e48c955aa4891222d46207c7c46e3616f53b7c
+
             })
 
             .state('admin-productos', {
