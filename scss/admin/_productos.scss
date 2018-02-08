@@ -1,3 +1,21 @@
 .tab{
     font-size:120%;
 }
+
+.contenido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 3%;
+    padding-top: 7%;
+}
+
+.mostrarProducto{
+    width: 90%;
+    height: auto;
+    margin-bottom:12%;
+}
+
+.foto{
+    width: 20%;
+}

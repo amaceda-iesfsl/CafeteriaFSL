@@ -1,45 +1,23 @@
 <ion-view view-title="CFSL-Productos">
-  <ion-content>
-       <div class="bar bar-header bar-stable">
+    <ion-content>
+        <div class="bar bar-header bar-stable">
             <h2 class="title">Bocadillos</h2>
         </div>
-
-        <div class="row product-list">
-            <div class="col col-100" >
-                <div class="list card" ng-repeat="producto in productos">
-                    <div class="item item-avatar item-text-wrap" ng-click="viewProduct({{producto}})">
-                        <!--<img src="img/promo/{{producto.img}}">-->
-                        <div class="row padding-0">
-                            <div class="col padding-0 col-75">
-                                <span class="badge badge-dark item-badge" ng-if="pedido.productos[producto.id]">{{pedido.productos[producto.id].cantidad}}</span>
-                                <span class="badge badge-dark item-badge" ng-if="!pedido.productos[producto.id]">0</span>
+        <div class="row row-offset-10 contenido">
+                <div class="col col-33" ng-repeat="producto in productos">
+                    <div class="item item-avatar item-text-wrap mostrarProducto" ng-click="viewProduct({{producto}})">
+                        <img class="foto" src="img/promo/{{producto.img}}">
+                        <div class="row infoProducto">
+                            <div class="col col-75">
                                 <h2>{{producto.nombre}}</h2>
                                 <div class="product-info">{{producto.ingredientes}}</div>
                             </div>
-                            <div class="col padding-0 col-25 right">
+                            <div class="col col-25 right">
                                 <strong><span class="price assertive">{{producto.precio}}€</span></strong>
                             </div>
                         </div>
                     </div>
-                    <div class="item item-divider">
-                        <div class="row padding-0 button-bar center">
-                            <button ng-click="cart.remove(producto.id)" ng-disabled="!pedido.productos[producto.id] || pedido.productos[producto.id].cantidad==0" class="button button-small ion-minus button-block button-assertive">
-                            </button>
-                            <button ng-click="cart.add(producto.id)" class="button button-small ion-plus button-block button-balanced">
-                            </button>
-                        </div>
-                    </div>
                 </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="col col-50 col-offset-25">
-
-            </div>
-        </div>
-
-
-
-
-  </ion-content>
+    </ion-content>
 </ion-view>
