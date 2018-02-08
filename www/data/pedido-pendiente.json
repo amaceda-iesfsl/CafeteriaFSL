@@ -1,7 +1,7 @@
 [
     {
       "id": "0001",
-      "info": "hola mundo",
+      "info": "Alejandro",
       "date": "07/02/2018",
       "celda": "1/1",
       "estado":false
@@ -9,49 +9,49 @@
     {
 
       "id": "0002",
-      "info": "hola mundo",
+      "info": "Vicente",
       "date": "07/02/2018",
       "celda": "1/3",
       "estado":true
     },
     {
       "id": "0003",
-      "info": "hola mundo",
+      "info": "Javier",
       "date": "07/02/2018",
       "celda": "1/5",
       "estado":false
     },
     {
       "id": "0004",
-      "info": "hola mundo",
+      "info": "Julián",
       "date": "07/02/2018",
       "celda": "2/2",
       "estado":false
     },
      {
       "id": "0005",
-      "info": "hola mundo",
+      "info": "Lluís",
       "date": "07/02/2018",
       "celda": "2/4",
       "estado":false
     },
     {
       "id": "0006",
-      "info": "hola mundo",
+      "info": "Jaume",
       "date": "07/02/2018",
       "celda": "2/6",
       "estado":false
     },
     {
       "id": "0007",
-      "info": "hola mundo",
+      "info": "Rubén",
       "date": "07/02/2018",
       "celda": "1/1",
       "estado":false
     },
     {
       "id": "0008",
-      "info": "hola mundo",
+      "info": "Adrián",
       "date": "07/02/2018",
       "celda": "1/1",
       "estado":false
