@@ -2,33 +2,33 @@
     "bocadillos": [
         {
             "id": "0001",
-            "nombre": "Jamón Serrano",
+            "nombre": "Jamón y queso",
             "img": "bocadillos.jpg",
-            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
+            "ingredientes": "Pan, Jamón, queso y tomate",
             "precio": 1.00,
             "cantidad": 0
         },
         {
             "id": "0002",
-            "nombre": "Jamón Serrano2",
+            "nombre": "Tortilla patata",
             "img": "bocadillos.jpg",
-            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
+            "ingredientes": "Pan, patata y huevos",
             "precio": 2.00,
             "cantidad": 0
         },
         {
             "id": "0003",
-            "nombre": "Jamón Serrano3",
+            "nombre": "Calamares",
             "img": "bocadillos.jpg",
-            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
+            "ingredientes": "Pan, calamares, mayonesa",
             "precio": 3.00,
             "cantidad": 0
         },
         {
             "id": "0004",
-            "nombre": "Jamón Serrano4",
+            "nombre": "Lomo con queso",
             "img": "bocadillos.jpg",
-            "ingredientes": "Pan, Jamón y muchas cosas más por supuesto que si, sino esto no tendría sentido",
+            "ingredientes": "Pan, lomo y queso",
             "precio": 4.00,
             "cantidad": 0
         }
@@ -36,28 +36,28 @@
     "bebidas": [
         {
             "id": "0005",
-            "nombre": "Agua1",
+            "nombre": "Agua",
             "img": "bebidas.jpg",
             "precio": 1.50,
             "cantidad": 0
         },
         {
             "id": "0006",
-            "nombre": "Agua2",
+            "nombre": "Coca Cola",
             "img": "bebidas.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
             "id": "0007",
-            "nombre": "Agua3",
+            "nombre": "Fanta naranaja",
             "img": "bebidas.jpg",
             "precio": 1.20,
             "cantidad": 0
         },
         {
             "id": "0008",
-            "nombre": "Agua4",
+            "nombre": "Batido chocolate",
             "img": "bebidas.jpg",
             "precio": 0.80,
             "cantidad": 0
@@ -66,28 +66,28 @@
     "cafes": [
         {
             "id": "9",
-            "nombre": "Cafe1",
+            "nombre": "Café solo",
             "img": "cafes.jpg",
             "precio": 1.00,
             "cantidad": 0
         },
         {
             "id": "10",
-            "nombre": "Cafe2",
+            "nombre": "Cortado",
             "img": "cafes.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
             "id": "11",
-            "nombre": "Cafe3",
+            "nombre": "Café con leche",
             "img": "cafes.jpg",
             "precio": 1.00,
             "cantidad": 0
         },
         {
             "id": "12",
-            "nombre": "Cafe4",
+            "nombre": "Bombón",
             "img": "cafes.jpg",
             "precio": 1.00,
             "cantidad": 0
@@ -96,28 +96,28 @@
     "bolleria": [
         {
             "id": "13",
-            "nombre": "Bollo1",
+            "nombre": "Napolitana chcolate",
             "img": "bolleria.jpg",
             "precio": 1.50,
             "cantidad": 0
         },
         {
             "id": "14",
-            "nombre": "Bollo2",
+            "nombre": "Donut",
             "img": "bolleria.jpg",
             "precio": 2.30,
             "cantidad": 0
         },
         {
             "id": "15",
-            "nombre": "Bollo3",
+            "nombre": "croissant",
             "img": "bolleria.jpg",
             "precio": 1.20,
             "cantidad": 0
         },
         {
             "id": "16",
-            "nombre": "Bollo4",
+            "nombre": "Ensaimada",
             "img": "bolleria.jpg",
             "precio": 0.80,
             "cantidad": 0
