@@ -1,12 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\scss",
+    "\\scss\\admin",
     "\\www",
     "\\www\\data",
     "\\www\\js",
     "\\www\\templates",
     "\\www\\templates\\admin"
   ],
-  "SelectedNode": "\\www\\js\\app.js",
+  "SelectedNode": "\\www\\js\\controllers.js",
   "PreviewInSolutionExplorer": false
 }

@@ -5,12 +5,12 @@
 
         <div class="row">
             <div class="bar bar-header bar-stable">
-                <h1 class="title">Lista de pedidos recogidos</h1>
+                <h1 class="title">Entregas</h1>
             </div>
         </div>
         <div class="row">
             <div class="col col-40 col-offset-75">
-                <button class="button  button-positive" id="opencamara" ng-click="doOrder()">Pedidos recogidos</button>
+                <button class="button  button-positive" id="opencamara" ng-click="doOrder()">Entregar</button>
             </div>
         </div>
 
@@ -34,9 +34,7 @@
                 </div>
                 <div class="row" ng-repeat="pendiente in pendientes">
                     <div class="col">
-                        <a href="www.{{pendiente.id}}">
                             <p>{{pendiente.id}}</p>
-                        </a>
                     </div>
                     <div class="col">
                         <p>{{pendiente.info}}</p>
