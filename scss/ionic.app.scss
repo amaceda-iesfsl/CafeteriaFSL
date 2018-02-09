@@ -206,20 +206,7 @@ ion-content.clean{
     width: auto;
 }
 
-@media (min-width: 600px) {
-    .category-card {
-        max-width: 25em;
-        .item-image {
-            min-height: 6rem;
-            background-position: bottom;
-            background-size: cover;
-            img {
-                height: 13rem;
-            }
 
-        }
-    }
-}
 
 .product-info {
     color: #666;

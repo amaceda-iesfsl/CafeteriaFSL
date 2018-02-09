@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-    .controller('PedidoCtrl', ['$scope', 'pedidos', '$stateParams', function ($scope, pedidos, $stateParams) {
+    .controller('PedidoCtrl', ['$scope', 'historialPedidos', '$stateParams', function ($scope, historialPedidos, $stateParams) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -8,7 +8,7 @@ angular.module('app.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
 
-        $scope.pedido = findElement(pedidos, "codigo", $stateParams.pedidoId);
+        $scope.pedido = findElement(historialPedidos.pedidos, "codigo", $stateParams.pedidoId);
     }])
 
     .controller('PedidosRecientesCtrl', ['$scope', 'historialPedidos', function ($scope, historialPedidos) {
@@ -19,9 +19,11 @@ angular.module('app.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-        var recientes = historialPedidos;
-        $scope.actual = recientes.length;
+        var recientes = historialPedidos.pedidos;
+        $scope.actual = recientes.length -1;
         $scope.pedido = recientes[$scope.actual];
+
+        console.log(historialPedidos);
 
         $scope.nav = {
             forward: function (pos) {

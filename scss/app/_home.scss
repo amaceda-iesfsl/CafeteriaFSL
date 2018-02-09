@@ -3,3 +3,32 @@
         margin: 0px 3px;
     }
 }
+
+.home-cards{
+  flex-wrap: wrap;
+}
+
+@media (min-width: 500px) {
+  .home-cards{
+    justify-content: space-around;
+
+    .col{
+      max-width: 30% !important;
+      .category-card {
+        .item{
+          .item-image {
+            min-height: 6rem;
+            background-position: bottom;
+            background-size: cover;
+            img {
+                width: 140%;
+                height: auto;
+            }
+        }
+        }
+    }
+  }
+  }
+
+}
+
