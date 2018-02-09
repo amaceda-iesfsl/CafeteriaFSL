@@ -1,9 +1,5 @@
 # CafeteriaFSL
 
-Bootstrap material: https://fezvrasta.github.io/bootstrap-material-design/
-
-Iconos: https://material.io/icons/
-
 Como previsualizar la aplicación en el navegador:
 - Clonar el repositorio.
 
