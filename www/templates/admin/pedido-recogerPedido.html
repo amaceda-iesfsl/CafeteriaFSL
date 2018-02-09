@@ -1,4 +1,4 @@
-<ion-view view-title="CFSL-Pedidos recogidos">
+<ion-view view-title="CFSL-Entregas">
 
 
     <ion-content>
@@ -28,13 +28,13 @@
                         <p>Fecha y hora</p>
                     </div>
                     <div class="col">
-                            <p>Bandeja/Pos</p>
-                        </div>
+                        <p>Bandeja/Pos</p>
+                    </div>
                     <div class="col col-10"></div>
                 </div>
                 <div class="row" ng-repeat="pendiente in pendientes">
                     <div class="col">
-                            <p>{{pendiente.id}}</p>
+                        <p>{{pendiente.id}}</p>
                     </div>
                     <div class="col">
                         <p>{{pendiente.info}}</p>
@@ -43,8 +43,8 @@
                         <p>{{pendiente.date}}</p>
                     </div>
                     <div class="col">
-                            <p>{{pendiente.celda}}</p>
-                        </div>
+                        <p>{{pendiente.celda}}</p>
+                    </div>
                     <div class="col col-10">
 
                         <ion-checkbox ng-checked="isChecked={{pendiente.estado}}"></ion-checkbox>

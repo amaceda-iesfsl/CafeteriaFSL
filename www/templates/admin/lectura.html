@@ -1,16 +1,19 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-positive">
-        <h1 class="title">Pedido realizado <i class="ion-checkmark"></i></h1>
+        <h1 class="title">Lectura código QR <i class="ion-checkmark"></i></h1>
     </ion-header-bar>
-    <ion-content class="backlight" ng-controller="BarcodeCtrl">
+    <ion-content class="backlight" >
         <div class="row">
             <div class="col col-80 col-offset-10 center">
-                <p class="info">Presenta el siguiente código QR en la cafetería el día de recogida</p>
+                <p class="info">Escanea el código QR del pedido</p>
             </div>
         </div>
+        <div class="col center">
+                <img src="img/codigoQR/QR.jpg" class="codigoQR" />
+            </div>
         <div class="row">
             <div class="col center">
-               <button class="col-80" ng-click="readcode">Leer codigo</button>
+               <button class="button  button-positive" ng-click="removeModal()">Leer codigo</button>
             </div>
         </div>
    
