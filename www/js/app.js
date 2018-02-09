@@ -153,11 +153,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
             .state('nuevo-producto', {
                 url: '/admin/nuevo-producto',
-                templateUrl: 'templates/admin/nuevo-producto.html'
+                templateUrl: 'templates/admin/nuevo-producto.html',
+                controller: "nuevoProductoCtrl",
             })
             .state('nueva-oferta', {
                 url: '/admin/nueva-oferta',
-                templateUrl: 'templates/admin/Nueva-oferta.html'
+                templateUrl: 'templates/admin/Nueva-oferta.html',
+                controller: "nuevaOfertaCtrl",
             })
             .state('Pedido-pendientes', {
                 url: '/admin/Pedido-pendientes',

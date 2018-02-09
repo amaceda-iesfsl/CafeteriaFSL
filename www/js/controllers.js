@@ -257,6 +257,44 @@ angular.module('app.controllers', [])
 
     }])
 
+    .controller('nuevoProductoCtrl',['$scope','$ionicModal', function($scope,$ionicModal){
+
+        $ionicModal.fromTemplateUrl('templates/admin/nuevoProductoModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal_info = modal;
+        });
+
+        $scope.viewProduct = function () {
+            $scope.modal_info.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal_info.hide();
+        }
+    }])
+
+    .controller('nuevaOfertaCtrl',['$scope','$ionicModal', function($scope,$ionicModal){
+
+        $ionicModal.fromTemplateUrl('templates/admin/nuevaOfertaModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal_info = modal;
+        });
+
+        $scope.viewProduct = function () {
+            $scope.modal_info.show();
+        }
+
+        $scope.hideModal = function () {
+            $scope.modal_info.hide();
+        }
+    }])
+
+
+
     .controller('BocadillosCtrl', ['$scope', '$ionicModal', 'productos', function ($scope, $ionicModal, productos) {
 
         $scope.tipo = "bocadillos";
