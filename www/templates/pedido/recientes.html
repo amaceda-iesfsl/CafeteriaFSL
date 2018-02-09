@@ -1,15 +1,15 @@
 <ion-view view-title="Pedidos recientes">
-    <ion-header-bar class="bar-subheader bar-stable bar-stable">
+    <ion-header-bar class="bar-subheader bar-stable bar-stable" align-title="center">
         <div class="buttons">
             <button class="button icon ion-ios-arrow-back" ng-click="nav.backward(actual)" ng-disabled="!nav.hasNewer(actual)"></button>
         </div>
-        <h1 class="title">{{pedido.fecha}}</h1>
+        <h1 class="title center">{{pedido.fecha}}</h1>
         <div class="buttons">
             <button class="button icon ion-ios-arrow-forward" ng-click="nav.forward(actual)" ng-disabled="!nav.hasOlder(actual)"></button>
         </div>
     </ion-header-bar>
     <ion-content class="has-subheader" on-swipe-left="nav.forward(actual)" on-swipe-right="nav.backward(actual)">
-        <div class="pedido">
+        <div class="pedido" ng-if="pedido">
             <div class="row">
                 <div class="col center">
                     <img src="img/promo/QR.jpg" class="col-80" />
@@ -41,5 +41,6 @@
                 </div>
             </div>
         </div>
+        <div class="pedido center" ng-if="!pedido"><p class="info dummy-text">Todavía no has hecho ningun pedido</p></div>
     </ion-content>
 </ion-view>

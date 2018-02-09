@@ -80,8 +80,15 @@ angular.module('app.controllers', [])
                         text: "Confirmar pedido",
                         type: 'button-positive',
                         onTap: function (e) {
-                            historialPedidos.pedidos.push(pedido);
-                            console.log(historialPedidos);
+                            pedido.estado="Pendiente";
+                            setOrderDate(pedido);
+                            //historialPedidos.pedidos.push(pedido);
+                            var p = {};
+                            angular.copy(pedido, p);
+                            historialPedidos.pedidos.push(p);
+                            pedido.productos = {};
+                            pedido.cTotal= 0;
+                            pedido.fecha = "";
                             $scope.modal.show();
                         }
                     }
@@ -192,7 +199,7 @@ angular.module('app.controllers', [])
     $scope.removeModal = function () {
         $scope.modal.hide();
     }
-  
+
     console.log("pendientes"+pendientes);
     $scope.pendientes = pendientes;
     console.log($scope.pendientes);
@@ -391,4 +398,30 @@ function findElement(arr, propName, propValue) {
             return arr[i];
 
     // will return undefined if not found; you could return a default instead
+}
+
+
+
+function setOrderDate(pedido){
+  var today = new Date();
+
+  // Setting time from today
+  var time = today.getHours() + ":" + today.getMinutes();
+
+  // Setting date from today
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) {
+      dd = '0' + dd
+  }
+
+  if (mm < 10) {
+      mm = '0' + mm
+  }
+
+  today = dd + '/' + mm  + '/' + yyyy;
+
+  pedido.fecha = today+" - " +time;
 }

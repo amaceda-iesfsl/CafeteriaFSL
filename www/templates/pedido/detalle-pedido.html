@@ -7,11 +7,14 @@
                         <img src="img/promo/QR.jpg">
                         <br>
                         <h2 class="code">Código: {{pedido.codigo}}</h2>
-                        <p>{{pedido.reserva.dia_recogida+" - "+pedido.reserva.hora_recogida}}</p>
+                        <p>{{pedido.reserva.dia_recogida | date : 'dd/MM/yyyy'}} - {{pedido.reserva.hora_recogida}}</p>
                     </div>
                     <div class="item item-divider padding-0">
                         <div class="row">
-                            <div class="col col-50 "><div class="entregado">{{pedido.estado}}</div></div>
+                            <div class="col col-50 ">
+                              <div class="entregado" ng-if="pedido.estado == 'Entregado'">{{pedido.estado}}</div>
+                              <div class="pendiente" ng-if="pedido.estado == 'Pendiente'">{{pedido.estado}}</div>
+                            </div>
                             <div class="col col-50 col-center right"><div class="total">Total: {{pedido.pTotal + " €"}}</div></div>
                         </div>
                     </div>
