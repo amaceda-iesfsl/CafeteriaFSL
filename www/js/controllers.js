@@ -154,7 +154,7 @@ angular.module('app.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
 
-        $ionicModal.fromTemplateUrl('templates/pedido/pedido-realizado.html', {
+        $ionicModal.fromTemplateUrl('templates/admin/lectura.html', {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {
@@ -162,7 +162,8 @@ angular.module('app.controllers', [])
         });
 
         $scope.doOrder = function () {
-            $scope.modal.show();
+          $scope.modal.show();
+
         }
 
         $scope.removeModal = function () {
