@@ -63,19 +63,17 @@ angular.module('app.services', [])
         }
         return total;
     })
-    // Here is where the magic works
-    .directive('date', function (dateFilter) {
-        return {
-            require: 'ngModel',
-            link: function (scope, elm, attrs, ctrl) {
-
-                var dateFormat = attrs['date'] || 'yyyy-MM-dd';
-
-                ctrl.$formatters.unshift(function (modelValue) {
-                    return dateFilter(modelValue, dateFormat);
-                });
-            }
+    
+    .factory("Pedido", function(){
+        var pedido = function(codigo, fecha, cTotal){
+            this.codigo = codigo;
+            this.fecha = "";
+            this.reserva = reserva;
+            this.productos = {};
+            this.cTotal = 0;
+            this.pTotal = totalPrice(this.productos);
         }
+        
     })
 ;
 

@@ -50,7 +50,7 @@
         },
         {
             "id": "0007",
-            "nombre": "Fanta naranaja",
+            "nombre": "Fanta naranja",
             "img": "bebidas.jpg",
             "precio": 1.20,
             "cantidad": 0
@@ -96,7 +96,7 @@
     "bolleria": [
         {
             "id": "13",
-            "nombre": "Napolitana chcolate",
+            "nombre": "Napolitana chocolate",
             "img": "bolleria.jpg",
             "precio": 1.50,
             "cantidad": 0
@@ -110,7 +110,7 @@
         },
         {
             "id": "15",
-            "nombre": "croissant",
+            "nombre": "Croissant",
             "img": "bolleria.jpg",
             "precio": 1.20,
             "cantidad": 0

@@ -139,9 +139,9 @@ angular.module('app.controllers', [])
                 if (pedido.productos[itemId]) {
                     if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
                         pedido.productos[itemId].cantidad += 1;
-                    }
-                    pedido.cTotal += 1;
-                    pedido.pTotal += pedido.productos[itemId].precio;
+                        pedido.cTotal += 1;
+                        pedido.pTotal += pedido.productos[itemId].precio;
+                    }                               
                 }
             },
             remove: function (itemId) {
@@ -247,23 +247,24 @@ angular.module('app.controllers', [])
                 if (!pedido.productos[itemId]) {
                     pedido.productos[producto.id] = producto;
                     pedido.productos[producto.id].cantidad = 1;
-                    //pedido.productos.push(producto);
+                    pedido.cTotal += 1;
+                    pedido.pTotal += producto.precio;
                 } else {
                     if (pedido.productos[itemId].cantidad < this.MAX_ITEMS) {
                         pedido.productos[itemId].cantidad += 1;
+                        pedido.cTotal += 1;
+                        pedido.pTotal += producto.precio;
                     }
-                }
-                pedido.cTotal += 1;
-                pedido.pTotal += producto.precio;
+                }  
             },
             remove: function (itemId) {
                 if (pedido.productos[itemId]) {
                     pedido.productos[itemId].cantidad -= 1;
-                    pedido.cTotal -= 1;
-                    pedido.pTotal -= pedido.productos[itemId].precio;
                     if (pedido.productos[itemId].cantidad == 0) {
                         delete pedido.productos[itemId];
                     }
+                    pedido.cTotal -= 1;
+                    pedido.pTotal -= pedido.productos[itemId].precio;
                 }
             }
         }
