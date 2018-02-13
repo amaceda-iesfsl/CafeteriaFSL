@@ -14,7 +14,7 @@
       "date": "07/02/2018",
       "celda": "1/3",
       "estado":true,
-        "bocadillo":"Jamón"
+        "bocadillo":"Tortilla"
     },
     {
       "id": "0003",
@@ -22,7 +22,7 @@
       "date": "07/02/2018",
       "celda": "1/5",
       "estado":false,
-        "bocadillo":"Jamón"
+        "bocadillo":"Patatas con chorizo"
     },
     {
       "id": "0004",
@@ -30,7 +30,7 @@
       "date": "07/02/2018",
       "celda": "2/2",
       "estado":false,
-        "bocadillo":"Jamón"
+        "bocadillo":"Ensalada de atún"
     },
      {
       "id": "0005",
@@ -38,7 +38,7 @@
       "date": "07/02/2018",
       "celda": "2/4",
       "estado":false,
-         "bocadillo":"Jamón"
+         "bocadillo":"Patatas con chorizo"
     },
     {
       "id": "0006",
@@ -46,7 +46,7 @@
       "date": "07/02/2018",
       "celda": "2/6",
       "estado":false,
-        "bocadillo":"Jamón"
+        "bocadillo":"Calamares"
     },
     {
       "id": "0007",
@@ -54,7 +54,7 @@
       "date": "07/02/2018",
       "celda": "1/1",
       "estado":false,
-        "bocadillo":"Jamón"
+        "bocadillo":"Calamares"
     },
     {
       "id": "0008",
@@ -62,7 +62,7 @@
       "date": "07/02/2018",
       "celda": "1/1",
       "estado":false,
-        "bocadillo":"Jamón"
+        "bocadillo":"Pimientos, longaniza y patatas"
     }
   ]
 
